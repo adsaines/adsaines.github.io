@@ -1,14 +1,59 @@
 import { NextPage } from "next";
-import { BlurbWithTitle, StandardResumeSection } from "./projections";
+import { BlurbWithTitle, EducationChunk, ProffessionalExperience, StandardResumeSection, TalkingPoint } from "./projections";
 
 const Resume: NextPage = () => {
 
     const tddBlurb = `I've been using TDD for a while, but I've found that I prefer to use it two very specific cirumstances. The first is for refactoring; it makes it considerably easier to work on large classes and components. The second is for time sensitive development; starting with the outcome keeps focus on easy and direct logical steps.`
 
+    const accentureTalkingPoints: TalkingPoint[] = [
+        {
+            bolded: 'Engineered and optimized full-stack applications',
+            followUp: 'leading critical refactoring initiatives to enhance functionality, user experience, and overall maintainability across diverse frameworks.'
+        },
+        {
+            bolded: 'Designed and implemented scalable architectural solutions',
+            followUp: 'including microservices and API development, to drive significant efficiency gains.'
+        },
+        {
+            bolded: 'Developed and integrated robust data solutions',
+            followUp: 'including secure data processing, storage, and reporting, ensuring data integrity and compliance.'
+        },
+        {
+            bolded: 'Mentored and guided team members on advanced development workflows',
+            followUp: 'fostering skill development and collaborative success.'
+        },
+        {
+            bolded: 'Built and utilized reusable component libraries',
+            followUp: 'standardizing development practices and increasing overall project efficiency.'
+        },
+    ]
+
+    const benchmarkTalkingPoints: TalkingPoint[] = [
+        {
+            bolded: 'Enhanced software quality and reliability',
+            followUp: 'through comprehensive testing strategies and proactive identification of system vulnerabilities. '
+        },
+        {
+            bolded: 'Streamlined data management processes',
+            followUp: 'by transitioning from manual methods to automated, user-friendly interfaces and robust backend systems.'
+        },
+        {
+            bolded: 'Successfully managed complex data integrations for high-profile clients',
+            followUp: 'ensuring seamless workflows and enhanced data accessibility.'
+        },
+    ]
+
+    const cornerstoneTalkingPoint: TalkingPoint[] = [
+        {
+            bolded: 'Applied',
+            followUp: 'advanced data extraction and analysis techniques to improve reporting efficiency and derive actionable insights from diverse data sources.'
+        }
+    ]
+
     return (
         <article className={`resume flex flex-col p-4 gap-4 m-2 max-w-4/5 text-lg`}>
             <StandardResumeSection title="Personal Details">
-                <div className="flex gap-4 justify-between">
+                <div className="flex gap-4 justify-between text-(--text-theme-secondary)">
                     <span>
                         Alex Saines
                     </span>
@@ -37,6 +82,9 @@ const Resume: NextPage = () => {
                 </div>
             </StandardResumeSection>
             <StandardResumeSection title="Technology" >
+                <div className="flex flex-col gap-4">
+                    {/* TODO-MAYBE: chart the technologies by experience & preference in a scatter chart */}
+                </div>
                 <p>
                     JS Frameworks: Angular, React, and Vue
                 </p>
@@ -63,66 +111,43 @@ const Resume: NextPage = () => {
                 </p>
             </StandardResumeSection>
             <StandardResumeSection title="Education" >
-                <div>
-                    <h3>Tech Elevator | 720 Hrs of Code</h3>
-                    <p>2019</p>
-                    <p>Full-stack coding bootcamp to develop dynamic web based software systems using Java & Vue.</p>
-                </div>
-                <div>
-                    <h3>The College of Wooster | Bachelor of Arts in Physics </h3>
-                    <p>2007-2011</p>
-                    <p>Progenitor of the published Order and chaos in the rotation and revolution of two massive line segments paper.</p>
-                </div>
+                <EducationChunk 
+                    blurb="Full-stack coding bootcamp to develop dynamic web based software systems using Java & Vue."
+                    graduated={2019}
+                    name="Tech Elevator"
+                    tagline="720 Hrs of Code"
+                    />
+                {/* TODO: work the paper link into the education chunk */}
+                <EducationChunk 
+                    blurb="Progenitor of the published Order and chaos in the rotation and revolution of two massive line segments paper."
+                    started={2007}
+                    graduated={2011}
+                    name="The College of Wooster"
+                    tagline="Bachelor of Arts in Physics"
+                    />
             </StandardResumeSection>
             <StandardResumeSection title="Professional Experience" >
-                <div>
-                    <h3>Accenture</h3>
-                    <p>Oct 2022 - Present</p>
-                    <p>Software Engineer</p>
-                    <ul>
-                        <li>
-                            Engineered and optimized full-stack applications, leading critical refactoring initiatives to enhance functionality, user experience, and overall maintainability across diverse frameworks.
-                        </li>
-                        <li>
-                            Designed and implemented scalable architectural solutions, including microservices and API development, to drive significant efficiency gains. 
-                        </li>
-                        <li>
-                            Developed and integrated robust data solutions, including secure data processing, storage, and reporting, ensuring data integrity and compliance.
-                        </li>
-                        <li>
-                            Mentored and guided team members on advanced development workflows, fostering skill development and collaborative success. 
-                        </li>
-                        <li>
-                            Built and utilized reusable component libraries, standardizing development practices and increasing overall project efficiency. 
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Benchmark Digital Partners LLC</h3>
-                    <p>April 2019 - April 2022</p>
-                    <p>Software Engineer | Product Owner</p>
-                    <ul>
-                        <li>
-                            Enhanced software quality and reliability through comprehensive testing strategies and proactive identification of system vulnerabilities. 
-                        </li>
-                        <li>
-                            Streamlined data management processes by transitioning from manual methods to automated, user-friendly interfaces and robust backend systems.
-                        </li>
-                        <li>
-                            Successfully managed complex data integrations for high-profile clients, ensuring seamless workflows and enhanced data accessibility. 
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Cornerstone Engineering</h3>
-                    <p>September 2011 - January 2019</p>
-                    <p>Spreadsheet Engineer and Data Analyst</p>
-                    <ul>
-                        <li>
-                            Applied advanced data extraction and analysis techniques to improve reporting efficiency and derive actionable insights from diverse data sources. 
-                        </li>
-                    </ul>
-                </div>
+                {/* TODO: make this a swappable section, you can view it by project or company */}
+                <ProffessionalExperience 
+                    company="Accenture"
+                    positionTitle="Software Engineer"
+                    startDate="2022/10/05"
+                    talkingPoints={accentureTalkingPoints}
+                    />
+                <ProffessionalExperience 
+                    company="Benchmark Digital Partners LLC"
+                    positionTitle="Software Engineer & Product Owner"
+                    startDate="2019/04/01"
+                    endDate="2022/04/01"
+                    talkingPoints={benchmarkTalkingPoints}
+                    />
+                <ProffessionalExperience 
+                    company="Cornerstone Engineering"
+                    positionTitle="Spreadsheet Engineer and Data Analyst"
+                    startDate="2011/09/01"
+                    endDate="2019/01/01"
+                    talkingPoints={cornerstoneTalkingPoint}
+                    />
             </StandardResumeSection>
         </article>
     )

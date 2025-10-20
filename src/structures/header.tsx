@@ -46,7 +46,7 @@ const HeaderLink = ({path, name, hoverText, selected}: {path: string, name: stri
     if(selected){
         return (
             <span
-                className="py-1 px-2 border-2 font-bold border-1 text-(--menu-selected) border-(--menu-selected)"
+                className="py-1 px-2 border-2 font-bold border-1 text-(--must-see-me) border-(--must-see-me)"
                 aria-label={hoverText}
                 >
                 {name}
@@ -56,7 +56,7 @@ const HeaderLink = ({path, name, hoverText, selected}: {path: string, name: stri
 
     return (
         <Link 
-            className="py-1 px-2 border-2 font-bold border-1 text-(--text-theme-secondary) border-(--background-theme-tertiary) hover:border-(--text-theme-secondary) "
+            className="py-1 px-2 border-2 font-bold border-1 text-(--text-theme-tertiary) border-(--background-theme-tertiary) hover:border-(--text-theme-tertiary) "
             href={path} 
             aria-label={hoverText}
             >
