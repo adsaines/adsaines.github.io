@@ -1,29 +1,40 @@
 import { NextPage } from "next";
-import { HorizontalRuleWithTitle, StandardResumeSection } from "./projections";
+import { BlurbWithTitle, StandardResumeSection } from "./projections";
 
 const Resume: NextPage = () => {
+
+    const tddBlurb = `I've been using TDD for a while, but I've found that I prefer to use it two very specific cirumstances. The first is for refactoring; it makes it considerably easier to work on large classes and components. The second is for time sensitive development; starting with the outcome keeps focus on easy and direct logical steps.`
+
     return (
         <article className={`resume flex flex-col p-4 gap-4 m-2 max-w-4/5 text-lg`}>
             <StandardResumeSection title="Personal Details">
-                <h1>
-                    Alex Saines
-                </h1>
-                <h2>
-                    <a href="mailto:adsaines@gmail.com" aria-label="Email me at adsaines@gmail.com">
-                        adsaines@gmail.com
-                    </a>
-                </h2>
-                <h2>
-                    740-279-5560
-                </h2>
+                <div className="flex gap-4 justify-between">
+                    <span>
+                        Alex Saines
+                    </span>
+                    <span>
+                        <a href="mailto:adsaines@gmail.com" aria-label="Email me at adsaines@gmail.com">
+                            adsaines@gmail.com
+                        </a>
+                    </span>
+                    <span>
+                        740-279-5560
+                    </span>
+                </div>
             </StandardResumeSection>
-            <StandardResumeSection title="Methodologies" >
-                <p>
-                    Test Driven Development (TDD) keeps side effects to a minimum and helps reduce later confusion. 
-                </p>
-                <p>
-                    Agile keeps engineers on task and avoids over development of unneeded features. 
-                </p>
+            <StandardResumeSection title="Methodologies I Follow" >
+                <div className="flex gap-4 justify-around">
+
+                    <BlurbWithTitle 
+                        title="Test Driven Development (TDD)" 
+                        blurb={tddBlurb}
+                        />
+                        
+                    <BlurbWithTitle 
+                        title="Agile" 
+                        blurb={`I have had good luck with Agile as it's nature allows my team and I to change focus and work styles as needed during growth.`}
+                        />
+                </div>
             </StandardResumeSection>
             <StandardResumeSection title="Technology" >
                 <p>
