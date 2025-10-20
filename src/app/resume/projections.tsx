@@ -1,7 +1,10 @@
-export const StandardResumeSection = ({children}: {children: React.ReactNode}) => {
+export const StandardResumeSection = ({title, children}: {title: string, children: React.ReactNode}) => {
     return (
-        <div className="hover:bg-slate-50 hover:pl-1 hover:text-xl hover:font-semibold">
-            {children}
+        <div className="border-1 p-4">
+            <HorizontalRuleWithTitle title={title} />
+            <div className="hover:border-lime-500 hover:font-semibold">
+                {children}
+            </div>
         </div>
     )
 }

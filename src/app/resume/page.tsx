@@ -4,26 +4,20 @@ import { HorizontalRuleWithTitle, StandardResumeSection } from "./projections";
 const Resume: NextPage = () => {
     return (
         <article className={`resume flex flex-col p-4 gap-4 m-2 max-w-4/5 text-lg`}>
-            <HorizontalRuleWithTitle title="Personal Details" />
-            <StandardResumeSection>
+            <StandardResumeSection title="Personal Details">
                 <h1>
                     Alex Saines
                 </h1>
-            </StandardResumeSection>
-            <StandardResumeSection>
                 <h2>
                     <a href="mailto:adsaines@gmail.com" aria-label="Email me at adsaines@gmail.com">
                         adsaines@gmail.com
                     </a>
                 </h2>
-            </StandardResumeSection>
-            <StandardResumeSection>
                 <h2>
                     740-279-5560
                 </h2>
             </StandardResumeSection>
-            <HorizontalRuleWithTitle title="Methodologies" />
-            <StandardResumeSection>
+            <StandardResumeSection title="Methodologies" >
                 <p>
                     Test Driven Development (TDD) keeps side effects to a minimum and helps reduce later confusion. 
                 </p>
@@ -31,8 +25,7 @@ const Resume: NextPage = () => {
                     Agile keeps engineers on task and avoids over development of unneeded features. 
                 </p>
             </StandardResumeSection>
-            <HorizontalRuleWithTitle title="Technology" />
-            <StandardResumeSection>
+            <StandardResumeSection title="Technology" >
                 <p>
                     JS Frameworks: Angular, React, and Vue
                 </p>
@@ -58,8 +51,7 @@ const Resume: NextPage = () => {
                     Buzzwords: Microservices
                 </p>
             </StandardResumeSection>
-            <HorizontalRuleWithTitle title="Education" />
-            <StandardResumeSection>
+            <StandardResumeSection title="Education" >
                 <div>
                     <h3>Tech Elevator | 720 Hrs of Code</h3>
                     <p>2019</p>
@@ -71,8 +63,7 @@ const Resume: NextPage = () => {
                     <p>Progenitor of the published Order and chaos in the rotation and revolution of two massive line segments paper.</p>
                 </div>
             </StandardResumeSection>
-            <HorizontalRuleWithTitle title="Professional Experience" />
-            <StandardResumeSection>
+            <StandardResumeSection title="Professional Experience" >
                 <div>
                     <h3>Accenture</h3>
                     <p>Oct 2022 - Present</p>

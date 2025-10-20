@@ -8,14 +8,25 @@ export const Header = ({children}: {children: React.ReactNode}) => {
     const path = usePathname()
 
     return (
-        <div className="h-screen w-full flex flex-col">
+        <div className="h-full w-full flex flex-col bg-(--background-theme-primary) text-(--text-theme-primary)">
             <nav 
                 aria-label="Pages and contact links."
                 data-show={path !== '/'} 
-                className={`p-2 bg-cyan-600 h-10 b-2 flex w-full data-[show="false"]:hidden justify-between items-center`}
+                className={`p-2 bg-(--background-theme-tertiary) h-12 b-2 flex w-full data-[show="false"]:hidden justify-between items-center`}
                 >
                 <div className="flex gap-1">
-                    <HeaderLink hoverText="Resume" name="Resume" path="resume" />
+                    <HeaderLink 
+                        hoverText="Home" 
+                        name="Home" 
+                        path="/" 
+                        selected={path === 'localhost:3000/'}
+                        />
+                    <HeaderLink 
+                        hoverText="Resume" 
+                        name="Resume" 
+                        path="resume" 
+                        selected={path.includes('resume')}
+                        />
                 </div>
                 <div className="flex">
                     <a 
@@ -31,10 +42,21 @@ export const Header = ({children}: {children: React.ReactNode}) => {
     )
 }
 
-const HeaderLink = ({path, name, hoverText}: {path: string, name: string, hoverText: string}) => {
+const HeaderLink = ({path, name, hoverText, selected}: {path: string, name: string, hoverText: string, selected: boolean}) => {
+    if(selected){
+        return (
+            <span
+                className="py-1 px-2 border-2 font-bold border-1 text-(--menu-selected) border-(--menu-selected)"
+                aria-label={hoverText}
+                >
+                {name}
+            </span>
+        )
+    }
+
     return (
         <Link 
-            className="bg-slate-100 rounded-lg py-1 px-2 border hover:border-2 font-medium font-black hover:font-bold hover:bg-slate-200 border-slate-700"
+            className="py-1 px-2 border-2 font-bold border-1 text-(--text-theme-secondary) border-(--background-theme-tertiary) hover:border-(--text-theme-secondary) "
             href={path} 
             aria-label={hoverText}
             >
