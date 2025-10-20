@@ -10,11 +10,11 @@ export const StandardResumeSection = ({title, children}: {title: string, childre
 export const HorizontalRuleWithTitle = ({title}: {title: string}) => {
     return (
         <div className="flex w-full items-center pb-4">
-            <hr className="w-full border" />
-            <h1 className="p-1 w-full text-center text-xl font-bold">
+            <hr className="grow border" />
+            <h1 className="px-2 grow-0 text-center text-xl font-bold no-wrap">
                 {title}
             </h1>
-            <hr className="w-full border"/>
+            <hr className="grow border"/>
         </div>
     )
 }

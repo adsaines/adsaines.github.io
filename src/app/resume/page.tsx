@@ -67,7 +67,7 @@ const Resume: NextPage = () => {
                     </span>
                 </div>
             </StandardResumeSection>
-            <StandardResumeSection title="Methodologies I Follow" >
+            <StandardResumeSection title="Methodologies" >
                 <div className="flex gap-4 justify-around">
 
                     <BlurbWithTitle 
