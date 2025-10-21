@@ -23,15 +23,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Header>
-          {children}
-        </Header>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+                <link 
+                    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                    rel="stylesheet">  
+                </link>
+                <Header>
+                {children}
+                </Header>
+            </body>
+        </html>
+    );
 }

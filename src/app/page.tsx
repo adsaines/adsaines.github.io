@@ -16,6 +16,12 @@ export default function Home() {
                 >
                     Resume
             </Link>
+            <Link 
+                className="bg-(--background-theme-secondary) py-2 px-4 min-w-1/5 text-center font-semibold text-xl border-1 border-(--background-theme-secondary) hover:border-(--text-theme-primary)" 
+                href={'/kudos'}
+                >
+                    Kudos
+            </Link>
         </div>
     );
 }

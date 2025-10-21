@@ -27,6 +27,12 @@ export const Header = ({children}: {children: React.ReactNode}) => {
                         path="resume" 
                         selected={path.includes('resume')}
                         />
+                    <HeaderLink 
+                        hoverText="Acknowledgments" 
+                        name="Kudos" 
+                        path="kudos" 
+                        selected={path.includes('kudos')}
+                        />
                 </div>
                 <div className="flex">
                     <a 
