@@ -1,13 +1,16 @@
+'use client'
+
 import { NextPage } from "next";
+import { GoogleMaterialIconsKudos, NextJsKudos, ReactKudos } from "./projections";
 
 // TODO: write some stuff about the libraries I used to make this page
 
 const Kudos: NextPage = () => {
     return (
-        <div className="flex flex-col h-screen justify-center items-center">
-            <div>
-                Google Material Icons
-            </div>
+        <div className="flex flex-wrap h-screen justify-center items-start">
+            <GoogleMaterialIconsKudos />
+            <ReactKudos />
+            <NextJsKudos />
         </div>
     )
 }
