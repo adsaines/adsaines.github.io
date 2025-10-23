@@ -17,21 +17,27 @@ export const Header = ({children}: {children: React.ReactNode}) => {
                 <div className="flex gap-1">
                     <HeaderLink 
                         hoverText="Home" 
-                        name="Home" 
+                        name="home" 
                         path="/" 
                         selected={path === 'localhost:3000/'}
                         />
                     <HeaderLink 
                         hoverText="Resume" 
-                        name="Resume" 
+                        name="resume" 
                         path="resume" 
                         selected={path.includes('resume')}
                         />
                     <HeaderLink 
-                        hoverText="Acknowledgments" 
-                        name="Kudos" 
+                        hoverText="Libraries I used to make this page, and why I like them" 
+                        name="kudos" 
                         path="kudos" 
                         selected={path.includes('kudos')}
+                        />
+                    <HeaderLink 
+                        hoverText="Stories of my dev career" 
+                        name="story_time" 
+                        path="stories" 
+                        selected={path.includes('stories')}
                         />
                 </div>
                 <div className="flex">

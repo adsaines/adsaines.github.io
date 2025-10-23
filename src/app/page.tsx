@@ -22,6 +22,12 @@ export default function Home() {
                 >
                     Kudos
             </Link>
+            <Link 
+                className="bg-(--background-theme-secondary) py-2 px-4 min-w-1/5 text-center font-semibold text-xl border-1 border-(--background-theme-secondary) hover:border-(--text-theme-primary)" 
+                href={'/stories'}
+                >
+                    Story time
+            </Link>
         </div>
     );
 }
