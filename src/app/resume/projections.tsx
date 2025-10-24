@@ -23,7 +23,7 @@ export const HorizontalRuleWithTitle = ({title}: {title: string}) => {
 
 export const BlurbWithTitle = ({title, blurb}: {title: string, blurb: string}) => {
     return (
-        <div className="flex flex-col h-full border-4 rounded-md border-double border-(--text-theme-primary) p-4 max-w-[500px]">
+        <div className="flex flex-col h-full border-4 rounded-md border-double border-(--text-theme-primary) p-4 max-w-[500px] min-w-[300px]">
             <div className="font-semibold text-lg pb-2 mb-2 border-b border-(--text-theme-primary) text-(--text-theme-secondary)">
                 {title}
             </div>
@@ -124,10 +124,13 @@ export const TitleWithBricks = ({title, subTitle, bricks}:{ title: string, subTi
     return (
         <div className="flex justify-start items-center w-full px-6">
             <div className="w-2/5 flex flex-col justify-start border-double border-r-4">
-                <div className="font-semibold text-lg text-(--text-theme-secondary)">
+                <div className="font-semibold text-lg text-(--text-theme-secondary) text-end pr-4">
                     {title}
                 </div>
-                <div data-show={subTitle !== undefined} className="data-[show='false']:hidden">
+                <div 
+                    data-show={subTitle !== undefined} 
+                    className="data-[show='false']:hidden text-end pr-4"
+                    >
                     {subTitle}
                 </div>
             </div>

@@ -2,12 +2,13 @@ import { NextPage } from "next";
 import { BlurbWithTitle, ItemWithExplanations, StandardResumeSection, TitleWithBricks } from "./projections";
 import { ResumeWording } from './resumeWording'
 
+/* this will require a media query for small screen setup, primarily, more horizontal room if the screen is small */
 const Resume: NextPage = () => {
     return (
         <div className="flex justify-center">
             <article className={`resume flex flex-col p-4 gap-4 m-2 max-w-4/5 text-lg`}>
                 <StandardResumeSection title="Personal Details">
-                    <div className="flex gap-4 justify-between text-(--text-theme-secondary)">
+                    <div className="flex flex-wrap gap-4 justify-between text-(--text-theme-secondary)">
                         <span>
                             Alex Saines
                         </span>
@@ -21,15 +22,47 @@ const Resume: NextPage = () => {
                         </span>
                     </div>
                 </StandardResumeSection>
+                <StandardResumeSection title="I subscribe to the agile manifesto">
+                    <div className="flex flex-col justify-center items-center gap-2">
+                        <p className="flex flex-col justify-center items-center">
+                            <span className="text-center">We are uncovering better ways of developing</span>
+                            <span className="text-center">software by doing it and helping others do it.</span>
+                            <span className="text-center">Through this work we have come to value:</span>
+                        </p>
+                        <p className="flex flex-col justify-center items-center">
+                            <div className="flex flex-wrap justify-center">
+                                <span className="text-2xl text-(--text-theme-secondary)">Individuals and interactions </span>
+                                <span className="text-center">over processes and tools</span>
+                            </div>
+                            <div className="flex flex-wrap justify-center">
+                                <span className="text-2xl text-(--text-theme-secondary)">Working software </span>
+                                <span className="text-center">over comprehensive documentation</span>
+                            </div>
+                            <div className="flex flex-wrap justify-center">
+                                <span className="text-2xl text-(--text-theme-secondary)">Customer collaboration </span>
+                                <span className="text-center">over contract negotiation</span>
+                            </div>
+                            <div className="flex flex-wrap justify-center">
+                                <span className="text-2xl text-(--text-theme-secondary)">Responding to change </span>
+                                <span className="text-center">over following a plan</span>
+                            </div>
+                        </p>
+                        <p className="flex flex-col justify-center items-center">
+                            <span className="text-center">That is, while there is value in the items on</span>
+                            <span className="text-center">the right, we value the items on the left more.</span>
+                        </p>
+                        <a
+                            href="https://agilemanifesto.org/"
+                            target="_blank"
+                            className="pt-2 text-(--text-theme-secondary) font-semibold flex items-center"
+                            >
+                                The Agile Manifesto
+                                <span className="material-icons text-xs pl-2">open_in_new</span>
+                        </a>
+                    </div>
+                </StandardResumeSection>
                 <StandardResumeSection title="Methodologies" >
-                    {/* 
-                        just switch this to the tenants of the agile manifesto
-                            + link the manifesto
-                            + keep the two other items
-
-                        make a variation of blurb with title that won't limit it's own width
-                    */}
-                    <div className="flex gap-4 justify-around">
+                    <div className="flex flex-wrap gap-4 justify-around">
 
                         <BlurbWithTitle 
                             title="Test Driven Development (TDD)" 
