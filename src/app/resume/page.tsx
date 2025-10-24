@@ -30,20 +30,20 @@ const Resume: NextPage = () => {
                             <span className="text-center">Through this work we have come to value:</span>
                         </p>
                         <p className="flex flex-col justify-center items-center">
-                            <span className="flex flex-wrap justify-center">
-                                <span className="text-2xl text-(--text-theme-secondary)">Individuals and interactions </span>
+                            <span className="flex flex-wrap justify-center items-center">
+                                <span className="text-2xl pr-1 text-(--text-theme-secondary)">Individuals and interactions </span>
                                 <span className="text-center">over processes and tools</span>
                             </span>
-                            <span className="flex flex-wrap justify-center">
-                                <span className="text-2xl text-(--text-theme-secondary)">Working software </span>
+                            <span className="flex flex-wrap justify-center items-center">
+                                <span className="text-2xl pr-1 text-(--text-theme-secondary)">Working software </span>
                                 <span className="text-center">over comprehensive documentation</span>
                             </span>
-                            <span className="flex flex-wrap justify-center">
-                                <span className="text-2xl text-(--text-theme-secondary)">Customer collaboration </span>
+                            <span className="flex flex-wrap justify-center items-center">
+                                <span className="text-2xl pr-1 text-(--text-theme-secondary)">Customer collaboration </span>
                                 <span className="text-center">over contract negotiation</span>
                             </span>
-                            <span className="flex flex-wrap justify-center">
-                                <span className="text-2xl text-(--text-theme-secondary)">Responding to change </span>
+                            <span className="flex flex-wrap justify-center items-center">
+                                <span className="text-2xl pr-1 text-(--text-theme-secondary)">Responding to change </span>
                                 <span className="text-center">over following a plan</span>
                             </span>
                         </p>
