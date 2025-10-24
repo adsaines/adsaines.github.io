@@ -104,7 +104,7 @@ export const MakeBrick = ({brick}: {brick: Brick}) => {
             <a 
                 href={brick.link} 
                 target="_blank" 
-                className="p-2 m-1 border-(--must-see-me) border-r-double border-r-4 border-r-(--text-theme-tertiary) border-1 hover:border-(--text-theme-tertiary) hover:text-(--text-theme-secondary) flex items-center gap-1"
+                className="p-2 m-1 border-(--must-see-me) border-r-double border-r-4 border-1 border-(--text-theme-tertiary) hover:text-(--text-theme-secondary) flex items-center gap-1"
                 >
                 {brick.title}
                 {/* TODO: figure out how to make this a bit smaller */}
@@ -114,7 +114,7 @@ export const MakeBrick = ({brick}: {brick: Brick}) => {
     }
 
     return (
-        <div className="p-2 m-1 border-(--must-see-me) border-1 hover:text-(--text-theme-secondary)">
+        <div className="p-2 m-1 border-(--must-see-me) border-1">
             {brick.title}
         </div>
     )

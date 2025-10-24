@@ -22,6 +22,13 @@ const Resume: NextPage = () => {
                     </div>
                 </StandardResumeSection>
                 <StandardResumeSection title="Methodologies" >
+                    {/* 
+                        just switch this to the tenants of the agile manifesto
+                            + link the manifesto
+                            + keep the two other items
+
+                        make a variation of blurb with title that won't limit it's own width
+                    */}
                     <div className="flex gap-4 justify-around">
 
                         <BlurbWithTitle 
