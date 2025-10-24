@@ -2,10 +2,10 @@ import { NextPage } from "next";
 import { BlurbWithTitle, ItemWithExplanations, StandardResumeSection, TitleWithBricks } from "./projections";
 import { ResumeWording } from './resumeWording'
 
-/* this will require a media query for small screen setup, primarily, more horizontal room if the screen is small */
+/* TODO: this will require a media query for small screen setup, primarily, more horizontal room if the screen is small */
 const Resume: NextPage = () => {
     return (
-        <div className="flex justify-center">
+        <div className="h-full overflow-auto flex justify-center">
             <article className={`resume flex flex-col p-4 gap-4 m-2 max-w-4/5 text-lg`}>
                 <StandardResumeSection title="Personal Details">
                     <div className="flex flex-wrap gap-4 justify-between text-(--text-theme-secondary)">
@@ -30,22 +30,22 @@ const Resume: NextPage = () => {
                             <span className="text-center">Through this work we have come to value:</span>
                         </p>
                         <p className="flex flex-col justify-center items-center">
-                            <div className="flex flex-wrap justify-center">
+                            <span className="flex flex-wrap justify-center">
                                 <span className="text-2xl text-(--text-theme-secondary)">Individuals and interactions </span>
                                 <span className="text-center">over processes and tools</span>
-                            </div>
-                            <div className="flex flex-wrap justify-center">
+                            </span>
+                            <span className="flex flex-wrap justify-center">
                                 <span className="text-2xl text-(--text-theme-secondary)">Working software </span>
                                 <span className="text-center">over comprehensive documentation</span>
-                            </div>
-                            <div className="flex flex-wrap justify-center">
+                            </span>
+                            <span className="flex flex-wrap justify-center">
                                 <span className="text-2xl text-(--text-theme-secondary)">Customer collaboration </span>
                                 <span className="text-center">over contract negotiation</span>
-                            </div>
-                            <div className="flex flex-wrap justify-center">
+                            </span>
+                            <span className="flex flex-wrap justify-center">
                                 <span className="text-2xl text-(--text-theme-secondary)">Responding to change </span>
                                 <span className="text-center">over following a plan</span>
-                            </div>
+                            </span>
                         </p>
                         <p className="flex flex-col justify-center items-center">
                             <span className="text-center">That is, while there is value in the items on</span>

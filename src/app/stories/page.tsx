@@ -5,7 +5,6 @@ import { useState } from "react";
 import { StorySegment, StorySelection } from "./projections";
 import { Stories, myStories } from "./stories";
 
-// TODO: need to find out how to keep the screen height from creating a little extra scroll space on pages where it I want it to be the size of the screen and scroll in the container, like here
 const StoriesPage: NextPage = () => {
     const [myStory, setMyStory] = useState<string[]>(['Just the beginning...'])
     const [title, setTitle] = useState('Default message')
@@ -13,9 +12,9 @@ const StoriesPage: NextPage = () => {
     const storyList = Object.keys(myStories);
 
     return (
-        <div className="h-screen flex">
+        <div className="h-full flex overflow-hidden">
             {/* TODO: need a media query here for when the screen is small to give the selection pane more room, 1/5 big, 3/8 small */}
-            <div className="flex flex-col w-3/8 overflow-auto border-r-2 p-4 gap-2">
+            <div className="flex flex-col w-2/5 border-r-2 p-4 gap-2">
                 {
                     storyList.map((storyName, index) => {
                         const onClick = () => {
@@ -34,12 +33,12 @@ const StoriesPage: NextPage = () => {
                     })
                 }
             </div>
-            <article className="flex flex-col w-full overflow-auto p-6">
+            <div className="overflow-auto flex flex-col w-full p-6">
                 <h1 className="font-semibold text-2xl pb-4">{title}</h1>
                 {
                     myStory.map((segment, index) => <StorySegment key={`segment-${index}`} segment={segment}/> )
                 }
-            </article>
+            </div>
         </div>
     )
 }

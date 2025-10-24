@@ -8,7 +8,7 @@ export const Header = ({children}: {children: React.ReactNode}) => {
     const path = usePathname()
 
     return (
-        <div className="h-full w-full flex flex-col bg-(--background-theme-primary) text-(--text-theme-primary)">
+        <div className="h-screen w-full flex flex-col bg-(--background-theme-primary) text-(--text-theme-primary)">
             <nav 
                 aria-label="Pages and contact links."
                 data-show={path !== '/'} 
@@ -29,9 +29,9 @@ export const Header = ({children}: {children: React.ReactNode}) => {
                         />
                     <HeaderLink 
                         hoverText="Libraries I used to make this page, and why I like them" 
-                        name="kudos" 
-                        path="kudos" 
-                        selected={path.includes('kudos')}
+                        name="avowal" 
+                        path="avowal" 
+                        selected={path.includes('avowal')}
                         />
                     <HeaderLink 
                         hoverText="Stories of my dev career" 
