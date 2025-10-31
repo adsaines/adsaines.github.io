@@ -1,0 +1,10 @@
+I have danced with the asyncronous devil in the moonlight. I used RxJs observables to create a continuous chain of calls for every piece of data that we received to find the appropriate currency code.
+
+To break it down a bit further: we were creating an online spreadsheet for building teams and calculating how much it would cost based on how many hours the people on the team would work per week. There was no gurantee that the selected people would be paid in US dollars. So, we had to create a call for each person on the team to our company's API to get how they were being paid and translate that into US dollars.
+
+We were further hindered by the fact that data was provided in a subscription feed, so every time someone up stream would update the team we would need to update our data. Which had a lot of these little hooks. So, to fulfull them all, we were running RxJs and using observables to make way too many calls and combine the results of all of them into our online spreadsheet.
+
+So, to re-iterate: I wrote a an observable chain that listened to our store, broke all of the people apart, summoned their US dollar equivalent values, updated their personal data stream, and zipped it all up for a business person to look at so that we didn't have to deal with excel.
+
+As an ex-excel jockey, it was almost worth it.
+
