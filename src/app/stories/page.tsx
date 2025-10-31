@@ -32,7 +32,6 @@ const StoriesPage: NextPage = () => {
         <div className="h-full flex overflow-hidden">
             {/* TODO: need a media query here for when the screen is small to give the selection pane more room, 1/5 big, 3/8 small */}
             <div 
-                // data-show={true} 
                 data-show={!storiesFetched} 
                 className="data-[show='false']:hidden flex justify-around w-2/5 border-r-2 p-4 gap-2"
                 >

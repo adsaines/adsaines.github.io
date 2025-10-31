@@ -14,7 +14,6 @@ export type StoryDetails = {
 
 export async function GET(request: NextRequest) {
 
-    // TODO: migrate the rest of the stories into this object & give them each a file
     const storyDetails: string[] = [
         'data-buried-deep.txt',
         'lodash-hell.txt',
@@ -45,9 +44,6 @@ export async function GET(request: NextRequest) {
                         title: storyName
                     } as StoryDetails)
                 }
-                
-                // TODO-RE: testing only
-                console.log('Successfully processed!');
 
                 resolve({
                     story: processTextFile(data),
