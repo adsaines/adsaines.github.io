@@ -30,7 +30,13 @@ export async function GET(request: NextRequest) {
 
             const processTextFile = (data: string) => {
                 return data.split('\n')
-                    .filter(line => line !== '' && line !== '\r')
+                    .filter((line, index) => {
+                        const isFilledLine = line !== '' && line !== '\r';
+                        const isNotExperienceLvl = index !== 0;
+                        
+                        return isFilledLine && isNotExperienceLvl;
+                    }
+                    )
                     .map(line => line.replaceAll('\r',''))
                     .join('<SPLIT>')
             }

@@ -1,4 +1,4 @@
-lvl100
+lvl_100
 
 I have danced with the asyncronous devil in the moonlight. I used RxJs observables to create a continuous chain of calls for every piece of data that we received to find the appropriate currency code.
 

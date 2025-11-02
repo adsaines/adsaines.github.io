@@ -5,10 +5,14 @@ import { useEffect, useState } from "react";
 import { StorySegment, StorySelection } from "./projections";
 import { StoryDetails } from "../api/stories/route";
 
+const defaultStory: StoryDetails = {
+    lvl: 'I indicate skill level',
+    story: 'This is an entertaining and informative story detailing one of my life experiences in the world of software development / engineering.',
+    title: 'Example title'
+}
 
 const StoriesPage: NextPage = () => {
-    const [selectedStory, setSelectedStory] = useState<string>('Just the beginning...')
-    const [selectedTitle, setSelectedTitle] = useState('Default message')
+    const [selectedStory, setSelectedStory] = useState<StoryDetails>(defaultStory)
     const [storyList, setStoryList] = useState<StoryDetails[]>([]);
     const [storiesFetched, setStoriesFetched] = useState(false);
 
@@ -18,8 +22,35 @@ const StoriesPage: NextPage = () => {
                 const stories = await response.json();
 
                 setStoryList(stories);
-                setTimeout(() => setStoriesFetched(true), 2000);
+                setTimeout(() => setStoriesFetched(true), 1000);
             })
+    }
+
+    const sortGreatestFirst = (first: StoryDetails, second: StoryDetails): number => {
+        if(first.lvl > second.lvl){
+            return -1
+        }
+
+        if (first.lvl < second.lvl){
+            return 1
+        }
+
+        return 0
+    }
+
+    const createStorySelection = (story: StoryDetails, index: number) => {
+        const onClick = () => {
+            setSelectedStory(story)
+        }
+        const selected = story.title === selectedStory.title
+        return (
+            <StorySelection 
+                key={`storyName-${index}`} 
+                onClick={onClick} 
+                title={`${story.lvl} - ${story.title}`} 
+                selected={selected}
+                />
+        )
     }
 
     useEffect(() => {
@@ -43,38 +74,24 @@ const StoriesPage: NextPage = () => {
                 >
                 {
                     storyList
-                        .sort((first, second) => {
-                            if(first.lvl > second.lvl){
-                                return -1
-                            }
-
-                            if (first.lvl < second.lvl){
-                                return 1
-                            }
-
-                            return 0
-                        })
-                        .map(({story, title, lvl}: StoryDetails, index) => {
-                            const onClick = () => {
-                                setSelectedTitle(title);
-                                setSelectedStory(story)
-                            }
-                            const selected = title === selectedTitle
-                            return (
-                                <StorySelection 
-                                    key={`storyName-${index}`} 
-                                    onClick={onClick} 
-                                    title={`${lvl} - ${title}`} 
-                                    selected={selected}
-                                    />
-                            )
-                        })
+                        .sort(sortGreatestFirst)
+                        .map(createStorySelection)
                 }
             </div>
             <div className="overflow-auto flex flex-col w-full p-6">
-                <h1 className="font-semibold text-2xl pb-4">{selectedTitle}</h1>
+                <h1 className="font-semibold text-2xl pb-2">{selectedStory.title}</h1>
+                <h2 className="font-semibold text-xl pb-4 text-(--text-theme-secondary)">{selectedStory.lvl}</h2>
                 {
-                    selectedStory.split('<SPLIT>').map((segment, index) => <StorySegment key={`segment-${index}`} segment={segment}/> )
+                    selectedStory.story
+                        .split('<SPLIT>')
+                        .map((segment, index) => {
+                            return (
+                                <StorySegment 
+                                    key={`segment-${index}`} 
+                                    segment={segment}
+                                    />
+                            ) 
+                        })
                 }
             </div>
         </div>
