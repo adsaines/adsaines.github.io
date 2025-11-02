@@ -1,5 +1,7 @@
 lvl_050
 
+While security is important, how far should you go to vet your data? The answer is very far. Time has shown that the internet is full of trolls and they will find you, and they will mess with you. Sometimes, security can get in the way, but you shouldn't circumvent it for ease of use. Please, introduce another security workflow if the standard one doesn't work for a required operation.
+
 Have you ever wondered how an offline spreadsheet gets vetted when you click the submit button? The answer won't surprise you! After all, you're here... on my stories page.
 
 I was one of two people in charge of spreadsheet form submittals for our company. We had a file that would print the spreadsheet off for our users. They would fill it out while they were out-and-about without the internet. Then, when they came back to their office they would hit the "submit" button and the data would be shot off to our endpoint.

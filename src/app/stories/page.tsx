@@ -89,6 +89,7 @@ const StoriesPage: NextPage = () => {
                                 <StorySegment 
                                     key={`segment-${index}`} 
                                     segment={segment}
+                                    isFirstSection={index === 0}
                                     />
                             ) 
                         })

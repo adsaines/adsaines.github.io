@@ -1,10 +1,18 @@
-export const StorySegment = ({segment}: {segment:string}) => {
+export const StorySegment = ({segment, isFirstSection = false}: {segment:string, isFirstSection: boolean}) => {
     return (
         <>
             <p>
                 {segment}
             </p>
             <br />
+            <hr 
+                data-show={isFirstSection}
+                className="w-full data-[show='false']:hidden" 
+                />
+            <br 
+                data-show={isFirstSection}
+                className="data-[show='false']:hidden" 
+                />
         </>
     )
 }

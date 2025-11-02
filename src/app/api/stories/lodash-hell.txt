@@ -1,5 +1,7 @@
 lvl_050
 
+I reached a realization that the majority of things that we build as engineers is a very close parallel to the popular quote: "It's turtles all the way down." We create something small, basic, useful, and hopefully elegant. Then we re-use it within a larger framework that is itself a smaller (basic, useful, and elegant?) part of the greater project.
+
 There was a time that I was excited to be moved to the hip team. We were in charge of our company's custom front-end framework. The awesomeness that I could bring to our user's would know no end.
 
 It was powered by Lodash. If you wanted the login page, you pulled up the "Login" lodash. If you were going to render the contents of a modal you made a template and filled that sucker out. If you wanted to load a set of small forms on a page: you pulled up the template for the page, the template(s) for the forms, and then you stuffed the form templates in the page template.
