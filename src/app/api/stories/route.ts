@@ -10,6 +10,7 @@ export type StoryDirections = {
 export type StoryDetails = {
     title: string;
     story: string;
+    lvl: string;
 }
 
 export async function GET(request: NextRequest) {
@@ -34,6 +35,10 @@ export async function GET(request: NextRequest) {
                     .join('<SPLIT>')
             }
 
+            const retrieveExperienceLvl = (data: string) => {
+                return data.split('\n')[0].replaceAll('\r','');
+            }
+
             const readFileContents = (err: Error | undefined, data: string) => {
                 if(err){
                     console.error(`Story not found: "${story}" at "${fetchPath}"`)
@@ -41,13 +46,15 @@ export async function GET(request: NextRequest) {
 
                     reject({
                         story: 'Not found.',
-                        title: storyName
+                        title: storyName,
+                        lvl: 'N/A'
                     } as StoryDetails)
                 }
 
                 resolve({
                     story: processTextFile(data),
-                    title: storyName
+                    title: storyName,
+                    lvl: retrieveExperienceLvl(data)
                 } as StoryDetails)
             }
 

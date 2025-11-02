@@ -1,3 +1,5 @@
+lvl050
+
 There was a time that I was excited to be moved to the hip team. We were in charge of our company's custom front-end framework. The awesomeness that I could bring to our user's would know no end.
 
 It was powered by Lodash. If you wanted the login page, you pulled up the "Login" lodash. If you were going to render the contents of a modal you made a template and filled that sucker out. If you wanted to load a set of small forms on a page: you pulled up the template for the page, the template(s) for the forms, and then you stuffed the form templates in the page template.

@@ -1,3 +1,5 @@
+lvl100
+
 I have danced with the asyncronous devil in the moonlight. I used RxJs observables to create a continuous chain of calls for every piece of data that we received to find the appropriate currency code.
 
 To break it down a bit further: we were creating an online spreadsheet for building teams and calculating how much it would cost based on how many hours the people on the team would work per week. There was no gurantee that the selected people would be paid in US dollars. So, we had to create a call for each person on the team to our company's API to get how they were being paid and translate that into US dollars.

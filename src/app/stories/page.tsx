@@ -42,21 +42,33 @@ const StoriesPage: NextPage = () => {
                 className="data-[show='false']:hidden flex flex-col w-2/5 border-r-2 p-4 gap-2"
                 >
                 {
-                    storyList.map(({story, title}: StoryDetails, index) => {
-                        const onClick = () => {
-                            setSelectedTitle(title);
-                            setSelectedStory(story)
-                        }
-                        const selected = title === selectedTitle
-                        return (
-                            <StorySelection 
-                                key={`storyName-${index}`} 
-                                onClick={onClick} 
-                                title={title} 
-                                selected={selected}
-                                />
-                        )
-                    })
+                    storyList
+                        .sort((first, second) => {
+                            if(first.lvl > second.lvl){
+                                return -1
+                            }
+
+                            if (first.lvl < second.lvl){
+                                return 1
+                            }
+
+                            return 0
+                        })
+                        .map(({story, title, lvl}: StoryDetails, index) => {
+                            const onClick = () => {
+                                setSelectedTitle(title);
+                                setSelectedStory(story)
+                            }
+                            const selected = title === selectedTitle
+                            return (
+                                <StorySelection 
+                                    key={`storyName-${index}`} 
+                                    onClick={onClick} 
+                                    title={`${lvl} - ${title}`} 
+                                    selected={selected}
+                                    />
+                            )
+                        })
                 }
             </div>
             <div className="overflow-auto flex flex-col w-full p-6">

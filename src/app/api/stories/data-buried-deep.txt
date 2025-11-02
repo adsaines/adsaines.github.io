@@ -1,3 +1,5 @@
+lvl000
+
 So, there was this one time that I was refactoring a small form into a modal. As is the way of forms, I needed a slice of data for that particular DB / application.
 
 I did the usual console log trace first and found that old version was pinging the file that built the page (this was the way in the legacy code base). So, I started looking. The file was only a few thousand lines long - not bad considering the repetition inherent in years of build up - so I was hopeful for a quick resolution
