@@ -7,7 +7,7 @@ import { StoryDetails } from "../api/stories/route";
 
 const defaultStory: StoryDetails = {
     lvl: 'I indicate skill level',
-    story: 'This is an entertaining and informative story detailing one of my life experiences in the world of software development / engineering.',
+    story: 'This is an entertaining and informative story detailing one of my life experiences in the world of software development & engineering.',
     title: 'Example title'
 }
 

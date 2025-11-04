@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/structures/header";
 import '@/styles/globals.css'
+import { SettingContextWrapper } from "@/structures/settings-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +33,11 @@ export default function RootLayout({
                     href="https://fonts.googleapis.com/icon?family=Material+Icons"
                     rel="stylesheet">  
                 </link>
-                <Header>
-                {children}
-                </Header>
+				<SettingContextWrapper>
+					<Header>
+						{children}
+					</Header>
+				</SettingContextWrapper>
             </body>
         </html>
     );

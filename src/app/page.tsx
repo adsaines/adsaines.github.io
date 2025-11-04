@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+// TODO: make this a splitting point for if you are a business person, or if you are a developer
+// if business: show nicely worded and direct items in stories page and allow people on to the "Kudos / avowals" page
+// if dev: show the flippant stories instead of the business coded ones
 export default function Home() {
     return (
         <div className="flex flex-col gap-4 h-screen w-full justify-center items-center">
