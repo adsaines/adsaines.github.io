@@ -39,6 +39,12 @@ export const Header = ({children}: {children: React.ReactNode}) => {
                         path="stories" 
                         selected={path.includes('stories')}
                         />
+                    <HeaderLink 
+                        hoverText="Things that will alter the contents or flow of the pages." 
+                        name="settings" 
+                        path="settings" 
+                        selected={path.includes('settings')}
+                        />
                 </div>
                 <div className="flex">
                     <a 

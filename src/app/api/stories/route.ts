@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server"
-import { getMyStories } from "./getDevStories";
+import { getMyStories } from "./projections";
 
 export type StoryDirections = {
     name: string;
