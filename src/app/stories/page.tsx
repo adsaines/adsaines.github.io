@@ -1,9 +1,10 @@
 'use client'
 
 import { NextPage } from "next";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { StorySegment, StorySelection } from "./projections";
 import { StoryDetails } from "../api/stories/route";
+import { SettingsContext } from "@/structures/settings-context";
 
 const defaultStory: StoryDetails = {
     lvl: 'I indicate skill level',
@@ -12,12 +13,13 @@ const defaultStory: StoryDetails = {
 }
 
 const StoriesPage: NextPage = () => {
+    const {settings} = useContext(SettingsContext);
     const [selectedStory, setSelectedStory] = useState<StoryDetails>(defaultStory)
     const [storyList, setStoryList] = useState<StoryDetails[]>([]);
     const [storiesFetched, setStoriesFetched] = useState(false);
 
     const fetchMyStories = () => {
-        fetch('/api/stories', {method: 'GET'})
+        fetch(`/api/stories?devMode=${String(settings.devMode)}`, {method: 'GET'})
             .then(async (response) => {
                 const stories = await response.json();
 
