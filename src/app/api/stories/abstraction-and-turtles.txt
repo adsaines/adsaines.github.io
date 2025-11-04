@@ -1,0 +1,13 @@
+lvl_050
+
+I reached a realization that the majority of things that we build as engineers is a very close parallel to the popular quote: "It's turtles all the way down." We create something small, basic, useful, and hopefully elegant. Then we re-use it within a larger framework that is itself a smaller (basic, useful, and elegant?) part of the greater project.
+
+I was thrilled to join the team responsible for creating our company's custom front-end framework, the structure used to build every page the user sees. The core of this system relied heavily on Lodash templates.
+
+If you needed a login form, you had a "Login Template." If you needed a full page, you had a "Page Template."
+
+The problem was in how we assembled them. Instead of simply attaching the Login Template to the Page Template, we were using a system where you had to stuff one template inside another template, which might itself be inside a third template that was designed specifically to hold the second template.
+
+For example, to build a full page, you would take a template for a small form, place it inside a template designed for an array of small forms, and then place that into the main Page Template. 
+
+In quick order it became a game of layering in which the only question you were allowed to ask was "what does this turtle sit on?" To which the only appropriate answer could be: "another turtle."

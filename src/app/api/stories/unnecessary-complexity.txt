@@ -1,0 +1,15 @@
+lvl_000
+
+The biggest lesson is this: don't overcomplicate the simple things. If you need one piece of information, get it directly. Creating layers of indirect steps: like naming a program after a database, and then using that name as a key to find another database name. It creates code that is impossible to understand or fix once the original programmer leaves.
+
+I was tasked with making a simple update to a data entry form. To update it, I first needed to find the source of its data.
+
+I followed the trail of code calls, and the process became instantly confusing.
+
+The old form didn't directly ask for the data it needed. Instead, it bounced to a file that queried a table full of names that didn't seem related to anything. This name was then passed along.
+
+The next file actually executed that name as if it were a command. I was completely lost and asked the team for help, but no one understood what this process was actually doing; everyone responsible for it had long since moved on.
+
+With no documentation, I had to manually search through the applications repository of files. I eventually found the function the "command" was running. It turned out this entire, multi-step process was just a convoluted way to retrieve a single, hardcoded object that contained the name of the database we needed.
+
+This experience showed how a simple piece of required information was hidden behind four layers of unnecessary, undocumented complexity, wasting time and creating massive risk for anyone who needed to maintain it.

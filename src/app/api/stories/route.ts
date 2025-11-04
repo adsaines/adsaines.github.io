@@ -16,11 +16,17 @@ const devStoryNames: string[] = [
     'data-buried-deep.txt',
     'lodash-hell.txt',
     'data-back-door.txt',
-    'legacy-code-base.txt',
+    'legacy-code-base-01.txt',
+    'legacy-code-base-02.txt',
     'marble-hell.txt',
 ];
 
-const businessStoryNames: string[] = [];
+const businessStoryNames: string[] = [
+    'when-you-are-not-secure.txt',
+    'unnecessary-complexity.txt',
+    'abstraction-and-turtles.txt',
+    'asyncronicity.txt',
+];
 
 export async function GET(request: NextRequest) {
     const params: URLSearchParams = request.nextUrl.searchParams
