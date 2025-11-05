@@ -29,9 +29,9 @@ export const Header = ({children}: {children: React.ReactNode}) => {
                         />
                     <HeaderLink 
                         hoverText="Libraries I used to make this page, and why I like them" 
-                        name="avowal" 
-                        path="avowal" 
-                        selected={path.includes('avowal')}
+                        name="thanks" 
+                        path="thanks" 
+                        selected={path.includes('thanks')}
                         />
                     <HeaderLink 
                         hoverText="Stories of my dev career" 

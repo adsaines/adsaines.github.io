@@ -5,7 +5,7 @@ import { GoogleMaterialIconsAvowal, NextJsAvowal, ReactAvowal } from "./projecti
 
 // TODO: write some stuff about the libraries I used to make this page
 
-const Avowal: NextPage = () => {
+const Thanks: NextPage = () => {
     return (
         <div className="h-full flex flex-col overflow-auto justify-between items-center">
             <div className="flex flex-col min-w-[400px] max-w-[600px] justify-center justify-start items-center mb-6">
@@ -25,4 +25,4 @@ const Avowal: NextPage = () => {
     )
 }
 
-export default Avowal
+export default Thanks

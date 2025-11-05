@@ -14,7 +14,7 @@ export default function Home() {
             </h2>
             
             <HomePageLink path="resume" title="Resume" />
-            <HomePageLink path="avowal" title="Avowals" />
+            <HomePageLink path="thanks" title="Thanks to..." />
             <HomePageLink path="stories" title="Story time" />
             <HomePageLink path="settings" title="Settings" />
         </div>
@@ -28,6 +28,6 @@ const HomePageLink = ({title, path}:{title: string, path: string}) => {
             href={`/${path}`}
             >
                 {title}
-        </Link>   
+        </Link>
     )
 }
