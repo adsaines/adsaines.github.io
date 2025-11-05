@@ -1,8 +1,8 @@
-import { dateRangeToMonthAndYearRange, datesToYearRange, dateToMMYYYY } from "@/projections/dateStuff"
+import { dateRangeToMonthAndYearRange, datesToYearRange } from "@/projections/dateStuff"
 
-export const StandardResumeSection = ({title, children}: {title: string, children: React.ReactNode}) => {
+export const StandardResumeSection = ({title, children, show=true}: {title: string, children: React.ReactNode, show?: boolean}) => {
     return (
-        <div className="border-1 border-dashed rounded-sm border-(--background-theme-primary) border-rounded hover:border-(--text-theme-primary) p-4">
+        <div data-show={show} className="border-1 border-dashed rounded-sm border-(--background-theme-primary) border-rounded hover:border-(--text-theme-primary) p-4 data-[show='false']:hidden">
             <HorizontalRuleWithTitle title={title} />
             {children}
         </div>
@@ -46,6 +46,10 @@ export type ItemWithExplanations = {
     endDate?: string, 
     justUseYear?: boolean
     talkingPoints: TalkingPoint[]
+    link?: {
+        title: string;
+        href: string;
+    }
 }
 
 
@@ -55,7 +59,8 @@ export const ItemWithExplanations = ({
     endDate, 
     subTitle, 
     talkingPoints, 
-    justUseYear = false
+    justUseYear = false,
+    link
 }:ItemWithExplanations) => {
     return (
         <div className="flex py-4 px-6 gap-6">
@@ -77,6 +82,17 @@ export const ItemWithExplanations = ({
             <div className="w-3/5 flex flex-col gap-2">
                 {
                     talkingPoints.map((point, index) => <FormatTalkingPoint key={`exp-point-${index}`} point={point} />)
+                }
+                {
+                    link &&
+                    <a 
+                        href={link.href} 
+                        target="_blank" 
+                        className="p-2 border-r-double border-r-4 border-1 border-(--text-theme-tertiary) hover:text-(--text-theme-secondary) flex items-center"
+                        >
+                        {link.title}
+                        <span className="material-icons text-xs">open_in_new</span>
+                    </a>
                 }
             </div>
         </div>
@@ -104,7 +120,7 @@ export const MakeBrick = ({brick}: {brick: Brick}) => {
             <a 
                 href={brick.link} 
                 target="_blank" 
-                className="p-2 m-1 border-(--must-see-me) border-r-double border-r-4 border-1 border-(--text-theme-tertiary) hover:text-(--text-theme-secondary) flex items-center gap-1"
+                className="p-2 m-1 border-r-double border-r-4 border-1 border-(--text-theme-tertiary) hover:text-(--text-theme-secondary) flex items-center gap-1"
                 >
                 {brick.title}
                 {/* TODO: figure out how to make this a bit smaller */}

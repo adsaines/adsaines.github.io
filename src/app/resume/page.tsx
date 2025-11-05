@@ -61,7 +61,8 @@ const Resume: NextPage = () => {
                         </a>
                     </div>
                 </StandardResumeSection>
-                <StandardResumeSection title="Methodologies" >
+                {/* TODO-MAYBE: have this show on DEV mode? */}
+                <StandardResumeSection title="Methodologies" show={false} >
                     <div className="flex flex-wrap gap-4 justify-around">
 
                         <BlurbWithTitle 
@@ -117,6 +118,10 @@ const Resume: NextPage = () => {
                         subTitle="Bachelor of Arts in Physics"
                         talkingPoints={ResumeWording.woosterTalkingPoints}
                         justUseYear={true}
+                        link={{
+                            href: 'http://doi.org/skk',
+                            title: 'Order and chaos in the rotation and revolution of two massive line segments'
+                        }}
                         />
                 </StandardResumeSection>
                 <StandardResumeSection title="Professional Experience" >

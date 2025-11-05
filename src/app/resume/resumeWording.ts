@@ -6,38 +6,38 @@ const tddBlurb = `I've been using TDD for a while and I've found that I prefer t
 const accentureTalkingPoints: TalkingPoint[] = [
     {
         bolded: 'Engineered and optimized full-stack applications',
-        followUp: 'Leading critical refactoring initiatives to enhance functionality, user experience, and overall maintainability across diverse frameworks.'
+        followUp: 'I Lead critical refactoring initiatives to enhance functionality, user experience, and overall maintainability across diverse frameworks.'
     },
     {
         bolded: 'Designed and implemented scalable architectural solutions',
-        followUp: 'Including microservices and API development, to drive significant efficiency gains.'
+        followUp: `These solutions were deployed across microservices and API's to drive significant efficiency gains.`
     },
     {
         bolded: 'Developed and integrated robust data solutions',
-        followUp: 'Including secure data processing, storage, and reporting, ensuring data integrity and compliance.'
+        followUp: 'Development included secure data processing, storage, and reporting, ensuring data integrity and compliance.'
     },
     {
         bolded: 'Mentored and guided team members on advanced development workflows',
-        followUp: 'Fostering skill development and collaborative success.'
+        followUp: 'I fostered skill development and collaborative success.'
     },
     {
-        bolded: 'Built and utilized reusable component libraries',
-        followUp: 'Standardizing development practices and increasing overall project efficiency.'
+        bolded: 'Built, deployed, and maintained internal component library',
+        followUp: 'Our library standardized development practices and increased overall project efficiency.'
     },
 ]
 
 const benchmarkTalkingPoints: TalkingPoint[] = [
     {
         bolded: 'Enhanced software quality and reliability',
-        followUp: 'Through comprehensive testing strategies and proactive identification of system vulnerabilities. '
+        followUp: 'I achieved this through comprehensive testing strategies and proactive identification of system vulnerabilities.'
     },
     {
         bolded: 'Streamlined data management processes',
-        followUp: 'By transitioning from manual methods to automated, user-friendly interfaces and robust backend systems.'
+        followUp: 'We accomplished this with a thorough plan to transition from manual methods to automated, user-friendly interfaces and robust backend systems.'
     },
     {
         bolded: 'Successfully managed complex data integrations for high-profile clients',
-        followUp: 'Ensuring seamless workflows and enhanced data accessibility.'
+        followUp: 'I ensured seamless workflows and enhanced data accessibility via rigorous vetting of data flows and upscaling of services.'
     },
 ]
 
@@ -57,8 +57,8 @@ const techElevatorTalkingPoints: TalkingPoint[] = [
 
 const woosterTalkingPoints: TalkingPoint[] = [
     {
-        bolded: 'Four years of analytical work under Professor Emeritus John Lindner.',
-        followUp: 'Progenitor of the published Order and chaos in the rotation and revolution of two massive line segments paper.',
+        bolded: 'Four years of analytical work',
+        followUp: 'Studied under Professor Emeritus John Lindner and became the progenitor of a published paper.',
     }
 ]
 
