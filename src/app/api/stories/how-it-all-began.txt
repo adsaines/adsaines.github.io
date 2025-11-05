@@ -1,4 +1,4 @@
-lvl_000
+LVL_000
 
 The greatest lesson I learned early in my career is how routine can blunt advancement if we don't actively look for better ways to work. Observing how much time was wasted on manual data review was my first motivation to become an engineer.
 

@@ -1,6 +1,6 @@
-lvl_000
+LVL_040
 
-The biggest lesson is this: don't overcomplicate the simple things. If you need one piece of information, get it directly. Creating layers of indirect steps: like naming a program after a database, and then using that name as a key to find another database name. It creates code that is impossible to understand or fix once the original programmer leaves.
+The biggest lesson is this: don't overcomplicate the simple things. If you need one piece of information, get it directly. Creating layers of indirect steps is not good: like naming a program after a database, and then using that name as a key to find another database name. It creates code that is impossible to understand or fix.
 
 I was tasked with making a simple update to a data entry form. To update it, I first needed to find the source of its data.
 

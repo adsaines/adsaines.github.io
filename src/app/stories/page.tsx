@@ -7,7 +7,7 @@ import { StoryDetails } from "../api/stories/route";
 import { SettingsContext } from "@/structures/settings-context";
 
 const defaultBusStory: StoryDetails = {
-    lvl: 'lvl_000 to 100 => beginner to master',
+    lvl: 'LVL_000 to LVL_100 => beginner to master',
     story: 'This is a story detailing one of my life experiences in the world of software development & engineering.',
     title: 'Example title'
 }

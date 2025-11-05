@@ -1,4 +1,4 @@
-lvl_100
+LVL_100
 
 A truly harrowing adventure awaits our handsome hero. Harrowing because of the way that the information was split within our company's system and the architecture that we were working with to retrieve it. Each action taken was an asyncronous step that retrieved and updated our state outside of the flow of what the user was doing.
 

@@ -1,4 +1,4 @@
-lvl_100
+LVL_100
 
 The lesson here is about managing complexity when data doesn't live in one place. When different parts of the system need different pieces of external information, you must build a sophisticated process that can reliably gather and sync all that data, especially when it's constantly changing.
 

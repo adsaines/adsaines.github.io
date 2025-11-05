@@ -1,4 +1,4 @@
-lvl_050
+LVL_075
 
 When handling data from the public, you must prioritize security above convenience—even if it seems tedious. The internet is full of people looking for vulnerabilities, and bypassing standard security steps for ease of use can create massive risks. If the current security process doesn't work for a required operation, the only safe answer is to build a new, compliant security workflow, not skip the existing one.
 
@@ -6,4 +6,4 @@ I was part of the team managing how we received data from user-filled, offline s
 
 Because we couldn't pass raw data through the main firewall, we used this unprotected landing spot to catch the submission. We moved the data into a temporary database table and then sent a separate, internal request to the secure part of our system to process it.
 
-However, the vetting process that followed was unnecessarily complicated and risky. We ran basic checks ("Is this a number?" "Is this a word?") but then, due to the system's legacy structure, we poured all that data into a duplicate, hidden HTML form on the backend. We then "submitted" this backend form to the original form-building page, which finally unpacked the data, ran its own second check, and saved it to the main database. This convoluted process showed how multiple layers of insecure, legacy workarounds were introduced simply to avoid creating one robust, modern security check.
+The vetting process that followed was unnecessarily complicated and risky as well. We ran basic checks ("Is this a number?" "Is this a word?") but then, due to the system's legacy structure, we poured all that data into a duplicate, hidden HTML form on the backend. We then "submitted" this backend form to the original form-building page, which finally unpacked the data, ran its own second check, and saved it to the main database. This convoluted process showed how multiple layers of insecure, legacy workarounds were introduced simply to avoid creating one robust, modern security check.
