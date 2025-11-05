@@ -20,6 +20,7 @@ const devStoryNames: string[] = [
     'legacy-code-base-02.txt',
     'marble-hell.txt',
     'how-it-all-began-dev.txt',
+    'second-foray.txt',
 ];
 
 const businessStoryNames: string[] = [
@@ -28,6 +29,7 @@ const businessStoryNames: string[] = [
     'abstraction-and-turtles.txt',
     'asyncronicity.txt',
     'how-it-all-began.txt',
+    'pre-processing-realization.txt',
 ];
 
 export async function GET(request: NextRequest) {

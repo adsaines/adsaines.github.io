@@ -1,0 +1,9 @@
+LVL_010
+
+After a fair amount of time playing with values in Excel, I realized that I could write some formula's that would act as triggers for VBA to read and generate my reports from. Thus I learned the a key tenant to software engineering: if you control the data stream, you can put whatever you want in there.
+
+My second large foray into VBA came after my data was normalized. I was generating runtime table from flow data. The intervals in the data were wild: everything from a reading once a week to a reading once per 15 seconds. So, I would either spend 10 minutes or a whole morning putting the tables together for the next report. I started adding runtime tags for each line based on flow levels. This vastly simplified the roll-up process as I didn't have to perform those checks within my macros.
+
+This realization took my rollup time from 2 hours down to ~15 minutes.
+
+As a consultant I was then chastised for not using up the budgeted time. So, I started spending the 1.75 hr's that I was saving writing code to process the goods even more efficiently. I split the billed it to "general purpose."

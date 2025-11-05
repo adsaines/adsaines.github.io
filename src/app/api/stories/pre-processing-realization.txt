@@ -1,0 +1,9 @@
+LVL_010
+
+The core lesson I learned is that if you can control the data stream, you can vastly simplify the work that follows. By setting up simple triggers or tags before the main process runs, you make the overall system much faster and more efficient.
+
+After normalizing the messy data from various sensors (which recorded at irregular intervals—sometimes once a week, sometimes every 15 seconds), my next challenge was generating reports. Manually compiling these reports took anywhere from 10 minutes to a full morning.
+
+I realized I could use Excel formulas to add "runtime tags" directly to the data. These tags automatically checked flow levels and flagged the status of each reading before my processing code ever ran. This small change meant my macro didn't have to perform those complex checks repeatedly.
+
+The result was phenomenal: I reduced the report generation time from two hours down to about 15 minutes.
