@@ -1,7 +1,7 @@
 import { TalkingPoint } from "./projections"
 
 
-const tddBlurb = `I've been using TDD for a while and I've found that I prefer to use it two very specific cirumstances. The first is for refactoring; it makes it considerably easier to work on large classes and components with complex side-effects. The second is for time sensitive development; starting with the outcome keeps focus on easy and direct logical steps.`
+const tddBlurb = `I've been using TDD for a while and I've found that I prefer to use it in two very specific cirumstances. The first is for refactoring; it makes it considerably easier to work on large classes and components with complex side-effects. The second is for time sensitive development; starting with the outcome keeps the focus on easy and direct logical steps.`
 
 const accentureTalkingPoints: TalkingPoint[] = [
     {

@@ -76,7 +76,7 @@ const GeneralLogo = ({isOpen,name}:{isOpen: boolean,name: string}) => {
 }
 
 export const GoogleMaterialIconsAvowal = () => {
-    const blurb = `It sure it nice to have a professional grade library with a free tier that doesn't make me sign up for it. I only need a few of these and it's saves a lot of time and effort that would have been spent generating SVG's for commonly used items.`
+    const blurb = `It sure is nice to have a professional grade library with a free tier that doesn't make me sign up for it. I only need a few of these and it's saves a lot of time and effort that would have been spent generating SVG's for commonly used items.`
 
     return (
         <AvowalBox blurb={blurb} name="Google Material Icons" logoSrc={GoogleIcon.src}/>
@@ -84,7 +84,7 @@ export const GoogleMaterialIconsAvowal = () => {
 }
 
 export const ReactAvowal = () => {
-    const blurb = `I do enjoy being able to code in a functional paradigm. Seriously, it is really nice to have access and recognition for all of the front end work so that you don't break everything because you mistyped or capitlized the wrong letter.`
+    const blurb = `I do enjoy being able to code in a functional paradigm. Seriously, Kudos to React for all of the front end work so that you don't break everything because you mistyped or capitlized the wrong letter.`
 
     return (
         <AvowalBox blurb={blurb} name="React" logoSrc='https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg'/>
