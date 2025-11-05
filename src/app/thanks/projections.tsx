@@ -1,6 +1,8 @@
 import { useState } from "react"
 import NextJsLightBackground from '@/images/nextjs-icon-light-background.png'
 import GoogleIcon from '@/images/google-logo.png'
+import NpmIcon from '@/images/npm.png'
+import Javascript from '@/images/javascript.png'
 
 const AvowalBox = ({name, blurb, logoSrc}:{name: string, blurb: string, logoSrc: string}) => {
     const [show, setShow] = useState(false);
@@ -75,26 +77,42 @@ const GeneralLogo = ({isOpen,name}:{isOpen: boolean,name: string}) => {
     )
 }
 
-export const GoogleMaterialIconsAvowal = () => {
+export const GoogleMaterialIconsThanks = () => {
     const blurb = `It sure is nice to have a professional grade library with a free tier that doesn't make me sign up for it. I only need a few of these and it's saves a lot of time and effort that would have been spent generating SVG's for commonly used items.`
 
     return (
-        <AvowalBox blurb={blurb} name="Google Material Icons" logoSrc={GoogleIcon.src}/>
+        <AvowalBox blurb={blurb} name="Google Icons" logoSrc={GoogleIcon.src}/>
     )
 }
 
-export const ReactAvowal = () => {
-    const blurb = `I do enjoy being able to code in a functional paradigm. Seriously, Kudos to React for all of the front end work so that you don't break everything because you mistyped or capitlized the wrong letter.`
+export const ReactThanks = () => {
+    const blurb = `I do enjoy being able to code in a functional paradigm. I was lost before I existed in this world of functions.`
 
     return (
         <AvowalBox blurb={blurb} name="React" logoSrc='https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg'/>
     )
 }
 
-export const NextJsAvowal = () => {
-    const blurb = `I didn't major in computer science. I don't know how to write a server. This works and does what I don't have the time to figure out.`
+export const NextJsThanks = () => {
+    const blurb = `I don't know how to write a server. This works right out of the box and can be ported to cloud environments very easy. Sending love.`
 
     return (
         <AvowalBox blurb={blurb} name="NextJs" logoSrc={NextJsLightBackground.src}/>
+    )
+}
+
+export const NpmThanks = () => {
+    const blurb = `I was pleasntly surprised when I started coding that I didn't have to worry that much about keeping packages up to date. One of my formative memories from middle and high school was juggling all of the installs it took to bring my computer back to life every time I deleted the wrong folder or screwed up the registry pirating a game for our next LAN party. My appreciation for a reliable low level service that keeps all of the odds and ends in check.`
+
+    return (
+        <AvowalBox blurb={blurb} name="NPM" logoSrc={NpmIcon.src}/>
+    )
+}
+
+export const LiveScriptThanks = () => {
+    const blurb = `Javascript is my #1 language. Typescript is a close second. I would be a sad man if I couldn't use the magic trio of array functionality. I give my heart to you... map, filter, and reduce.`
+
+    return (
+        <AvowalBox blurb={blurb} name="Javascript" logoSrc={Javascript.src}/>
     )
 }
