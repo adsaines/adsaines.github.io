@@ -1,0 +1,9 @@
+lvl_000
+
+A long time ago in an unremarkable office building common area; a second hand desk sat vacant. Fresh from college I came; with no knowledge of what to do with my life; no great yearnings or direction; I inhabited this second hand desk. Nigh upon the advent of the first annual reporting season I realized that my job was repetitive and I became aware that it could easily be done by a computer. I also realized that nobody cared. Thus did I become aware of the stickyness of routine and the blunting of advancement.
+
+I majored in physics in college and did poorly in a single java class. But, I was aware that programming solves repetitive problems. My first job was to physcially scroll through data in Excel spreadsheets and extract sets of information into tables. I put 2 and 2 together and found that they equalled: 5?
+
+I spent a good chunk of time learning about VBA's foibles as they applied to Excel, and a not uncommon issue turned out to be rounding errors in the floating point values that the instruments were using. I will say that learning VBA with no help and only going off of internet comments is akin to slowly pushing your face through a window. It was not helped by the fact that I did not realize the spreadsheets I had inherited were non-uniform despite the data itself being nearly uniform.
+
+So, my first true dip into programming was to spend far too many hours writing a macro that would sort any of the data types that we received into a uniform mass that I could play with and analyze. I normalized that data so thoroughly, I should have started an actual database for it.

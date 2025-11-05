@@ -1,0 +1,9 @@
+lvl_000
+
+The greatest lesson I learned early in my career is how routine can blunt advancement if we don't actively look for better ways to work. Observing how much time was wasted on manual data review was my first motivation to become an engineer.
+
+Fresh out of college, my job was to manually scroll through large Excel spreadsheets and physically extract specific sets of data into new tables. Tedious is too gentle a word for it. While others accepted this routine, I realized a computer could handle it easily.
+
+Despite only having a limited background in programming, I taught myself VBA (Visual Basic for Applications) to automate the work. The learning process was challenging, as the existing spreadsheets I inherited were far from uniform, meaning the same code wouldn't work across all of them. I also had to contend with issues like rounding and non-numerical codes in the instrument data.
+
+I spent significant time writing my first piece of code: a complex macro designed to normalize and sort any incoming data type into a single, uniform format. This was the foundation for all future analysis. By automating and standardizing this process, I single-handedly eliminated hours of manual work and proved that even deeply ingrained routines can be overcome with smart programming.

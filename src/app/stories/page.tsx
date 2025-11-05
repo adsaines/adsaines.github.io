@@ -6,15 +6,22 @@ import { StorySegment, StorySelection } from "./projections";
 import { StoryDetails } from "../api/stories/route";
 import { SettingsContext } from "@/structures/settings-context";
 
-const defaultStory: StoryDetails = {
-    lvl: 'I indicate skill level',
-    story: 'This is an entertaining and informative story detailing one of my life experiences in the world of software development & engineering.',
+const defaultBusStory: StoryDetails = {
+    lvl: 'lvl_000 to 100 => beginner to master',
+    story: 'This is a story detailing one of my life experiences in the world of software development & engineering.',
     title: 'Example title'
 }
 
+const defaultDevStory: StoryDetails = {
+    lvl: `I used to have a l33t code level.`,
+    story: `This is an entertaining and informative story: from my start to my end I don't know if I've found a friend quite as fickle as VBA.`,
+    title: `You'll only see me once per page load.`
+}
+
+
 const StoriesPage: NextPage = () => {
     const {settings} = useContext(SettingsContext);
-    const [selectedStory, setSelectedStory] = useState<StoryDetails>(defaultStory)
+    const [selectedStory, setSelectedStory] = useState<StoryDetails>(settings.devMode ? defaultDevStory : defaultBusStory)
     const [storyList, setStoryList] = useState<StoryDetails[]>([]);
     const [storiesFetched, setStoriesFetched] = useState(false);
 
@@ -56,10 +63,8 @@ const StoriesPage: NextPage = () => {
     }
 
     useEffect(() => {
-        if(!storiesFetched){
-            fetchMyStories();
-        }
-    }, [storiesFetched])
+        fetchMyStories();
+    }, [])
 
     return (
         <div className="h-full flex overflow-hidden">
