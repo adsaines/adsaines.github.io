@@ -44,14 +44,22 @@ const benchmarkTalkingPoints: TalkingPoint[] = [
 const cornerstoneTalkingPoint: TalkingPoint[] = [
     {
         bolded: 'Applied advanced data extraction and analysis techniques',
-        followUp: 'To improve reporting efficiency and derive actionable insights from diverse data sources.'
-    }
+        followUp: 'I bent my intellect to improve efficiency and derive actionable insights from diverse data sources.'
+    },
+    {
+        bolded: 'Data Automation for Regulatory Compliance',
+        followUp: 'I engineered and utilized automated data pipelines that guaranteed the timely and accurate population of tables and figures required for mandatory quarterly, semi-annual, and annual regulatory reporting deadlines.'
+    },
+    {
+        bolded: 'Custom Analytical Solution Design',
+        followUp: 'Leveraging cross-functional input from co-workers and superiors, I designed custom spreadsheets to provide immediate, consistent answers to complex, recurring questions asked by multiple clients.'
+    },
 ]
 
 const techElevatorTalkingPoints: TalkingPoint[] = [
     {
         bolded: 'Full-stack coding bootcamp',
-        followUp: 'To develop dynamic web based software systems using Java & Vue.'
+        followUp: 'Completed intensive training focused on developing dynamic, full-stack web applications using Java Spring Boot for robust APIs and Vue.js for component-based front-end systems.'
     }
 ]
 
