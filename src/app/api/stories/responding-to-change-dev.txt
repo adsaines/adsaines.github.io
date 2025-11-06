@@ -1,0 +1,13 @@
+M
+
+Responding to change over following a plan.
+
+"I've been through so much shit, deactivated programs with my lambda, now it's time to blow this plan down!" => An altered line from a crass and entertaining song.
+
+Direct experience: I was sent off on an errand to "...re-write the Handsontable implementation for [CLIENT]." My response was "alright, let's do this!"
+
+A month later, having been given no direction on how Handsontable works, and running all of my changes off of a single spreadsheet that I received from the change ticket in our system I was informed that it needed to be done in one week. In the meantime, I had created this elaborate class that would implement the updates that the client wanted. My mentor / superior / co-worker, [STEVONI THE ALMIGHTY], looked at the changes within the branch that I had made. He congratualated me on having created such a nifty class, and promptly threw out 90% of it.
+
+In the month that I had labored in my corner of the overly dark cubicle a new version of the spreadsheet had been drawn up. It had not been shared with me. Thus, what would have been an overall reduction in work turned into a mad dash.
+
+The lesson to be learned: responding to change when it happens is very important. Do not barrel forward with your existing plan. It saves time and effort if you communicate the progress of the current plan and listen to any adjustments or feedback that the client may provide.

@@ -1,0 +1,13 @@
+M
+
+Working software over comprehensive documentation. The priority in software engineering is providing a robust and functional product. Creating a document to tell others how your code works, or how to push the buttons comes after you are able to reliably push the buttons.
+
+You should absolutely have documentation.
+
+You should absolutely not take screenshots and describe step by step how to perform an action in your finished application.
+
+Code is mutable, desires change, looks get updated, visuals are dynamic.
+
+The best documentation that I have seen, and that I have written, has been the tests for my code.
+
+The best description of actions that I have been able to provide has lived in the same place that the action can be taken.

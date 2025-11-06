@@ -1,0 +1,9 @@
+M
+
+Customer collaboration over contract negotiation.
+
+The biggest lesson in maintaining software isn't about code quality; it's about communication. Whether planning a product or fixing a bug, the most efficient solution is to talk directly to the people involved.
+
+When executing any project, you must constantly check in with the stakeholders. Rarely does a contract start and finish without revisions or changes in scope. I learned that regularly speaking with clients and end-users ensures the work being done still fulfills their latest vision, avoiding wasted effort on code that no one wants by the time it’s finished.
+
+In a widely used application, engineers are often buried under a mountain of technical support tickets. It's incredibly difficult to re-create a poorly described bug report or understand the context behind a failure from a brief, vague comment. To avoid drowning in this paperwork, the answer is simple: talk to the person who experienced the issue. Direct communication is the most reliable way to quickly understand the problem, maintain our complex systems, and prevent the creation of a bureaucracy that tries to replace a simple conversation.

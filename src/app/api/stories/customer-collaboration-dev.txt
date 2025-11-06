@@ -1,0 +1,5 @@
+M
+
+Customer collaboration over contract negotiation. Speak with those who hired you to make sure that their desires are being fulfilled by the work you are completing. Rarely does a contract start and finish without revisions or scope changes. Software is mutable, listen to those that use it so that you can fulfil their wishes.
+
+Under the mountains of tickets is an engineer who looks at comments about things that have gone wrong. Rarely can this lonesome individual see the bright sun or re-create the vaguely described issues. Ideally we wouldn't have tickets to bury this creature in, but how else do you deal with widely used applications? The answer is to talk to a person. We must talk to each other as we build and maintain our webs of code. If we stray from the path of communication it is all too easy to add paperwork to take the place of a person.

@@ -1,0 +1,13 @@
+M
+
+Responding to change over following a plan.
+
+The essential lesson here is that responding to change as it happens is critical; it saves immense time and effort. It is vital to constantly communicate the current plan's progress and actively listen for any adjustments or feedback the client may provide.
+
+I was assigned a major project: re-writing a complex, online spreadsheet application for a key client. I jumped in and spent a month building an elaborate, custom solution to implement the features based on the single spreadsheet example I had received from the initial work ticket.
+
+Despite my hard work, I was abruptly informed that the entire project now had to be finished within one week. Worse, when my mentor reviewed my code, he congratulated me on building a clever solution but then immediately threw out 90% of it.
+
+Why? In the month I had been heads-down coding, the client had completely redesigned the spreadsheet and created a new version that was never shared with me. My custom class was now obsolete. What should have been a steady reduction in the overall workload turned into a mad, compressed dash to rework the entire solution.
+
+No matter how focused you are, you must maintain communication with stakeholders to ensure you are always building the solution for the current problem, not the problem from last month.

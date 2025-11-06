@@ -21,6 +21,10 @@ const devStoryNames: string[] = [
     'marble-hell.txt',
     'how-it-all-began-dev.txt',
     'second-foray.txt',
+    'individuals-and-interactions-dev.txt',
+    'working-software-dev.txt',
+    'customer-collaboration-dev.txt',
+    'responding-to-change-dev.txt'
 ];
 
 const businessStoryNames: string[] = [
@@ -30,6 +34,10 @@ const businessStoryNames: string[] = [
     'asyncronicity.txt',
     'how-it-all-began.txt',
     'pre-processing-realization.txt',
+    'individuals-and-interactions.txt',
+    'working-software.txt',
+    'customer-collaboration.txt',
+    'responding-to-change.txt'
 ];
 
 export async function GET(request: NextRequest) {
