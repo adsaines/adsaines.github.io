@@ -7,17 +7,34 @@ const Resume: NextPage = () => {
     return (
         <div className="h-full overflow-auto flex justify-center">
             <article className={`resume flex flex-col p-4 gap-4 m-2 max-w-4/5 text-lg`}>
-                <StandardResumeSection title="Personal Details">
-                    <div className="flex flex-wrap gap-4 justify-between text-(--text-theme-secondary)">
-                        <span>
+                <StandardResumeSection title="Personal">
+                    {/* TODO: maybe slap a picture of me here? */}
+                    <div className="flex flex-col gap-4 justify-center items-center">
+                        <span className="font-semibold text-xl text-(--text-theme-secondary)">
                             Alex Saines
                         </span>
-                        <span>
+                        <p>
+                            I aim to cook every day.    
+                        </p>
+                        <p>
+                            I keep my mind active with games at night.
+                        </p>
+                        <p>
+                            I practice and teach karate.
+                        </p>
+                        <p>
+                            I am driven to fix those things that pull on the edges of my mind and are wrong for this world.
+                        </p>
+                        <p>
+                            I know the difference between things that I have the power to change and those that I cannot... mostly.
+                        </p>
+                        {/* TODO-RE? I probably shouldn't just be tossing my personal email out there. A linked in link would probably be better. */}
+                        <span className="hidden">
                             <a href="mailto:adsaines@gmail.com" aria-label="Email me at adsaines@gmail.com">
                                 adsaines@gmail.com
                             </a>
                         </span>
-                        <span>
+                        <span className="hidden">
                             740-279-5560
                         </span>
                     </div>
