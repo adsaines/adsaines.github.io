@@ -4,8 +4,8 @@
   "homepage": "https://adsaines.github.io/experience",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build && move ./.next/build ./",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d ./.next/build",
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",

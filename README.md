@@ -36,14 +36,13 @@ I am using [Github Pages](https://docs.github.com/en/pages) to host my site. To 
 
 Primary things to do...
 
-- make sure the repo follows this naming convention: {username}.github.io
-- install the gh-pages package
-- make sure that the "gh-pages" branch exists and then run the `npm run deploy` command.
+- run the "deploy" script and include a commit message: `npm run deploy -- -m "COMMIT MESSAGE"`\
+- go to "https://adsaines.github.io/experience" & check that the changes are present
+
+NOTE: the deploye script in the tutorial looks for the build folder at the rot level. I had to specify that it will appear in the ".next" folder within the "-d" (directory) command
 
 ## Steps to publish
 
 Because nothing is ever as straightforward as you want. I'm using react with nextjs and the build folder is under the .next folder. I have added a command to the "predeploy" scrip to move the build folder out to the root path for the "deploy" script to publish. However, the move command does not have over-writing rights, so...
 
 - delete any "build" folder that exists at the root
-- run the "deploy" script and include a commit message: `npm run deploy -- -m "COMMIT MESSAGE"`\
-- go to "https://adsaines.github.io/" & check that the changes are present
