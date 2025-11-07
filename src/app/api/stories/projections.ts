@@ -25,7 +25,7 @@ export const getMyStories = async (stories: string[]) => {
                     .join('<SPLIT>')
             }
 
-            const readFileContents = (err: Error | undefined, data: string) => {
+            const readFileContents = (err: any, data: string) => {
                 if(err){
                     console.error(`Story not found: "${story}" at "${fetchPath}"`)
                     console.error(err);
