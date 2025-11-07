@@ -1,10 +1,10 @@
 {
   "name": "show-off",
   "version": "0.1.0",
-  "homepage": "https://adsaines.github.io/react-gh-pages",
+  "homepage": "https://adsaines.github.io/experience",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && move ./.next/build ./",
     "deploy": "gh-pages -d build",
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
