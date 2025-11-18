@@ -2,40 +2,41 @@
 
 import { NextPage } from "next";
 import { useContext, useEffect, useState } from "react";
-import { StorySegment, StorySelection } from "./projections";
-import { StoryDetails } from "../api/stories/route";
+import { StorySelection } from "./projections";
 import { SettingsContext } from "@/structures/settings-context";
 
-const defaultBusStory: StoryDetails = {
-    lvl: 'LVL_000 to LVL_100 => beginner to master',
-    story: 'This is a story detailing one of my life experiences in the world of software development & engineering.',
-    title: 'Example title'
+import {default as devStories} from '@/app/stories/stories/dev-stories.json';
+import {default as busStories} from '@/app/stories/stories/business-stories.json';
+
+type Story = {
+    lvl: string;
+    abstract: string;
+    contents: string[];
+    title: string;
 }
 
-const defaultDevStory: StoryDetails = {
+const defaultBusStory: Story = {
+    lvl: 'LVL_000 to LVL_100 => beginner to master',
+    abstract: 'This is a story detailing one of my life experiences in the world of software development & engineering.',
+    title: 'Example title',
+    contents: ['Experience and anecdotes show up here.']
+}
+
+const defaultDevStory: Story = {
     lvl: `I used to have a l33t code level.`,
-    story: `This is an entertaining and informative story: from my start to my end I don't know if I've found a friend quite as fickle as VBA.`,
-    title: `You'll only see me once per page load.`
+    abstract: `This is an entertaining and informative story: from my start to my end I don't know if I've found a friend quite as fickle as VBA.`,
+    title: `You'll only see me once per page load.`,
+    contents: ['Experience and anecdotes show up here.']
 }
 
 
 const StoriesPage: NextPage = () => {
     const {settings} = useContext(SettingsContext);
-    const [selectedStory, setSelectedStory] = useState<StoryDetails>(settings.devMode ? defaultDevStory : defaultBusStory)
-    const [storyList, setStoryList] = useState<StoryDetails[]>([]);
+    const [selectedStory, setSelectedStory] = useState<Story>(settings.devMode ? defaultDevStory : defaultBusStory)
+    const [storyList, setStoryList] = useState<Story[]>([]);
     const [storiesFetched, setStoriesFetched] = useState(false);
 
-    const fetchMyStories = () => {
-        fetch(`/api/stories?devMode=${String(settings.devMode)}`, {method: 'GET'})
-            .then(async (response) => {
-                const stories = await response.json();
-
-                setStoryList(stories);
-                setTimeout(() => setStoriesFetched(true), 1000);
-            })
-    }
-
-    const sortGreatestFirst = (first: StoryDetails, second: StoryDetails): number => {
+    const sortGreatestFirst = (first: Story, second: Story): number => {
         if(first.lvl > second.lvl){
             return -1
         }
@@ -47,7 +48,7 @@ const StoriesPage: NextPage = () => {
         return 0
     }
 
-    const createStorySelection = (story: StoryDetails, index: number) => {
+    const createStorySelection = (story: Story, index: number) => {
         const onClick = () => {
             setSelectedStory(story)
         }
@@ -63,7 +64,8 @@ const StoriesPage: NextPage = () => {
     }
 
     useEffect(() => {
-        fetchMyStories();
+        setStoryList(settings.devMode ? devStories as Story[] : busStories as Story[])
+        setStoriesFetched(true);
     }, [])
 
     return (
@@ -85,21 +87,15 @@ const StoriesPage: NextPage = () => {
                         .map(createStorySelection)
                 }
             </div>
-            <div className="overflow-auto flex flex-col w-full p-6">
-                <h1 className="font-semibold text-2xl pb-2">{selectedStory.title}</h1>
-                <h2 className="font-semibold text-xl pb-4 text-(--text-theme-secondary)">{selectedStory.lvl}</h2>
+            <div className="overflow-auto flex flex-col w-full p-6 gap-4">
+                <h1 className="font-semibold text-2xl">{selectedStory.title}</h1>
+                <h2 className="font-semibold text-xl text-(--text-theme-secondary)">{selectedStory.lvl}</h2>
+                <p>
+                    {selectedStory.abstract}
+                </p>
+                <hr className="w-full" />
                 {
-                    selectedStory.story
-                        .split('<SPLIT>')
-                        .map((segment, index) => {
-                            return (
-                                <StorySegment 
-                                    key={`segment-${index}`} 
-                                    segment={segment}
-                                    isFirstSection={index === 0}
-                                    />
-                            ) 
-                        })
+                    selectedStory.contents.map((section, index) => ( <p key={`story-section-${index}`}>{section}</p> ))
                 }
             </div>
         </div>

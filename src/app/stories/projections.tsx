@@ -1,22 +1,3 @@
-export const StorySegment = ({segment, isFirstSection = false}: {segment:string, isFirstSection: boolean}) => {
-    return (
-        <>
-            <p>
-                {segment}
-            </p>
-            <br />
-            <hr 
-                data-show={isFirstSection}
-                className="w-full data-[show='false']:hidden" 
-                />
-            <br 
-                data-show={isFirstSection}
-                className="data-[show='false']:hidden" 
-                />
-        </>
-    )
-}
-
 export const StorySelection = ({onClick, title, selected}: {onClick: ()=>void, title: string, selected: boolean}) => {
     return (
         <button data-selected={selected} onClick={onClick} className="flex group justify-between data-[selected='true']:text-(--text-theme-secondary)">

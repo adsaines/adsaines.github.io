@@ -1,0 +1,176 @@
+[
+  {
+    "title": "data_buried_deep",
+    "lvl": "LVL_030",
+    "abstract": "...or \"The Perils of Unnecessary Complexity in System Design!\" Don't ask me why it was done, it is better not to know sometimes. However, if you ever find yourself making an application that is named after your data base, and then decide that the name should be the key to all of your queries... please, just stop. Everyone likes to be certain about themselves at some point, but naming your architecture and then using that as a variable that is defined in a database to reference another database is going too far.",
+    "contents": [
+      "So, there was this one time that I was refactoring a small form into a modal. As is the way of forms, I needed a slice of data for that particular DB / application.",
+      "I did the usual console log trace first and found that old version was pinging the file that built the page (this was the way in the legacy code base). So, I started looking. The file was only a few thousand lines long - not bad considering the repetition inherent in years of build up - so I was hopeful for a quick resolution",
+      "Bounce 1: I followed the logs down to a function that called out to another file.",
+      "Bounce 2: In the file I found a function that queried a table that I had never heard of. Investigation found that the table was filled with names(?) that didn't seem to correlate to anything in particular. That value was passed to another file.",
+      "Bounce 3: In the tertiary file I found a function that executed the value provided... ??? I didn't know if we had any scripts floating around on our server and I certainly didn't know why running EXEC on a string would trigger a script. So, I asked for help.",
+      "Blockage: nobody knew what the hell any of this did. They all blamed someone who was in management now, or someone who had retired, been fired, or jumped ship. Where to go from here? I started randomly searching the strings that were being queried. We didn't have any way to search in multiple files at the same time, and I was a junior, so I didn't think about a looping script or anything clever like that. No, I started opening files in this slice of the application and doing \"ctrl+F\".",
+      "Bounce 4: I found a hit for the specific string that was queried by the old small form I was refactoring. It was a function. The EXEC operation was running the names of functions in different files of our application. This particular function that was executed returned a hardcoded object. I realized that the hardcoded object contained the name of the database where the information was going to be stored and some other general pointer strings. I was... so sad. \"This could've just been an email.\"",
+      "What I learned: never name your databases after you application names and then change the application names."
+    ]
+  },
+  {
+    "title": "lodash_hell",
+    "lvl": "LVL_075",
+    "abstract": "I reached a realization that the majority of things that we build as engineers is a very close parallel to the popular quote: \"It's turtles all the way down.\" We create something small, basic, useful, and hopefully elegant. Then we re-use it within a larger framework that is itself a smaller (basic, useful, and elegant?) part of the greater project.",
+    "contents": [
+      "There was a time that I was excited to be moved to the hip team. We were in charge of our company's custom front-end framework. The awesomeness that I could bring to our user's would know no end.",
+      "It was powered by Lodash. If you wanted the login page, you pulled up the \"Login\" lodash. If you were going to render the contents of a modal you made a template and filled that sucker out. If you wanted to load a set of small forms on a page: you pulled up the template for the page, the template(s) for the forms, and then you stuffed the form templates in the page template.",
+      "Wait... what?",
+      "Yes, we had a page template, a template for various forms, a template for your mom's famous casserole. And if you wanted to fill out a page? You stuffed a template, into a template. Sometimes, you would stuff an array of templates into a template. And sometimes you would create a template, to hold your other templates in a slightly different manner.",
+      "Yo",
+      "...",
+      "Dawg",
+      "...",
+      "I heard you liked templates",
+      "...",
+      "So I put a template, in your template, so you can template while you template."
+    ]
+  },
+  {
+    "title": "data_back_door",
+    "lvl": "LVL_050",
+    "abstract": "While security is important, how far should you go to vet your data? The answer is very far. Time has shown that the internet is full of trolls and they will find you, and they will mess with you. Sometimes, security can get in the way, but you shouldn't circumvent it for ease of use. Please, introduce another security workflow if the standard one doesn't work for a required operation.",
+    "contents": [
+      "Have you ever wondered how an offline spreadsheet gets vetted when you click the submit button? The answer won't surprise you! After all, you're here... on my stories page.",
+      "I was one of two people in charge of spreadsheet form submittals for our company. We had a file that would print the spreadsheet off for our users. They would fill it out while they were out-and-about without the internet. Then, when they came back to their office they would hit the \"submit\" button and the data would be shot off to our endpoint.",
+      "Our deliciously undefended endpoint => I'm exaggerating for dramatic effect.",
+      "We had type validation and string key verification in place based on the payload. BUT.... if you had the correct string pointers in row 1 we would begin the process. Specifically, we would take the submitted form data and move it into a temporary DB table. We did this because you weren't allowed to pass form data through the firewall as a general rule. But, one would say, are you not receiving the request on the other side of said firewall? No, we were not. This endpoint had an exemption from the firewalls protection. It was a landing pad specifically for the form data that we received from our spreadsheets. We had no rules that stopped us from connecting to our MSSQL instance at this point b/c the request existed on our servers. So, into the table the data went and we then formed a new http request that included the id tag for the uploaded information and sent that to our processing page. On our processing page we would take the ID, and unload all of our data into our system.",
+      "At this point we would run the data through a rigorous check system like \"is this a string?\" and \"is this a number?\" Once we were sure the data was safe we loaded it all into an html form... yes, an actual html form on our backend... that was a duplicate of another form that existed in the system for performing this same operation. Then we submitted the form data to the page that built the form (b/c legacy) where it was actually unpacked, checked again, and then, finally, added to the database."
+    ]
+  },
+  {
+    "title": "legacy_code_base_01",
+    "lvl": "LVL_020",
+    "abstract": "I spent my time in the mines. I once had high hopes of finding a magical button that would fix a big problem. So, lacking humility, I would actively hunt for problems to fix alongside my smaller fixes that were actually requested. I would frequently score a win for the team and be able to refactor functions with multiple variants into a singular re-usable setup. However, I learned my lesson in the same manner that the travelller was humbled by Ozymandias' stone in the barren desert (Percy Bysshe Shelley).",
+    "contents": [
+      "I fought the chaos with might and wit,",
+      "I sought to defeat it at it's core.",
+      "Hours I spent finding reasons to celebrate my accomplishments; ",
+      "collapsing infinitely repeating items;",
+      "simplifying complexities that no longer existed;",
+      "delving deeply into the chain of commands,",
+      "set to trigger a single element's creation that would replace another,",
+      "fully functional item,",
+      "with one that didn't work.",
+      "At times my impact would be seen, be praised, be rewarded by those loftier than I.",
+      "Always I sought to better my abilities,",
+      "widen my scope,",
+      "see through the veil so that all would acknowledge my abilities.",
+      "My veil was pierced and I left myself one day.",
+      "For, enscribed in our code was a line that those loftier than I had enscribed in years past...",
+      "\"Someone should clean this up ... it's causing a mess ... '05\"",
+      "It was 2020.",
+      "In 15 years I'd be teaching my child to drive.",
+      "15 years ago, another me wrote a note to remind me that it can't all be fix."
+    ]
+  },
+  {
+    "title": "legacy_code_base_02",
+    "lvl": "LVL_020",
+    "abstract": "I spent my time in the mines. I once had high hopes of finding a magical button that would fix a big problem. So, lacking humility, I would actively hunt for problems to fix alongside my smaller fixes that were actually requested. I would frequently score a win for the team and be able to refactor functions with multiple variants into a singular re-usable setup. However, I learned my lesson in the same manner that the travelller was humbled by Ozymandias' stone in the barren desert (Percy Bysshe Shelley).",
+    "contents": [
+      "Once there was a boy who wished he was old,",
+      "That boy would spend hours diving into the depths of chaos,",
+      "On occasion he would come back with a pearl of wisdom,",
+      "On bright days he might vanquish some of the chaos,",
+      "This was a call for celebration and joy,",
+      "All of his comrades would congratulate him and toast to his victory,",
+      "He delved deep many times,",
+      "He surfaced each time sure that the next would lead him to the center of the puzzle,",
+      "Why had the chaos taken over?",
+      "Where had his comrades lost control?",
+      "How could he reverse it all?",
+      "He delved,",
+      "Deeper,",
+      "So deep he lost track of where he entered,",
+      "He rested,",
+      "There beside his resting place was scratched...",
+      "\"",
+      "Someone should clean this up ... ",
+      "it's causing a mess ...",
+      "'05",
+      "\"",
+      "It was 2020."
+    ]
+  },
+  {
+    "title": "marble_hell",
+    "lvl": "LVL_100",
+    "abstract": "A truly harrowing adventure awaits our handsome hero. Harrowing because of the way that the information was split within our company's system and the architecture that we were working with to retrieve it. Each action taken was an asyncronous step that retrieved and updated our state outside of the flow of what the user was doing.",
+    "contents": [
+      "I have danced with the asyncronous devil in the moonlight. I used RxJs observables to create a continuous chain of calls for every piece of data that we received to find the appropriate currency code.",
+      "To break it down a bit further: we were creating an online spreadsheet for building teams and calculating how much it would cost based on how many hours the people on the team would work per week. There was no gurantee that the selected people would be paid in US dollars. So, we had to create a call for each person on the team to our company's API to get how they were being paid and translate that into US dollars.",
+      "We were further hindered by the fact that data was provided in a subscription feed, so every time someone up stream would update the team we would need to update our data. Which had a lot of these little hooks. So, to fulfull them all, we were running RxJs and using observables to make way too many calls and combine the results of all of them into our online spreadsheet.",
+      "So, to re-iterate: I wrote an observable chain that listened to our store, broke all of the people apart, summoned their US dollar equivalent values, updated their personal data stream, and zipped it all up for a business person to look at so that we didn't have to deal with excel.",
+      "As an ex-excel jockey, it was almost worth it."
+    ]
+  },
+  {
+    "title": "how_it_all_began",
+    "lvl": "LVL_000",
+    "abstract": "A long time ago in an unremarkable office building common area; a second hand desk sat vacant. Fresh from college I came; with no knowledge of what to do with my life; no great yearnings or direction; I inhabited this second hand desk. Nigh upon the advent of the first annual reporting season I realized that my job was repetitive and I became aware that it could easily be done by a computer. I also realized that nobody cared. Thus did I become aware of the stickyness of routine and the blunting of advancement.",
+    "contents": [
+      "I majored in physics in college and did poorly in a single java class. But, I was aware that programming solves repetitive problems. My first job was to physcially scroll through data in Excel spreadsheets and extract sets of information into tables. I put 2 and 2 together and found that they equalled: 5?",
+      "I spent a good chunk of time learning about VBA's foibles as they applied to Excel, and a not uncommon issue turned out to be rounding errors in the floating point values that the instruments were using. I will say that learning VBA with no help and only going off of internet comments is akin to slowly pushing your face through a window. It was not helped by the fact that I did not realize the spreadsheets I had inherited were non-uniform despite the data itself being nearly uniform.",
+      "So, my first true dip into programming was to spend far too many hours writing a macro that would sort any of the data types that we received into a uniform mass that I could play with and analyze. I normalized that data so thoroughly, I should have started an actual database for it."
+    ]
+  },
+  {
+    "title": "second_foray",
+    "lvl": "LVL_010",
+    "abstract": "After a fair amount of time playing with values in Excel, I realized that I could write some formula's that would act as triggers for VBA to read and generate my reports from. Thus I learned the a key tenant to software engineering: if you control the data stream, you can put whatever you want in there.",
+    "contents": [
+      "My second large foray into VBA came after my data was normalized. I was generating runtime table from flow data. The intervals in the data were wild: everything from a reading once a week to a reading once per 15 seconds. So, I would either spend 10 minutes or a whole morning putting the tables together for the next report. I started adding runtime tags for each line based on flow levels. This vastly simplified the roll-up process as I didn't have to perform those checks within my macros.",
+      "This realization took my rollup time from 2 hours down to ~15 minutes.",
+      "As a consultant I was then chastised for not using up the budgeted time. So, I started spending the 1.75 hr's that I was saving writing code to process the goods even more efficiently. I split the billed it to \"general purpose.\""
+    ]
+  },
+  {
+    "title": "individuals_and_interactions",
+    "lvl": "M",
+    "abstract": "Individuals and interactions over processes and tools. While planning work we must consider who is doing the work. It is just as important to consider how that person will be performing the work. These two aspects take precedence over the tools that we use to plan and the processes that are commonly implemented to achieve that plan.",
+    "contents": [
+      "I have worked in many different environments. Before I was in the tech world I was in the waste world (literally). I have worked in every type of weather; I have worked with loud and large egos; I have prodded quiet engineers to help me in times of need; I have gone solo for long stretches of time; I have collaborated every day... I know how I work best.",
+      "When others listen to me, to my preferences, and to my methodologies I feel heard and I am able to reciprocate.",
+      "When I am told what I must do, how I must do it, when I must do it, and I am not allowed to question... I understand that I do not matter and I, as a cog in a watch, will turn or break."
+    ]
+  },
+  {
+    "title": "working_software",
+    "lvl": "M",
+    "abstract": "Working software over comprehensive documentation. The priority in software engineering is providing a robust and functional product. Creating a document to tell others how your code works, or how to push the buttons comes after you are able to reliably push the buttons.",
+    "contents": [
+      "You should absolutely have documentation.",
+      "You should absolutely not take screenshots and describe step by step how to perform an action in your finished application.",
+      "Code is mutable, desires change, looks get updated, visuals are dynamic.",
+      "The best documentation that I have seen, and that I have written, has been the tests for my code.",
+      "The best description of actions that I have been able to provide has lived in the same place that the action can be taken."
+    ]
+  },
+  {
+    "title": "customer_collaboration",
+    "lvl": "M",
+    "abstract": "Customer collaboration over contract negotiation. Speak with those who hired you to make sure that their desires are being fulfilled by the work you are completing. Rarely does a contract start and finish without revisions or scope changes. Software is mutable, listen to those that use it so that you can fulfil their wishes.",
+    "contents": [
+      "Under the mountains of tickets is an engineer who looks at comments about things that have gone wrong. Rarely can this lonesome individual see the bright sun or re-create the vaguely described issues. Ideally we wouldn't have tickets to bury this creature in, but how else do you deal with widely used applications? The answer is to talk to a person. We must talk to each other as we build and maintain our webs of code. If we stray from the path of communication it is all too easy to add paperwork to take the place of a person."
+    ]
+  },
+  {
+    "title": "responding_to_change",
+    "lvl": "M",
+    "abstract": "Responding to change over following a plan.",
+    "contents": [
+      "\"I've been through so much shit, deactivated programs with my lambda, now it's time to blow this plan down!\" => An altered line from a crass and entertaining song.",
+      "Direct experience: I was sent off on an errand to \"...re-write the Handsontable implementation for [CLIENT].\" My response was \"alright, let's do this!\"",
+      "A month later, having been given no direction on how Handsontable works, and running all of my changes off of a single spreadsheet that I received from the change ticket in our system I was informed that it needed to be done in one week. In the meantime, I had created this elaborate class that would implement the updates that the client wanted. My mentor / superior / co-worker, [STEVONI THE ALMIGHTY], looked at the changes within the branch that I had made. He congratualated me on having created such a nifty class, and promptly threw out 90% of it.",
+      "In the month that I had labored in my corner of the overly dark cubicle a new version of the spreadsheet had been drawn up. It had not been shared with me. Thus, what would have been an overall reduction in work turned into a mad dash.",
+      "The lesson to be learned: responding to change when it happens is very important. Do not barrel forward with your existing plan. It saves time and effort if you communicate the progress of the current plan and listen to any adjustments or feedback that the client may provide."
+    ]
+  }
+]
