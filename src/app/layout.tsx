@@ -26,6 +26,8 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
@@ -34,9 +36,9 @@ export default function RootLayout({
                     rel="stylesheet">  
                 </link>
 				<SettingContextWrapper>
-					<Header>
-						{children}
-					</Header>
+				<Header>
+					{children}
+				</Header>
 				</SettingContextWrapper>
             </body>
         </html>

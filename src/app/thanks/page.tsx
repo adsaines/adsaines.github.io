@@ -3,8 +3,6 @@
 import { NextPage } from "next";
 import { GoogleMaterialIconsThanks, LiveScriptThanks, NextJsThanks, NpmThanks, ReactThanks } from "./projections";
 
-// TODO: write some stuff about the libraries I used to make this page
-
 const Thanks: NextPage = () => {
     return (
         <div className="h-full flex flex-col overflow-auto justify-between items-center">
@@ -14,12 +12,13 @@ const Thanks: NextPage = () => {
                 <NextJsThanks />
                 <NpmThanks />
                 <LiveScriptThanks />
+                {/* TODO: add github pages here */}
             </div>
             <div className="flex flex-col justify-end items-center">
-                <p>
+                <p className="text-center">
                     This is just a general thanks for all the help page.
                 </p>
-                <p>
+                <p className="text-center">
                     I've listed the libraries that asked for recognition and the ones that made things very straightforward.
                 </p>
             </div>

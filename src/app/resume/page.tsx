@@ -6,26 +6,26 @@ import { ResumeWording } from './resumeWording'
 const Resume: NextPage = () => {
     return (
         <div className="h-full overflow-auto flex justify-center">
-            <article className={`resume flex flex-col p-4 gap-4 m-2 max-w-4/5 text-lg`}>
+            <article className={`resume flex flex-col md:p-4 gap-4 m-2 md:max-w-4/5 sm:w-full text-lg`}>
                 <StandardResumeSection title="Personal">
                     {/* TODO: maybe slap a picture of me here? */}
                     <div className="flex flex-col gap-4 justify-center items-center">
-                        <span className="font-semibold text-xl text-(--text-theme-secondary)">
+                        <span className="font-semibold text-xl text-(--text-theme-secondary) text-center">
                             Alex Saines
                         </span>
-                        <p>
+                        <p  className="text-center">
                             I aim to cook every day.    
                         </p>
-                        <p>
+                        <p  className="text-center">
                             I keep my mind active with games at night.
                         </p>
-                        <p>
+                        <p  className="text-center">
                             I practice and teach karate.
                         </p>
-                        <p>
+                        <p  className="text-center">
                             I am driven to fix those things that pull on the edges of my mind and are wrong for this world.
                         </p>
-                        <p>
+                        <p  className="text-center">
                             I know the difference between things that I have the power to change and those that I cannot... mostly.
                         </p>
                         {/* TODO-RE? I probably shouldn't just be tossing my personal email out there. A linked in link would probably be better. */}
@@ -47,19 +47,19 @@ const Resume: NextPage = () => {
                             <span className="text-center">Through this work we have come to value:</span>
                         </p>
                         <p className="flex flex-col justify-center items-center">
-                            <span className="flex flex-wrap justify-center items-center">
+                            <span className="flex max-sm:flex-col md:flex-wrap justify-center items-center">
                                 <span className="text-2xl pr-1 text-(--text-theme-secondary)">Individuals and interactions </span>
                                 <span className="text-center">over processes and tools</span>
                             </span>
-                            <span className="flex flex-wrap justify-center items-center">
+                            <span className="flex max-sm:flex-col md:flex-wrap justify-center items-center">
                                 <span className="text-2xl pr-1 text-(--text-theme-secondary)">Working software </span>
                                 <span className="text-center">over comprehensive documentation</span>
                             </span>
-                            <span className="flex flex-wrap justify-center items-center">
+                            <span className="flex max-sm:flex-col md:flex-wrap justify-center items-center">
                                 <span className="text-2xl pr-1 text-(--text-theme-secondary)">Customer collaboration </span>
                                 <span className="text-center">over contract negotiation</span>
                             </span>
-                            <span className="flex flex-wrap justify-center items-center">
+                            <span className="flex max-sm:flex-col md:flex-wrap justify-center items-center">
                                 <span className="text-2xl pr-1 text-(--text-theme-secondary)">Responding to change </span>
                                 <span className="text-center">over following a plan</span>
                             </span>

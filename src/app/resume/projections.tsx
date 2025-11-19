@@ -2,7 +2,7 @@ import { dateRangeToMonthAndYearRange, datesToYearRange } from "@/projections/da
 
 export const StandardResumeSection = ({title, children, show=true}: {title: string, children: React.ReactNode, show?: boolean}) => {
     return (
-        <div data-show={show} className="border-1 border-dashed rounded-sm border-(--background-theme-primary) border-rounded hover:border-(--text-theme-primary) p-4 data-[show='false']:hidden">
+        <div data-show={show} className="border-1 border-dashed rounded-sm border-(--background-theme-primary) border-rounded hover:border-(--text-theme-primary) md:p-4 data-[show='false']:hidden">
             <HorizontalRuleWithTitle title={title} />
             {children}
         </div>
@@ -63,7 +63,7 @@ export const ItemWithExplanations = ({
     link
 }:ItemWithExplanations) => {
     return (
-        <div className="flex py-4 px-6 gap-6">
+        <div className="flex py-4 max-sm:px-1 md:px-6 gap-6">
             <div className="w-2/5 flex flex-col justify-start border-r-1">
                 <span className="font-semibold text-lg text-(--text-theme-secondary)">
                     {/* TODO: add a linked in link for each company */}
