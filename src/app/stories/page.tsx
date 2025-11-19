@@ -2,13 +2,13 @@
 
 import { NextPage } from "next";
 import { useContext, useEffect, useState } from "react";
-import { StorySelection } from "./projections";
+import { StoryDisplay, StorySelection } from "./projections";
 import { SettingsContext } from "@/structures/settings-context";
 
 import {default as devStories} from '@/app/stories/stories/dev-stories.json';
 import {default as busStories} from '@/app/stories/stories/business-stories.json';
 
-type Story = {
+export type Story = {
     lvl: string;
     abstract: string;
     contents: string[];
@@ -35,6 +35,8 @@ const StoriesPage: NextPage = () => {
     const [selectedStory, setSelectedStory] = useState<Story>(settings.devMode ? defaultDevStory : defaultBusStory)
     const [storyList, setStoryList] = useState<Story[]>([]);
     const [storiesFetched, setStoriesFetched] = useState(false);
+
+    const [showMobileStoryList, setShowMobileStoryList] = useState(false);
 
     const sortGreatestFirst = (first: Story, second: Story): number => {
         if(first.lvl > second.lvl){
@@ -69,34 +71,81 @@ const StoriesPage: NextPage = () => {
     }, [])
 
     return (
-        <div className="h-full flex overflow-hidden">
-            {/* TODO: need a media query here for when the screen is small to give the selection pane more room, 1/5 big, 3/8 small */}
-            <div 
-                data-show={!storiesFetched} 
-                className="data-[show='false']:hidden flex justify-around w-2/5 border-r-2 p-4 gap-2"
-                >
-                <div className="w-1/2 p-4 animate-ping bg-(--text-theme-primary) opacity-50"></div>
+        <div className="h-full overflow-hidden">
+            {/* 
+                TODO: need to modify the view when the viewport is small
+
+                thoughts: make a collapsablestory selection pane that lives at the bottom of the screen, click it and it will expand to the whole screen, select a story and the selection collapses to just show that story name at the bottom with the story in the main part of the screen
+            */}
+            <div id="small & mobile screen variant" className="md:hidden h-full flex flex-col justify-between">
+                <StoryDisplay story={selectedStory} />
+                <div 
+                    data-show={showMobileStoryList} 
+                    className="data-[show=false]:hidden flex flex-col gap-2 p-4 h-2/3 overflow-y-auto  border-t-2"
+                    >
+                    {
+                        storyList
+                            .sort(sortGreatestFirst)
+                            .map((story, index) => {
+                                return (
+                                    <button 
+                                        key={`mobile-story-selection-${index}`} 
+                                        className="flex justify-between"
+                                        onClick={() => {
+                                            setShowMobileStoryList(!showMobileStoryList)
+                                            setSelectedStory(story)
+                                        }}
+                                        >
+                                        <div 
+                                            data-visible={story.title === selectedStory.title} 
+                                            className="data-[visible=false]:invisible material-icons"
+                                            >
+                                            keyboard_double_arrow_right
+                                        </div>
+                                        {story.title}
+                                        <div 
+                                            data-visible={story.title === selectedStory.title} 
+                                            className="data-[visible=false]:invisible material-icons"
+                                            >
+                                            keyboard_double_arrow_left
+                                        </div>
+                                    </button>
+                                )
+                            })
+                    }
+                </div>
+                <button 
+                    disabled={showMobileStoryList} onClick={() => {
+                        setShowMobileStoryList(!showMobileStoryList)
+                    }} 
+                    className="w-full flex justify-between items-center p-2 border-t-2"
+                    >
+                    <div className="material-icons">keyboard_double_arrow_up</div>
+                    <div className="flex flex-col justify-center items-center">
+                        <div>{selectedStory.lvl}</div>
+                        <div className="truncate">{selectedStory.title}</div>
+                    </div>
+                    <div className="material-icons">keyboard_double_arrow_up</div>
+                </button>
             </div>
-            <div 
-                data-show={storiesFetched} 
-                className="data-[show='false']:hidden flex flex-col w-2/5 border-r-2 p-4 gap-2"
-                >
-                {
-                    storyList
-                        .sort(sortGreatestFirst)
-                        .map(createStorySelection)
-                }
-            </div>
-            <div className="overflow-auto flex flex-col w-full p-6 gap-4">
-                <h1 className="font-semibold text-2xl">{selectedStory.title}</h1>
-                <h2 className="font-semibold text-xl text-(--text-theme-secondary)">{selectedStory.lvl}</h2>
-                <p>
-                    {selectedStory.abstract}
-                </p>
-                <hr className="w-full" />
-                {
-                    selectedStory.contents.map((section, index) => ( <p key={`story-section-${index}`}>{section}</p> ))
-                }
+            <div id="medium & up screen variant" className="max-sm:hidden h-full flex">
+                <div 
+                    data-show={!storiesFetched} 
+                    className="data-[show='false']:hidden flex justify-around w-2/5 border-r-2 p-4 gap-2"
+                    >
+                    <div className="w-1/2 p-4 animate-ping bg-(--text-theme-primary) opacity-50"></div>
+                </div>
+                <div 
+                    data-show={storiesFetched} 
+                    className="data-[show='false']:hidden flex flex-col w-2/5 border-r-2 p-4 gap-2"
+                    >
+                    {
+                        storyList
+                            .sort(sortGreatestFirst)
+                            .map(createStorySelection)
+                    }
+                </div>
+                <StoryDisplay story={selectedStory} />
             </div>
         </div>
     )
