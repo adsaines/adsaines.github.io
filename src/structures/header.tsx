@@ -12,7 +12,7 @@ export const Header = ({children}: {children: React.ReactNode}) => {
             <nav 
                 aria-label="Pages and contact links."
                 data-show={path !== '/'} 
-                className={`p-2 bg-(--background-theme-tertiary) h-12 b-2 flex w-full data-[show="false"]:hidden justify-between items-center`}
+                className={`p-2 bg-(--background-theme-tertiary) h-12 b-2 flex w-full data-[show="false"]:hidden justify-between items-center overflow-x-auto`}
                 >
                 <div className="flex gap-1">
                     <HeaderLink 
