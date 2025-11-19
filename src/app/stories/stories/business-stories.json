@@ -1,0 +1,115 @@
+[
+  {
+    "title": "when_you_are_not_secure",
+    "lvl": "LVL_075",
+    "abstract": "When handling data from the public, you must prioritize security above convenience—even if it seems tedious. The internet is full of people looking for vulnerabilities, and bypassing standard security steps for ease of use can create massive risks. If the current security process doesn't work for a required operation, the only safe answer is to build a new, compliant security workflow, not skip the existing one.",
+    "contents": [
+      "I was part of the team managing how we received data from user-filled, offline spreadsheets. Users would fill out a form without an internet connection and then click \"submit\" when they returned to the office. This data was sent directly to a receiving point on our server that had been specifically exempted from the firewall's protection.",
+      "Because we couldn't pass raw data through the main firewall, we used this unprotected landing spot to catch the submission. We moved the data into a temporary database table and then sent a separate, internal request to the secure part of our system to process it.",
+      "The vetting process that followed was unnecessarily complicated and risky as well. We ran basic checks (\"Is this a number?\" \"Is this a word?\") but then, due to the system's legacy structure, we poured all that data into a duplicate, hidden HTML form on the backend. We then \"submitted\" this backend form to the original form-building page, which finally unpacked the data, ran its own second check, and saved it to the main database. This convoluted process showed how multiple layers of insecure, legacy workarounds were introduced simply to avoid creating one robust, modern security check."
+    ]
+  },
+  {
+    "title": "unnecessary_complexity",
+    "lvl": "LVL_040",
+    "abstract": "The biggest lesson is this: don't overcomplicate the simple things. If you need one piece of information, get it directly. Creating layers of indirect steps is not good: like naming a program after a database, and then using that name as a key to find another database name. It creates code that is impossible to understand or fix.",
+    "contents": [
+      "I was tasked with making a simple update to a data entry form. To update it, I first needed to find the source of its data.",
+      "I followed the trail of code calls, and the process became instantly confusing.",
+      "The old form didn't directly ask for the data it needed. Instead, it bounced to a file that queried a table full of names that didn't seem related to anything. This name was then passed along.",
+      "The next file actually executed that name as if it were a command. I was completely lost and asked the team for help, but no one understood what this process was actually doing; everyone responsible for it had long since moved on.",
+      "With no documentation, I had to manually search through the applications repository of files. I eventually found the function the \"command\" was running. It turned out this entire, multi-step process was just a convoluted way to retrieve a single, hardcoded object that contained the name of the database we needed.",
+      "This experience showed how a simple piece of required information was hidden behind four layers of unnecessary, undocumented complexity, wasting time and creating massive risk for anyone who needed to maintain it."
+    ]
+  },
+  {
+    "title": "abstraction_and_turtles",
+    "lvl": "LVL_050",
+    "abstract": "I reached a realization that the majority of things that we build as engineers is a very close parallel to the popular quote: \"It's turtles all the way down.\" We create something small, basic, useful, and hopefully elegant. Then we re-use it within a larger framework that is itself a smaller (basic, useful, and elegant?) part of the greater project.",
+    "contents": [
+      "I was thrilled to join the team responsible for creating our company's custom front-end framework, the structure used to build every page the user sees. The core of this system relied heavily on Lodash templates.",
+      "If you needed a login form, you had a \"Login Template.\" If you needed a full page, you had a \"Page Template.\"",
+      "The problem was in how we assembled them. Instead of simply attaching the Login Template to the Page Template, we were using a system where you had to stuff one template inside another template, which might itself be inside a third template that was designed specifically to hold the second template.",
+      "For example, to build a full page, you would take a template for a small form, place it inside a template designed for an array of small forms, and then place that into the main Page Template. ",
+      "In quick order it became a game of layering in which the only question you were allowed to ask was \"what does this turtle sit on?\" To which the only appropriate answer could be: \"another turtle.\""
+    ]
+  },
+  {
+    "title": "asyncronicity",
+    "lvl": "LVL_100",
+    "abstract": "The lesson here is about managing complexity when data doesn't live in one place. When different parts of the system need different pieces of external information, you must build a sophisticated process that can reliably gather and sync all that data, especially when it's constantly changing.",
+    "contents": [
+      "Our project was an online spreadsheet tool designed for managers to build teams and calculate labor costs based on weekly hours. The major complication was the money: employees could be paid in any currency, but the spreadsheet needed to show the total cost in US Dollars. This required a complex, real-time data flow.",
+      "The Constant Stream: The basic team information (who was on the team) was delivered to us through a subscription feed, meaning every time a manager made an edit, our data was instantly updated.",
+      "The Hidden Cost: For every single person added to the team, we had to make a separate, external call to our company's financial system just to figure out their specific currency and convert it to US Dollars.",
+      "The Solution: To handle this constant inflow of team updates and the flood of individual currency calls, I used a complex programming approach involving \"observable chains.\" I essentially created a sophisticated system that listened constantly to the team data, split it up by person, queued up all the necessary currency requests, waited for all those external answers, and finally stitched all the pieces back together into one accurate, real-time total on the screen.",
+      "The result was a single, dynamic tool that allowed business people to confidently plan budgets without ever having to touch a disconnected spreadsheet program like Excel. This taught me how to architect solutions for high-volume, highly-dependent asynchronous data processing."
+    ]
+  },
+  {
+    "title": "how_it_all_began",
+    "lvl": "LVL_000",
+    "abstract": "The greatest lesson I learned early in my career is how routine can blunt advancement if we don't actively look for better ways to work. Observing how much time was wasted on manual data review was my first motivation to become an engineer.",
+    "contents": [
+      "Fresh out of college, my job was to manually scroll through large Excel spreadsheets and physically extract specific sets of data into new tables. Tedious is too gentle a word for it. While others accepted this routine, I realized a computer could handle it easily.",
+      "Despite only having a limited background in programming, I taught myself VBA (Visual Basic for Applications) to automate the work. The learning process was challenging, as the existing spreadsheets I inherited were far from uniform, meaning the same code wouldn't work across all of them. I also had to contend with issues like rounding and non-numerical codes in the instrument data.",
+      "I spent significant time writing my first piece of code: a complex macro designed to normalize and sort any incoming data into a single, uniform format. This was the foundation for all future analysis. By automating and standardizing this process, I single-handedly eliminated hours of manual work and proved that even deeply ingrained routines can be overcome with smart programming."
+    ]
+  },
+  {
+    "title": "pre_processing_realization",
+    "lvl": "LVL_010",
+    "abstract": "The core lesson I learned is that if you can control the data stream, you can vastly simplify the work that follows. By setting up simple triggers or tags before the main process runs, you make the overall system much faster and more efficient.",
+    "contents": [
+      "After normalizing the messy data from various sensors (which recorded at irregular intervals—sometimes once a week, sometimes every 15 seconds), my next challenge was generating reports. Manually compiling these reports took anywhere from 10 minutes to a full morning.",
+      "I realized I could use Excel formulas to add \"runtime tags\" directly to the data. These tags automatically checked flow levels and flagged the status of each reading before my processing code ever ran. This small change meant my macro didn't have to perform those complex checks repeatedly.",
+      "The result was phenomenal: I reduced the report generation time from two hours down to about 15 minutes."
+    ]
+  },
+  {
+    "title": "individuals_and_interactions",
+    "lvl": "M",
+    "abstract": "Individuals and interactions over processes and tools.",
+    "contents": [
+      "The most important realization in planning work is that the person doing the job and their methodology are more critical than the tools or generic processes we use. When an employee's preferences and expertise are heard and observed, that employee feels heard and is empowered to deliver their best work.",
+      "I've worked in diverse environments—from physical labor to complex software engineering. These experiences have shown me the full spectrum of team dynamics: managing loud, aggressive egos, quietly prompting reserved experts for help, working solo, or with daily collaboration. Through this, I've learned how I operate most effectively.",
+      "When I am given the autonomy to apply my proven methods and my preferences are respected, I am able to reciprocate with high performance.",
+      "Conversely, when I am simply dictated what to do, how to do it, and when to do it, without any room for question or input, I feel my expertise is disregarded. In these situations, I realize I am treated as a replaceable cog, which ultimately limits my creativity and dedication to the outcome. Effective planning starts with listening to the people doing the work."
+    ]
+  },
+  {
+    "title": "working_software",
+    "lvl": "M",
+    "abstract": "Working software over comprehensive documentation.",
+    "contents": [
+      "The priority in software engineering is always building a robust, functional product. However, when it comes to documentation, the lesson is that written rules and procedures must evolve alongside the product.",
+      "Documentation should not take the form of static manuals filled with step-by-step instructions or screenshots. Why? Because code changes constantly, features get updated, UI's shift, and visual steps become outdated and confusing.",
+      "The most effective documentation I've experienced and created is documentation that is live and functional.",
+      "For Engineers: The best documentation for how the code works is the tests themselves. A comprehensive test suite shows exactly what the code is supposed to do and how it behaves.",
+      "For Users: The best description of how to perform an action should live in the application right where the action is taken (e.g., tooltips, contextual help).",
+      "This philosophy taught me that documenting a product shouldn't be a separate, static writing task; it should be an integrated part of the build process that provides real-time functional assurance and guidance."
+    ]
+  },
+  {
+    "title": "customer_collaboration",
+    "lvl": "M",
+    "abstract": "Customer collaboration over contract negotiation.",
+    "contents": [
+      "The biggest lesson in maintaining software isn't about code quality; it's about communication. Whether planning a product or fixing a bug, the most efficient solution is to talk directly to the people involved.",
+      "When executing any project, you must constantly check in with the stakeholders. Rarely does a contract start and finish without revisions or changes in scope. I learned that regularly speaking with clients and end-users ensures the work being done still fulfills their latest vision, avoiding wasted effort on code that no one wants by the time it’s finished.",
+      "In a widely used application, engineers are often buried under a mountain of technical support tickets. It's incredibly difficult to re-create a poorly described bug report or understand the context behind a failure from a brief, vague comment. To avoid drowning in this paperwork, the answer is simple: talk to the person who experienced the issue. Direct communication is the most reliable way to quickly understand the problem, maintain our complex systems, and prevent the creation of a bureaucracy that tries to replace a simple conversation."
+    ]
+  },
+  {
+    "title": "responding_to_change",
+    "lvl": "M",
+    "abstract": "Responding to change over following a plan.",
+    "contents": [
+      "The essential lesson here is that responding to change as it happens is critical; it saves immense time and effort. It is vital to constantly communicate the current plan's progress and actively listen for any adjustments or feedback the client may provide.",
+      "I was assigned a major project: re-writing a complex, online spreadsheet application for a key client. I jumped in and spent a month building an elaborate, custom solution to implement the features based on the single spreadsheet example I had received from the initial work ticket.",
+      "Despite my hard work, I was abruptly informed that the entire project now had to be finished within one week. Worse, when my mentor reviewed my code, he congratulated me on building a clever solution but then immediately threw out 90% of it.",
+      "Why? In the month I had been heads-down coding, the client had completely redesigned the spreadsheet and created a new version that was never shared with me. My custom class was now obsolete. What should have been a steady reduction in the overall workload turned into a mad, compressed dash to rework the entire solution.",
+      "No matter how focused you are, you must maintain communication with stakeholders to ensure you are always building the solution for the current problem, not the problem from last month."
+    ]
+  }
+]
