@@ -40,7 +40,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (usese turbopack)
+      - name: Build (uses turbopack)
         run: npm run build
 
       - name: Setup Pages

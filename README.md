@@ -12,7 +12,7 @@ I made this page primarily to show off my resume and provide people with some in
 
 ## /resume
 
-Here you will find a robust version of my resume.
+Here you will find a robust version of my resume. I will be playing around with the best ways to show off my accomplishments, so check back on occasion and see my updated diction.
 
 ## /thanks
 
@@ -32,17 +32,13 @@ However, I enjoyed writing and reading the unpolished versions of those experien
 
 # Publishing
 
-I am using [Github Pages](https://docs.github.com/en/pages) to host my site. To host a React project on pages follow thes steps in [this tutorial](https://github.com/gitname/react-gh-pages).
+I am using [Github Pages](https://docs.github.com/en/pages) to host my site. This provides a free domain for a static webpage which exists at a location based on your user name. For me that is...
 
-Primary things to do...
+- [https://adsaines.github.io/](https://adsaines.github.io/)
 
-- run the "deploy" script and include a commit message: `npm run deploy -- -m "COMMIT MESSAGE"`\
-- go to "https://adsaines.github.io/experience" & check that the changes are present
+The deployment is automatically taken care of when a new commit is pushed to the "main" branch or a pull request is approved and merged, also to "main." The setup as of creation (2025/11/18) takes a little less than 1 minute to complete and for the changes to become live.
 
-NOTE: the deploye script in the tutorial looks for the build folder at the rot level. I had to specify that it will appear in the ".next" folder within the "-d" (directory) command
+## References that I used
 
-## Steps to publish
-
-Because nothing is ever as straightforward as you want. I'm using react with nextjs and the build folder is under the .next folder. I have added a command to the "predeploy" scrip to move the build folder out to the root path for the "deploy" script to publish. However, the move command does not have over-writing rights, so...
-
-- delete any "build" folder that exists at the root
+- [Freecodecamp tutorial](https://www.freecodecamp.org/news/how-to-deploy-next-js-app-to-github-pages/)
+- [Suggested node js setup workflow](https://github.com/adsaines/adsaines.github.io/new/main?filename=.github%2Fworkflows%2Fnode.js.yml&workflow_template=ci%2Fnode.js)
