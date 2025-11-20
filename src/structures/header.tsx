@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import linkedIn from "@/images/linked-in-white-background.png"
+import gitHubLight from "@/images/github-inertocat-light.png"
 
 export const Header = ({children}: {children: React.ReactNode}) => {
     const path = usePathname()
@@ -12,49 +13,41 @@ export const Header = ({children}: {children: React.ReactNode}) => {
             <nav 
                 aria-label="Pages and contact links."
                 data-show={path !== '/'} 
-                className={`p-2 bg-(--background-theme-tertiary) h-12 b-2 flex w-full data-[show="false"]:hidden justify-between items-center overflow-x-auto`}
+                className={`px-2 max-sm:py-6 md:py-6 gap-2 bg-(--background-theme-tertiary) h-12 b-2 flex w-screen data-[show="false"]:hidden items-center overflow-x-auto overflow-y-hidden`}
                 >
-                <div className="flex gap-1">
-                    <HeaderLink 
-                        hoverText="Home" 
-                        name="home" 
-                        path="/" 
-                        selected={path === 'localhost:3000/'}
-                        />
-                    <HeaderLink 
-                        hoverText="Resume" 
-                        name="resume" 
-                        path="resume" 
-                        selected={path.includes('resume')}
-                        />
-                    <HeaderLink 
-                        hoverText="Libraries I used to make this page, and why I like them" 
-                        name="thanks" 
-                        path="thanks" 
-                        selected={path.includes('thanks')}
-                        />
-                    <HeaderLink 
-                        hoverText="Stories of my dev career" 
-                        name="story_time" 
-                        path="stories" 
-                        selected={path.includes('stories')}
-                        />
-                    <HeaderLink 
-                        hoverText="Things that will alter the contents or flow of the pages." 
-                        name="settings" 
-                        path="settings" 
-                        selected={path.includes('settings')}
-                        />
+                <HeaderLink 
+                    hoverText="Home" 
+                    name="home" 
+                    path="/" 
+                    selected={path === 'localhost:3000/'}
+                    />
+                <HeaderLink 
+                    hoverText="Resume" 
+                    name="resume" 
+                    path="resume" 
+                    selected={path.includes('resume')}
+                    />
+                <HeaderLink 
+                    hoverText="Libraries I used to make this page, and why I like them" 
+                    name="thanks" 
+                    path="thanks" 
+                    selected={path.includes('thanks')}
+                    />
+                <HeaderLink 
+                    hoverText="Stories of my dev career" 
+                    name="story_time" 
+                    path="stories" 
+                    selected={path.includes('stories')}
+                    />
+                <HeaderLink 
+                    hoverText="Things that will alter the contents or flow of the pages." 
+                    name="settings" 
+                    path="settings" 
+                    selected={path.includes('settings')}
+                    />
+                <div className="grow max-sm:hidden">
                 </div>
-                {/* TODO: for some reason this link has a vertical scroll bar associated with it */}
-                <div className="flex">
-                    <a 
-                        href="https://www.linkedin.com/in/AlexSaines"
-                        target="_blank"
-                        >
-                        <img className="w-8" src={linkedIn.src} alt={'Linked In'} />
-                    </a>
-                </div>
+                <SocialLinks />
             </nav>
             {children}
         </div>
@@ -81,5 +74,26 @@ const HeaderLink = ({path, name, hoverText, selected}: {path: string, name: stri
             >
             {name}
         </Link>
+    )
+}
+
+export const SocialLinks = () => {
+    return (
+        <>
+            <a 
+                href="https://www.linkedin.com/in/AlexSaines"
+                target="_blank"
+                className="flex justify-center items-center w-8"
+                >
+                <img className="w-8" src={linkedIn.src} alt={'Linked In'} />
+            </a>
+            <a 
+                href="https://github.com/adsaines"
+                target="_blank"
+                className="flex justify-center items-center w-8"
+                >
+                <img className="w-8" src={gitHubLight.src} alt={'Github'} />
+            </a>
+        </>
     )
 }

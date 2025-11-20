@@ -1,6 +1,9 @@
 import { NextPage } from "next";
 import { BlurbWithTitle, ItemWithExplanations, StandardResumeSection, TitleWithBricks } from "./projections";
 import { ResumeWording } from './resumeWording'
+import linkedIn from "@/images/linked-in-white-background.png"
+import gitHubLight from "@/images/github-inertocat-light.png"
+import { SocialLinks } from "@/structures/header";
 
 /* TODO: this will require a media query for small screen setup, primarily, more horizontal room if the screen is small */
 const Resume: NextPage = () => {
@@ -96,7 +99,7 @@ const Resume: NextPage = () => {
                 </StandardResumeSection>
                 <StandardResumeSection title="Personal">
                     {/* TODO: maybe slap a picture of me here? */}
-                    <div className="flex flex-col gap-4 justify-center items-center">
+                    <div className="flex flex-col max-sm:gap-4 md:gap-6 justify-center items-center">
                         <span className="font-semibold text-xl text-(--text-theme-secondary) text-center">
                             Alex Saines
                         </span>
@@ -130,19 +133,14 @@ const Resume: NextPage = () => {
                         <p className="flex justify-center items-center md:hidden">
                             <span className="material-icons pr-4">self_improvement</span> let go what you can't <span className="material-icons pl-4">self_improvement</span>
                         </p>
-                        {/* TODO-RE? I probably shouldn't just be tossing my personal email out there. A linked in link would probably be better. */}
-                        <span className="hidden">
-                            <a href="mailto:adsaines@gmail.com" aria-label="Email me at adsaines@gmail.com">
-                                adsaines@gmail.com
-                            </a>
-                        </span>
-                        <span className="hidden">
-                            740-279-5560
-                        </span>
+                        <div className="flex justify-center items-center gap-2">
+                            <SocialLinks />
+                        </div>
                     </div>
                 </StandardResumeSection>
                 <StandardResumeSection title="I subscribe to the agile manifesto">
-                    <div className="flex flex-col justify-center items-center gap-2">
+                    {/* NOTE: on mobile the bottom of the screen likes to encroach, so the margin bottom bumps that down a big to allow for better viewing */}
+                    <div className="flex flex-col justify-center items-center gap-2 mb-6">
                         <p className="flex flex-col justify-center items-center max-sm:hidden">
                             <span className="text-center">We are uncovering better ways of developing</span>
                             <span className="text-center">software by doing it and helping others do it.</span>
