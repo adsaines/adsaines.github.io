@@ -2,7 +2,7 @@
 
 import { NextPage } from "next";
 import { useContext, useEffect, useState } from "react";
-import { StoryDisplay, StorySelection } from "./projections";
+import { MobileStoryDisplay, StoryDisplay, StorySelection } from "./projections";
 import { SettingsContext } from "@/structures/settings-context";
 
 import {default as devStories} from '@/app/stories/stories/dev-stories.json';
@@ -29,14 +29,11 @@ const defaultDevStory: Story = {
     contents: ['Experience and anecdotes show up here.']
 }
 
-
 const StoriesPage: NextPage = () => {
     const {settings} = useContext(SettingsContext);
-    const [selectedStory, setSelectedStory] = useState<Story>(settings.devMode ? defaultDevStory : defaultBusStory)
+    const [selectedStory, setSelectedStory] = useState<Story | null>(settings.devMode ? defaultDevStory : defaultBusStory)
     const [storyList, setStoryList] = useState<Story[]>([]);
     const [storiesFetched, setStoriesFetched] = useState(false);
-
-    const [showMobileStoryList, setShowMobileStoryList] = useState(false);
 
     const sortGreatestFirst = (first: Story, second: Story): number => {
         if(first.lvl > second.lvl){
@@ -48,21 +45,6 @@ const StoriesPage: NextPage = () => {
         }
 
         return 0
-    }
-
-    const createStorySelection = (story: Story, index: number) => {
-        const onClick = () => {
-            setSelectedStory(story)
-        }
-        const selected = story.title === selectedStory.title
-        return (
-            <StorySelection 
-                key={`storyName-${index}`} 
-                onClick={onClick} 
-                title={`${story.lvl} - ${story.title}`} 
-                selected={selected}
-                />
-        )
     }
 
     useEffect(() => {
@@ -77,56 +59,22 @@ const StoriesPage: NextPage = () => {
 
                 cassie doesn't like it on bottom
             */}
-            <div id="small & mobile screen variant" className="md:hidden h-full flex flex-col justify-between">
-                <StoryDisplay story={selectedStory} />
-                <div 
-                    data-show={showMobileStoryList} 
-                    className="data-[show=false]:hidden flex flex-col gap-2 p-4 h-2/3 overflow-y-auto  border-t-2"
-                    >
-                    {
-                        storyList
-                            .sort(sortGreatestFirst)
-                            .map((story, index) => {
-                                return (
-                                    <button 
-                                        key={`mobile-story-selection-${index}`} 
-                                        className="flex justify-between"
-                                        onClick={() => {
-                                            setShowMobileStoryList(!showMobileStoryList)
-                                            setSelectedStory(story)
-                                        }}
-                                        >
-                                        <div 
-                                            data-visible={story.title === selectedStory.title} 
-                                            className="data-[visible=false]:invisible material-icons"
-                                            >
-                                            keyboard_double_arrow_right
-                                        </div>
-                                        {story.title}
-                                        <div 
-                                            data-visible={story.title === selectedStory.title} 
-                                            className="data-[visible=false]:invisible material-icons"
-                                            >
-                                            keyboard_double_arrow_left
-                                        </div>
-                                    </button>
-                                )
-                            })
-                    }
-                </div>
-                <button 
-                    disabled={showMobileStoryList} onClick={() => {
-                        setShowMobileStoryList(!showMobileStoryList)
-                    }} 
-                    className="w-full flex justify-between items-center p-2 border-t-2"
-                    >
-                    <div className="material-icons">keyboard_double_arrow_up</div>
-                    <div className="flex flex-col justify-center items-center">
-                        <div>{selectedStory.lvl}</div>
-                        <div className="truncate">{selectedStory.title}</div>
-                    </div>
-                    <div className="material-icons">keyboard_double_arrow_up</div>
-                </button>
+            <div id="small & mobile screen variant" className="md:hidden h-full flex flex-col pb-6">
+                {
+                    storyList
+                        .sort(sortGreatestFirst)
+                        .map((story, index) => {
+                            const storySelected = selectedStory?.title === story.title;
+                            return (
+                                <MobileStoryDisplay 
+                                    isSelected={storySelected} 
+                                    story={story}
+                                    toggleStory={setSelectedStory}
+                                    key={`mobile-story-${index}`}
+                                    />
+                            )
+                        })
+                }
             </div>
             <div id="medium & up screen variant" className="max-sm:hidden h-full flex">
                 <div 
@@ -142,10 +90,20 @@ const StoriesPage: NextPage = () => {
                     {
                         storyList
                             .sort(sortGreatestFirst)
-                            .map(createStorySelection)
+                            .map((story: Story, index: number) => {
+                                const selected = story.title === selectedStory?.title
+                                return (
+                                    <StorySelection 
+                                        key={`desktop-story-${index}`} 
+                                        onClick={() => setSelectedStory(story)} 
+                                        title={`${story.lvl} - ${story.title}`} 
+                                        selected={selected}
+                                        />
+                                )
+                            })
                     }
                 </div>
-                <StoryDisplay story={selectedStory} />
+                <StoryDisplay story={selectedStory ?? settings.devMode ? defaultDevStory : defaultBusStory} />
             </div>
         </div>
     )
