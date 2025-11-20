@@ -23,6 +23,29 @@ const Resume: NextPage = () => {
                             />
                     </div>
                 </StandardResumeSection>
+                <StandardResumeSection title="Professional Experience" >
+                    {/* TODO: make this a swappable section, you can view it by project or company */}
+                    <ItemWithExplanations 
+                        title="Accenture"
+                        subTitle="Software Engineer"
+                        startDate="2022/10/05"
+                        talkingPoints={ResumeWording.accentureTalkingPoints}
+                        />
+                    <ItemWithExplanations 
+                        title="Benchmark Digital Partners LLC"
+                        subTitle="Software Engineer & Product Owner"
+                        startDate="2019/04/01"
+                        endDate="2022/04/01"
+                        talkingPoints={ResumeWording.benchmarkTalkingPoints}
+                        />
+                    <ItemWithExplanations 
+                        title="Cornerstone Engineering"
+                        subTitle="Spreadsheet Engineer and Data Analyst"
+                        startDate="2011/09/01"
+                        endDate="2019/01/01"
+                        talkingPoints={ResumeWording.cornerstoneTalkingPoint}
+                        />
+                </StandardResumeSection>
                 <StandardResumeSection title="Technology" >
                     {/* TODO-MAYBE: chart the technologies by experience & preference in a scatter chart */}
                     <TitleWithBricks 
@@ -71,49 +94,41 @@ const Resume: NextPage = () => {
                         }}
                         />
                 </StandardResumeSection>
-                <StandardResumeSection title="Professional Experience" >
-                    {/* TODO: make this a swappable section, you can view it by project or company */}
-                    <ItemWithExplanations 
-                        title="Accenture"
-                        subTitle="Software Engineer"
-                        startDate="2022/10/05"
-                        talkingPoints={ResumeWording.accentureTalkingPoints}
-                        />
-                    <ItemWithExplanations 
-                        title="Benchmark Digital Partners LLC"
-                        subTitle="Software Engineer & Product Owner"
-                        startDate="2019/04/01"
-                        endDate="2022/04/01"
-                        talkingPoints={ResumeWording.benchmarkTalkingPoints}
-                        />
-                    <ItemWithExplanations 
-                        title="Cornerstone Engineering"
-                        subTitle="Spreadsheet Engineer and Data Analyst"
-                        startDate="2011/09/01"
-                        endDate="2019/01/01"
-                        talkingPoints={ResumeWording.cornerstoneTalkingPoint}
-                        />
-                </StandardResumeSection>
                 <StandardResumeSection title="Personal">
                     {/* TODO: maybe slap a picture of me here? */}
                     <div className="flex flex-col gap-4 justify-center items-center">
                         <span className="font-semibold text-xl text-(--text-theme-secondary) text-center">
                             Alex Saines
                         </span>
-                        <p  className="text-center">
+                        <p className="text-center max-sm:hidden">
                             I aim to cook every day.    
                         </p>
-                        <p  className="text-center">
+                        <p className="flex justify-center items-center md:hidden">
+                            <span className="material-icons pr-4">local_pizza</span> cook everyday <span className="material-icons pl-4">cake</span>
+                        </p>
+                        <p className="text-center max-sm:hidden">
                             I keep my mind active with games at night.
                         </p>
-                        <p  className="text-center">
+                        <p className="flex justify-center items-center md:hidden">
+                            <span className="material-icons pr-4">sports_esports</span> game, when able <span className="material-icons pl-4">videogame_asset</span>
+                        </p>
+                        <p className="text-center max-sm:hidden">
                             I practice and teach karate.
                         </p>
-                        <p  className="text-center">
+                        <p className="flex justify-center items-center md:hidden">
+                            <span className="material-icons pr-4">sports_martial_arts</span> punch for fun <span className="material-icons pl-4">waving_hand</span>
+                        </p>
+                        <p className="text-center max-sm:hidden">
                             I am driven to fix those things that pull on the edges of my mind and are wrong for this world.
                         </p>
-                        <p  className="text-center">
+                        <p className="flex justify-center items-center md:hidden">
+                            <span className="material-icons pr-4">build</span> fix what you can <span className="material-icons pl-4">plumbing</span>
+                        </p>
+                        <p className="text-center max-sm:hidden">
                             I know the difference between things that I have the power to change and those that I cannot... mostly.
+                        </p>
+                        <p className="flex justify-center items-center md:hidden">
+                            <span className="material-icons pr-4">self_improvement</span> let go what you can't <span className="material-icons pl-4">self_improvement</span>
                         </p>
                         {/* TODO-RE? I probably shouldn't just be tossing my personal email out there. A linked in link would probably be better. */}
                         <span className="hidden">
@@ -128,7 +143,7 @@ const Resume: NextPage = () => {
                 </StandardResumeSection>
                 <StandardResumeSection title="I subscribe to the agile manifesto">
                     <div className="flex flex-col justify-center items-center gap-2">
-                        <p className="flex flex-col justify-center items-center">
+                        <p className="flex flex-col justify-center items-center max-sm:hidden">
                             <span className="text-center">We are uncovering better ways of developing</span>
                             <span className="text-center">software by doing it and helping others do it.</span>
                             <span className="text-center">Through this work we have come to value:</span>
@@ -151,14 +166,14 @@ const Resume: NextPage = () => {
                                 <span className="text-center">over following a plan</span>
                             </span>
                         </p>
-                        <p className="flex flex-col justify-center items-center">
+                        <p className="flex flex-col justify-center items-center max-sm:hidden">
                             <span className="text-center">That is, while there is value in the items on</span>
                             <span className="text-center">the right, we value the items on the left more.</span>
                         </p>
                         <a
                             href="https://agilemanifesto.org/"
                             target="_blank"
-                            className="pt-2 text-(--text-theme-secondary) font-semibold flex items-center"
+                            className="pt-2 text-(--text-theme-tertiary) font-semibold flex items-center"
                             >
                                 The Agile Manifesto
                                 <span className="material-icons text-xs pl-2">open_in_new</span>

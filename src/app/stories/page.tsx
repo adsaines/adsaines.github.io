@@ -73,9 +73,9 @@ const StoriesPage: NextPage = () => {
     return (
         <div className="h-full overflow-hidden">
             {/* 
-                TODO: need to modify the view when the viewport is small
+                TODO: selection button is being pushed off the screen to the bottom on mobile devices
 
-                thoughts: make a collapsablestory selection pane that lives at the bottom of the screen, click it and it will expand to the whole screen, select a story and the selection collapses to just show that story name at the bottom with the story in the main part of the screen
+                cassie doesn't like it on bottom
             */}
             <div id="small & mobile screen variant" className="md:hidden h-full flex flex-col justify-between">
                 <StoryDisplay story={selectedStory} />

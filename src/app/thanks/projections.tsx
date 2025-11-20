@@ -94,7 +94,7 @@ export const ReactThanks = () => {
 }
 
 export const NextJsThanks = () => {
-    const blurb = `I don't know how to write a server. This works right out of the box and can be ported to cloud environments very easy. Sending love.`
+    const blurb = `I don't know how to write a server. This works right out of the box and can be ported to cloud environments very easily. Sending love.`
 
     return (
         <AvowalBox blurb={blurb} name="NextJs" logoSrc={NextJsLightBackground.src}/>
@@ -102,7 +102,7 @@ export const NextJsThanks = () => {
 }
 
 export const NpmThanks = () => {
-    const blurb = `I was pleasntly surprised when I started coding that I didn't have to worry that much about keeping packages up to date. One of my formative memories from middle and high school was juggling all of the installs it took to bring my computer back to life every time I deleted the wrong folder or screwed up the registry pirating a game for our next LAN party. My appreciation for a reliable low level service that keeps all of the odds and ends in check.`
+    const blurb = `I was pleasantly surprised when I started coding that I didn't have to worry that much about keeping packages up to date. One of my formative memories from middle and high school was juggling all of the installs it took to bring my computer back to life every time I deleted the wrong folder or screwed up the registry pirating a game for our next LAN party. My appreciation for a reliable low level service that keeps all of the odds and ends in check.`
 
     return (
         <AvowalBox blurb={blurb} name="NPM" logoSrc={NpmIcon.src}/>

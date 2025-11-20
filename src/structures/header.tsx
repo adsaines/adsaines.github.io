@@ -46,6 +46,7 @@ export const Header = ({children}: {children: React.ReactNode}) => {
                         selected={path.includes('settings')}
                         />
                 </div>
+                {/* TODO: for some reason this link has a vertical scroll bar associated with it */}
                 <div className="flex">
                     <a 
                         href="https://www.linkedin.com/in/AlexSaines"

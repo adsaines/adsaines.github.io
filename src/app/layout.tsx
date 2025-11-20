@@ -26,15 +26,18 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+			<head>
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link 
                     href="https://fonts.googleapis.com/icon?family=Material+Icons"
                     rel="stylesheet">  
                 </link>
+			</head>
+
+            <body
+                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+				
 				<SettingContextWrapper>
 				<Header>
 					{children}

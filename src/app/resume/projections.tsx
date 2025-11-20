@@ -63,10 +63,9 @@ export const ItemWithExplanations = ({
     link
 }:ItemWithExplanations) => {
     return (
-        <div className="flex py-4 max-sm:px-1 md:px-6 gap-6">
-            <div className="w-2/5 flex flex-col justify-start border-r-1">
+        <div className="flex py-4 max-sm:flex-col max-sm:px-1 md:px-6 gap-6">
+            <div className="md:w-2/5 flex flex-col justify-start md:border-r-1">
                 <span className="font-semibold text-lg text-(--text-theme-secondary)">
-                    {/* TODO: add a linked in link for each company */}
                     {title}
                 </span>
                 <span>
@@ -79,7 +78,7 @@ export const ItemWithExplanations = ({
                     {dateRangeToMonthAndYearRange(startDate,endDate)}
                 </span>
             </div>
-            <div className="w-3/5 flex flex-col gap-2">
+            <div className="max-sm:pl-4 md:w-3/5 flex flex-col gap-2">
                 {
                     talkingPoints.map((point, index) => <FormatTalkingPoint key={`exp-point-${index}`} point={point} />)
                 }
@@ -138,8 +137,8 @@ export const MakeBrick = ({brick}: {brick: Brick}) => {
 
 export const TitleWithBricks = ({title, subTitle, bricks}:{ title: string, subTitle?: string, bricks: Brick[]}) => {
     return (
-        <div className="flex justify-start items-center w-full px-6">
-            <div className="w-2/5 flex flex-col justify-start border-double border-r-4">
+        <div className="flex max-sm:flex-col md:justify-start md:items-center w-full px-6">
+            <div className="md:w-2/5 flex md:flex-col md:justify-start border-double md:border-r-4">
                 <div className="font-semibold text-lg text-(--text-theme-secondary) text-end pr-4">
                     {title}
                 </div>
@@ -150,7 +149,7 @@ export const TitleWithBricks = ({title, subTitle, bricks}:{ title: string, subTi
                     {subTitle}
                 </div>
             </div>
-            <div className="flex flex-wrap w-3/5 p-2">
+            <div className="flex flex-wrap max-sm:pl-4 md:w-3/5 p-2">
                 {
                     bricks.map((brick, index) => <MakeBrick brick={brick} key={`brick-${index}`} />)
                 }
