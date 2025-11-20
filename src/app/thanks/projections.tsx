@@ -3,6 +3,7 @@ import NextJsLightBackground from '@/images/nextjs-icon-light-background.png'
 import GoogleIcon from '@/images/google-logo.png'
 import NpmIcon from '@/images/npm.png'
 import Javascript from '@/images/javascript.png'
+import GithubLight from '@/images/github-inertocat-light.png'
 
 const AvowalBox = ({name, blurb, logoSrc}:{name: string, blurb: string, logoSrc: string}) => {
     const [show, setShow] = useState(false);
@@ -114,5 +115,13 @@ export const LiveScriptThanks = () => {
 
     return (
         <AvowalBox blurb={blurb} name="Javascript" logoSrc={Javascript.src}/>
+    )
+}
+
+export const GithubPagesThanks = () => {
+    const blurb = `I was worried that after making this website I'd end up with another subscription that would require constant tending and an overly complicated workflow. But, then I found the pages in Github and it had nice examples of how to deploy within their pipeline that only took a few tries to get right. Thumbs up. Would recommend.`
+
+    return (
+        <AvowalBox blurb={blurb} name="Github Pages" logoSrc={GithubLight.src}/>
     )
 }

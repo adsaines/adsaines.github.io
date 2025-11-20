@@ -1,7 +1,7 @@
 'use client'
 
 import { NextPage } from "next";
-import { GoogleMaterialIconsThanks, LiveScriptThanks, NextJsThanks, NpmThanks, ReactThanks } from "./projections";
+import { GithubPagesThanks, GoogleMaterialIconsThanks, LiveScriptThanks, NextJsThanks, NpmThanks, ReactThanks } from "./projections";
 
 const Thanks: NextPage = () => {
     return (
@@ -12,6 +12,7 @@ const Thanks: NextPage = () => {
                 <NextJsThanks />
                 <NpmThanks />
                 <LiveScriptThanks />
+                <GithubPagesThanks />
                 {/* TODO: add github pages here */}
             </div>
             <div className="flex flex-col justify-end items-center">

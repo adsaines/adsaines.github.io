@@ -13,8 +13,11 @@ export const Header = ({children}: {children: React.ReactNode}) => {
             <nav 
                 aria-label="Pages and contact links."
                 data-show={path !== '/'} 
-                className={`px-2 max-sm:py-6 md:py-6 gap-2 bg-(--background-theme-tertiary) h-12 b-2 flex w-screen data-[show="false"]:hidden items-center overflow-x-auto overflow-y-hidden`}
+                className={`px-2 max-sm:py-6 md:py-6 gap-2 bg-(--background-theme-tertiary) h-12 b-2 flex data-[show="false"]:hidden items-center overflow-x-auto overflow-y-hidden`}
                 >
+                <div className="md:hidden">
+                    <span className="material-icons">swap_horizontal_circle</span>
+                </div>
                 <HeaderLink 
                     hoverText="Home" 
                     name="home" 
@@ -48,6 +51,9 @@ export const Header = ({children}: {children: React.ReactNode}) => {
                 <div className="grow max-sm:hidden">
                 </div>
                 <SocialLinks />
+                <div className="md:hidden">
+                    <span className="material-icons">swap_horizontal_circle</span>
+                </div>
             </nav>
             {children}
         </div>
