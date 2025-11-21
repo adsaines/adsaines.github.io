@@ -1,4 +1,4 @@
-# Leslie
+# Leslie - covered by lauren's comments (I think)
 
 She thought each of the listed technologies were clickable because they were in boxes. While only the ones that blue-boxed are clickable.
 
@@ -22,7 +22,3 @@ She thought each of the listed technologies were clickable because they were in 
 
 - Under the "thanks" tab, under NPM, you say, "I was pleasntly surprised....." Fix it to pleasantly.
 - Under the "thanks" tab, under NextJs, you say, "..... cloud environments very easy. Sending love." Change easy to easily. Easily is an adverb, modifying your slang verb, "ported."
-
-# Me
-
-- the colors should be named after the colors, not text or background

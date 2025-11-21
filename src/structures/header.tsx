@@ -9,9 +9,9 @@ import { Dispatch, SetStateAction, useState } from "react"
 export const Header = ({children}: {children: React.ReactNode}) => {
     return (
         <div className="h-screen w-full flex flex-col bg-(--dark-primary) text-(--light-primary)">
-            <SmallMediaHeader />
             <WideMediaHeader />
             {children}
+            <SmallMediaHeader />
         </div>
     )
 }
