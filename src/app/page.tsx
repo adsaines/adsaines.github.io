@@ -10,7 +10,7 @@ export default function Home() {
                 <span className="text-(--text-theme-secondary)">engineer, developer,</span> <span className="text-base">cook, karate master</span>
             </h2>
             
-            <div className="flex flex-col gap-6 px-2 max-sm:w-full md:w-[20rem]">
+            <div className="flex flex-col gap-6 px-12 max-sm:w-full md:w-[20rem]">
                 <HomePageLink path="resume" title="resume" />
                 <HomePageLink path="thanks" title="thanks_to" />
                 <HomePageLink path="stories" title="story_time" />
@@ -23,7 +23,7 @@ export default function Home() {
 const HomePageLink = ({title, path}:{title: string, path: string}) => {
     return (
         <Link 
-            className="bg-(--background-theme-secondary) py-2 px-4 w-full text-center font-semibold text-xl border-1 border-(--background-theme-secondary) hover:border-(--text-theme-primary)" 
+            className="bg-(--background-theme-secondary) py-2 px-4 w-full text-center font-semibold text-xl border-1 border-(--background-theme-secondary) hover:border-(--text-theme-primary) max-sm:border-(--text-theme-primary)" 
             href={`/${path}`}
             >
                 {title}
