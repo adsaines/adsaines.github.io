@@ -139,7 +139,7 @@ const Resume: NextPage = () => {
                     </div>
                 </StandardResumeSection>
                 <StandardResumeSection title="I subscribe to the agile manifesto">
-                    {/* NOTE: on mobile the bottom of the screen likes to encroach, so the margin bottom bumps that down a big to allow for better viewing */}
+                    {/* NOTE: on mobile the bottom of the screen likes to encroach, so the margin bottom bumps that down a bit to allow for better viewing */}
                     <div className="flex flex-col justify-center items-center gap-2 mb-6">
                         <p className="flex flex-col justify-center items-center max-sm:hidden">
                             <span className="text-center">We are uncovering better ways of developing</span>

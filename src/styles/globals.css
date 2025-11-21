@@ -13,9 +13,9 @@
     --background-theme-primary: var(--color-zinc-600);
     --background-theme-secondary: var(--color-zinc-500);
     --background-theme-tertiary: var(--color-zinc-800);
-    --text-theme-primary: var(--color-lime-500);
+    --text-theme-primary: var(--color-lime-400);
     --text-theme-secondary: var(--color-teal-400);
-    --text-theme-tertiary: var(--color-emerald-500);
+    --text-theme-tertiary: var(--color-emerald-400);
     --must-see-me: var(--color-fuchsia-700);
 }
 

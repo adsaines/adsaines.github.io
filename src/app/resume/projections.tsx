@@ -2,7 +2,7 @@ import { dateRangeToMonthAndYearRange, datesToYearRange } from "@/projections/da
 
 export const StandardResumeSection = ({title, children, show=true}: {title: string, children: React.ReactNode, show?: boolean}) => {
     return (
-        <div data-show={show} className="border-1 border-dashed rounded-sm border-(--background-theme-primary) border-rounded hover:border-(--text-theme-primary) md:p-4 data-[show='false']:hidden">
+        <div data-show={show} className="border-1 border-dashed rounded-sm border-(--background-theme-primary) border-rounded hover:border-(--text-theme-primary) p-4 data-[show='false']:hidden">
             <HorizontalRuleWithTitle title={title} />
             {children}
         </div>
@@ -87,10 +87,12 @@ export const ItemWithExplanations = ({
                     <a 
                         href={link.href} 
                         target="_blank" 
-                        className="p-2 border-r-double border-r-4 border-1 border-(--text-theme-tertiary) hover:text-(--text-theme-secondary) flex items-center"
+                        className="text-(--text-theme-secondary) flex items-center underline"
                         >
                         {link.title}
-                        <span className="material-icons text-xs">open_in_new</span>
+                        <div className="w-2">
+                            <span className="material-icons">arrow_outward</span>
+                        </div>
                     </a>
                 }
             </div>
@@ -119,17 +121,18 @@ export const MakeBrick = ({brick}: {brick: Brick}) => {
             <a 
                 href={brick.link} 
                 target="_blank" 
-                className="p-2 m-1 border-r-double border-r-4 border-1 border-(--text-theme-tertiary) hover:text-(--text-theme-secondary) flex items-center gap-1"
+                className="p-2 m-1 text-(--text-theme-secondary) flex items-center gap-1 underline flex justify-center items-center"
                 >
                 {brick.title}
-                {/* TODO: figure out how to make this a bit smaller */}
-                <span className="material-icons text-xs">open_in_new</span>
+                <div className="w-2">
+                    <span className="material-icons">arrow_outward</span>
+                </div>
             </a>
         )
     }
 
     return (
-        <div className="p-2 m-1 border-(--must-see-me) border-1">
+        <div className="p-2 m-1">
             {brick.title}
         </div>
     )
@@ -139,7 +142,7 @@ export const TitleWithBricks = ({title, subTitle, bricks}:{ title: string, subTi
     return (
         <div className="flex max-sm:flex-col md:justify-start md:items-center w-full px-6">
             <div className="md:w-2/5 flex md:flex-col md:justify-start border-double md:border-r-4">
-                <div className="font-semibold text-lg text-(--text-theme-secondary) text-end pr-4">
+                <div className="font-semibold text-lg text-(--text-theme-tertiary) text-end pr-4">
                     {title}
                 </div>
                 <div 

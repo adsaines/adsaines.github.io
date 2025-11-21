@@ -2,12 +2,12 @@
 
 She thought each of the listed technologies were clickable because they were in boxes. While only the ones that blue-boxed are clickable.
 
-# Cassie
+# Cassie - complete
 
 - the story selection zone is hidden b/c of the collapsible "topbar" in chrome on mobile
 - also doesn't like the selection at the bottom, thinks it would be more apparent / understandable on top
 
-# Lauren
+# Lauren - complete
 
 - more space on landing page links
 - make nav menu a hamburger when small
