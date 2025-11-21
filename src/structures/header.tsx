@@ -9,29 +9,28 @@ import { Dispatch, SetStateAction, useState } from "react"
 export const Header = ({children}: {children: React.ReactNode}) => {
     return (
         <div className="h-screen w-full flex flex-col bg-(--dark-primary) text-(--light-primary)">
+            <SmallMediaHeader />
             <WideMediaHeader />
             {children}
-            <SmallMediaHeader />
         </div>
     )
 }
 
 const SmallMediaHeader = () => {
     const path = usePathname()
-
     const [expanded, setExpanded] = useState(false);
 
     return (
         <>
-            <nav
+            <div
                 aria-label="Open page navigation overlay"
                 data-show={path !== '/'} 
                 data-expanded={expanded}
-                className={`md:hidden data-[show="false"]:hidden px-2 py-6 bg-(--dark-tertiary) h-12 flex items-center`}
+                className={`md:hidden sticky top-0 data-[show="false"]:hidden px-2 py-6 bg-(--dark-tertiary) h-12 flex items-center`}
                 >
                     <button className="material-icons" onClick={() => setExpanded(!expanded)}>menu</button>
-            </nav>
-            <div data-show={expanded} className="data-[show=false]:hidden py-6 flex flex-col gap-6 justify-center items-center border-b-4 border-double border-(--light-primary)">
+            </div>
+            <nav data-show={expanded} className="data-[show=false]:hidden py-6 flex flex-col gap-6 justify-center items-center border-b-4 border-double border-(--light-primary)">
                 <HamburgerMenuLink 
                     title="home" 
                     path="/" 
@@ -62,7 +61,7 @@ const SmallMediaHeader = () => {
                     selected={path.includes('settings')}
                     setExpanded={setExpanded}
                     />
-            </div>
+            </nav>
         </>
     )
 }
@@ -71,7 +70,7 @@ const HamburgerMenuLink = ({title, path, selected, setExpanded}:{title: string, 
     if(selected){
         return (
             <span
-                className="bg-(--dark-tertiary) py-2 px-4 w-2/3 text-center font-semibold text-xl border-1"
+                className="bg-(--dark-tertiary) text-(--light-secondary) py-2 px-4 w-2/3 text-center font-semibold text-xl border-1"
                 >
                 {title}
             </span>
