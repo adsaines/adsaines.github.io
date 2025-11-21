@@ -76,7 +76,7 @@ const StoriesPage: NextPage = () => {
                     data-show={!storiesFetched} 
                     className="data-[show='false']:hidden flex justify-around w-2/5 border-r-2 p-4 gap-2"
                     >
-                    <div className="w-1/2 p-4 animate-ping bg-(--text-theme-primary) opacity-50"></div>
+                    <div className="w-1/2 p-4 animate-ping bg-(--light-primary) opacity-50"></div>
                 </div>
                 <div 
                     data-show={storiesFetched} 

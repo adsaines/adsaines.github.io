@@ -8,7 +8,7 @@ import { Dispatch, SetStateAction, useState } from "react"
 
 export const Header = ({children}: {children: React.ReactNode}) => {
     return (
-        <div className="h-screen w-full flex flex-col bg-(--background-theme-primary) text-(--text-theme-primary)">
+        <div className="h-screen w-full flex flex-col bg-(--dark-primary) text-(--light-primary)">
             <SmallMediaHeader />
             <WideMediaHeader />
             {children}
@@ -27,11 +27,11 @@ const SmallMediaHeader = () => {
                 aria-label="Open page navigation overlay"
                 data-show={path !== '/'} 
                 data-expanded={expanded}
-                className={`md:hidden data-[show="false"]:hidden px-2 py-6 bg-(--background-theme-tertiary) h-12 flex items-center`}
+                className={`md:hidden data-[show="false"]:hidden px-2 py-6 bg-(--dark-tertiary) h-12 flex items-center`}
                 >
                     <button className="material-icons" onClick={() => setExpanded(!expanded)}>menu</button>
             </nav>
-            <div data-show={expanded} className="data-[show=false]:hidden py-6 flex flex-col gap-6 justify-center items-center border-b-4 border-double border-(--text-theme-primary)">
+            <div data-show={expanded} className="data-[show=false]:hidden py-6 flex flex-col gap-6 justify-center items-center border-b-4 border-double border-(--light-primary)">
                 <HamburgerMenuLink 
                     title="home" 
                     path="/" 
@@ -71,7 +71,7 @@ const HamburgerMenuLink = ({title, path, selected, setExpanded}:{title: string, 
     if(selected){
         return (
             <span
-                className="bg-(--background-theme-tertiary) py-2 px-4 w-2/3 text-center font-semibold text-xl border-1"
+                className="bg-(--dark-tertiary) py-2 px-4 w-2/3 text-center font-semibold text-xl border-1"
                 >
                 {title}
             </span>
@@ -80,7 +80,7 @@ const HamburgerMenuLink = ({title, path, selected, setExpanded}:{title: string, 
 
     return (
         <Link 
-            className="bg-(--background-theme-secondary) py-2 px-4 w-2/3 text-center font-semibold text-xl border-1 border-(--text-theme-primary)" 
+            className="bg-(--dark-secondary) py-2 px-4 w-2/3 text-center font-semibold text-xl border-1 border-(--light-primary)" 
             href={`/${path}`}
             onClick={() => setExpanded(false)}
             >
@@ -96,7 +96,7 @@ const WideMediaHeader = () => {
         <nav 
             aria-label="Pages"
             data-show={path !== '/'} 
-            className={`max-sm:hidden data-[show="false"]:hidden px-2 py-6 gap-2 bg-(--background-theme-tertiary) h-12 b-2 flex items-center overflow-x-auto overflow-y-hidden`}
+            className={`max-sm:hidden data-[show="false"]:hidden px-2 py-6 gap-2 bg-(--dark-tertiary) h-12 b-2 flex items-center overflow-x-auto overflow-y-hidden`}
             >
             <HeaderLink 
                 name="home" 
@@ -139,7 +139,7 @@ const HeaderLink = ({path, name, hoverText, selected}: {path: string, name: stri
     if(selected){
         return (
             <span
-                className="py-1 px-2 border-2 font-bold border-1 text-(--text-theme-primary) border-(--text-theme-primary)"
+                className="py-1 px-2 border-2 font-bold border-1 text-(--light-primary) border-(--light-primary)"
                 aria-label={hoverText}
                 >
                 {name}
@@ -149,7 +149,7 @@ const HeaderLink = ({path, name, hoverText, selected}: {path: string, name: stri
 
     return (
         <Link 
-            className="py-1 px-2 border-2 font-bold border-1 text-(--text-theme-tertiary) border-(--background-theme-tertiary) hover:border-(--text-theme-tertiary) "
+            className="py-1 px-2 border-2 font-bold border-1 text-(--light-tertiary) border-(--dark-tertiary) hover:border-(--light-tertiary) "
             href={path} 
             aria-label={hoverText}
             >

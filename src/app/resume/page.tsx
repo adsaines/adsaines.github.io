@@ -100,7 +100,7 @@ const Resume: NextPage = () => {
                 <StandardResumeSection title="Personal">
                     {/* TODO: maybe slap a picture of me here? */}
                     <div className="flex flex-col max-sm:gap-4 md:gap-6 justify-center items-center">
-                        <span className="font-semibold text-xl text-(--text-theme-secondary) text-center">
+                        <span className="font-semibold text-xl text-(--light-secondary) text-center">
                             Alex Saines
                         </span>
                         <p className="text-center max-sm:hidden">
@@ -148,19 +148,19 @@ const Resume: NextPage = () => {
                         </p>
                         <p className="flex flex-col justify-center items-center">
                             <span className="flex max-sm:flex-col md:flex-wrap justify-center items-center">
-                                <span className="text-2xl pr-1 text-(--text-theme-secondary)">Individuals and interactions </span>
+                                <span className="text-2xl pr-1 text-(--light-secondary)">Individuals and interactions </span>
                                 <span className="text-center">over processes and tools</span>
                             </span>
                             <span className="flex max-sm:flex-col md:flex-wrap justify-center items-center">
-                                <span className="text-2xl pr-1 text-(--text-theme-secondary)">Working software </span>
+                                <span className="text-2xl pr-1 text-(--light-secondary)">Working software </span>
                                 <span className="text-center">over comprehensive documentation</span>
                             </span>
                             <span className="flex max-sm:flex-col md:flex-wrap justify-center items-center">
-                                <span className="text-2xl pr-1 text-(--text-theme-secondary)">Customer collaboration </span>
+                                <span className="text-2xl pr-1 text-(--light-secondary)">Customer collaboration </span>
                                 <span className="text-center">over contract negotiation</span>
                             </span>
                             <span className="flex max-sm:flex-col md:flex-wrap justify-center items-center">
-                                <span className="text-2xl pr-1 text-(--text-theme-secondary)">Responding to change </span>
+                                <span className="text-2xl pr-1 text-(--light-secondary)">Responding to change </span>
                                 <span className="text-center">over following a plan</span>
                             </span>
                         </p>
@@ -171,7 +171,7 @@ const Resume: NextPage = () => {
                         <a
                             href="https://agilemanifesto.org/"
                             target="_blank"
-                            className="pt-2 text-(--text-theme-tertiary) font-semibold flex items-center"
+                            className="pt-2 text-(--light-tertiary) font-semibold flex items-center"
                             >
                                 The Agile Manifesto
                                 <span className="material-icons text-xs pl-2">open_in_new</span>

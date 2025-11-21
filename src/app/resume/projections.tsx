@@ -2,7 +2,7 @@ import { dateRangeToMonthAndYearRange, datesToYearRange } from "@/projections/da
 
 export const StandardResumeSection = ({title, children, show=true}: {title: string, children: React.ReactNode, show?: boolean}) => {
     return (
-        <div data-show={show} className="border-1 border-dashed rounded-sm border-(--background-theme-primary) border-rounded hover:border-(--text-theme-primary) p-4 data-[show='false']:hidden">
+        <div data-show={show} className="border-1 border-dashed rounded-sm border-(--dark-primary) border-rounded hover:border-(--light-primary) p-4 data-[show='false']:hidden">
             <HorizontalRuleWithTitle title={title} />
             {children}
         </div>
@@ -23,8 +23,8 @@ export const HorizontalRuleWithTitle = ({title}: {title: string}) => {
 
 export const BlurbWithTitle = ({title, blurb}: {title: string, blurb: string}) => {
     return (
-        <div className="flex flex-col h-full border-4 rounded-md border-double border-(--text-theme-primary) p-4 max-w-[500px] min-w-[300px]">
-            <div className="font-semibold text-lg pb-2 mb-2 border-b border-(--text-theme-primary) text-(--text-theme-secondary)">
+        <div className="flex flex-col h-full border-4 rounded-md border-double border-(--light-primary) p-4 max-w-[500px] min-w-[300px]">
+            <div className="font-semibold text-lg pb-2 mb-2 border-b border-(--light-primary) text-(--light-secondary)">
                 {title}
             </div>
             <div>
@@ -65,7 +65,7 @@ export const ItemWithExplanations = ({
     return (
         <div className="flex py-4 max-sm:flex-col max-sm:px-1 md:px-6 gap-6">
             <div className="md:w-2/5 flex flex-col justify-start md:border-r-1">
-                <span className="font-semibold text-lg text-(--text-theme-secondary)">
+                <span className="font-semibold text-lg text-(--light-secondary)">
                     {title}
                 </span>
                 <span>
@@ -87,7 +87,7 @@ export const ItemWithExplanations = ({
                     <a 
                         href={link.href} 
                         target="_blank" 
-                        className="text-(--text-theme-secondary) flex items-center underline"
+                        className="text-(--light-secondary) flex items-center underline"
                         >
                         {link.title}
                         <div className="w-2">
@@ -103,7 +103,7 @@ export const ItemWithExplanations = ({
 export const FormatTalkingPoint = ({point}: {point: TalkingPoint}) => {
     return (
         <div className="flex flex-col">
-            <span className="font-semibold text-(--text-theme-tertiary)">{point.bolded}</span>
+            <span className="font-semibold text-(--light-tertiary)">{point.bolded}</span>
             <span>{point.followUp}</span>
         </div>
     )
@@ -121,7 +121,7 @@ export const MakeBrick = ({brick}: {brick: Brick}) => {
             <a 
                 href={brick.link} 
                 target="_blank" 
-                className="p-2 m-1 text-(--text-theme-secondary) flex items-center gap-1 underline flex justify-center items-center"
+                className="p-2 m-1 text-(--light-secondary) flex items-center gap-1 underline flex justify-center items-center"
                 >
                 {brick.title}
                 <div className="w-2">
@@ -142,7 +142,7 @@ export const TitleWithBricks = ({title, subTitle, bricks}:{ title: string, subTi
     return (
         <div className="flex max-sm:flex-col md:justify-start md:items-center w-full px-6">
             <div className="md:w-2/5 flex md:flex-col md:justify-start border-double md:border-r-4">
-                <div className="font-semibold text-lg text-(--text-theme-tertiary) text-end pr-4">
+                <div className="font-semibold text-lg text-(--light-tertiary) text-end pr-4">
                     {title}
                 </div>
                 <div 

@@ -15,7 +15,7 @@ const AvowalBox = ({name, blurb, logoSrc}:{name: string, blurb: string, logoSrc:
     }
 
     return (
-        <button onClick={onClick} className="flex flex-col gap-4 border-2 border-dashed hover:border-double hover:border-(--must-see-me) group p-6 m-6 max-w-[550px] min-w-[350px] justify-center items-center cursor-pointer">
+        <button onClick={onClick} className="flex flex-col gap-4 border-2 border-dashed hover:border-double hover:border-(--light-secondary) group p-6 m-6 max-w-[550px] min-w-[350px] justify-center items-center cursor-pointer">
             <div className="flex flex-col">
                 <GeneralLogo isOpen={clicked} name={name} />
             </div>
