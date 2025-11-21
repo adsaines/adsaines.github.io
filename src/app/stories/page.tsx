@@ -54,11 +54,6 @@ const StoriesPage: NextPage = () => {
 
     return (
         <div className="h-full overflow-hidden">
-            {/* 
-                TODO: selection button is being pushed off the screen to the bottom on mobile devices
-
-                cassie doesn't like it on bottom
-            */}
             <div id="small & mobile screen variant" className="md:hidden h-full flex flex-col pb-6">
                 {
                     storyList
@@ -103,7 +98,7 @@ const StoriesPage: NextPage = () => {
                             })
                     }
                 </div>
-                <StoryDisplay story={selectedStory ?? settings.devMode ? defaultDevStory : defaultBusStory} />
+                <StoryDisplay story={selectedStory} />
             </div>
         </div>
     )
