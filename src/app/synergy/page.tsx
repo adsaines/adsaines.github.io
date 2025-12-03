@@ -2,7 +2,7 @@ import { NextPage } from "next";
 
 const Synergy: NextPage = () => {
     return (
-        <div className="flex flex-col justify-start gap-4 p-10">
+        <div className="h-full overflow-auto flex flex-col justify-start gap-4 p-10">
             <h1><span className="text-2xl">synergy</span><span> noun</span></h1>
             <h2>syn·​er·​gy</h2>
             <p className="pl-4">
