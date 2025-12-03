@@ -28,20 +28,27 @@ const Resume: NextPage = () => {
                     {/* TODO: make this a swappable section, you can view it by project or company */}
                     <ItemWithExplanations 
                         title="Accenture"
-                        subTitle="Software Engineer"
+                        subTitle="software engineer"
                         startDate="2022/10/05"
                         talkingPoints={ResumeWording.accentureTalkingPoints}
                         />
                     <ItemWithExplanations 
+                        title="Freelance"
+                        subTitle="freelance developing & consulting"
+                        startDate="2022/04/02"
+                        endDate="2022/10/04"
+                        talkingPoints={ResumeWording.freelanceTalkingPoints}
+                        />
+                    <ItemWithExplanations 
                         title="Benchmark Digital Partners LLC"
-                        subTitle="Software Engineer & Product Owner"
+                        subTitle="software engineer & product owner"
                         startDate="2019/04/01"
                         endDate="2022/04/01"
                         talkingPoints={ResumeWording.benchmarkTalkingPoints}
                         />
                     <ItemWithExplanations 
                         title="Cornerstone Engineering"
-                        subTitle="Spreadsheet Engineer and Data Analyst"
+                        subTitle="spreadsheet engineer and data analyst"
                         startDate="2011/09/01"
                         endDate="2019/01/01"
                         talkingPoints={ResumeWording.cornerstoneTalkingPoint}
@@ -54,11 +61,11 @@ const Resume: NextPage = () => {
                         bricks={[{title: 'TypeScript'},{title: 'JavaScript'},{title: 'Python'},{title: 'CSS'},{title: 'PowerShell'},{title: 'ColdFusion'},{title: 'Java'},{title: 'Terraform'},{title: 'YAML'}]}
                         />
                     <TitleWithBricks 
-                        title="JavaScript Frameworks"
+                        title="JavaScript frameworks"
                         bricks={[{title: 'Angular'},{title: 'React'},{title: 'Vue'}]}
                         />
                     <TitleWithBricks 
-                        title="DB Languages"
+                        title="DB languages"
                         bricks={[{title: 'MSSQL'},{title: 'PostgreSQL'},{title: 'SOQL/SOSL (Salesforce)'}]}
                         />
                     <TitleWithBricks 
@@ -66,11 +73,11 @@ const Resume: NextPage = () => {
                         bricks={[{title: 'Basic & SCSS'},{title: 'Tailwind'},{title: 'Bootstrap'}]}
                         />
                     <TitleWithBricks 
-                        title="Notable Packages"
+                        title="Notable libraries"
                         bricks={[{title: 'RxJS'},{title: 'Cypress'},{title: 'jQuery'}]}
                         />
                     <TitleWithBricks 
-                        title="AWS Services"
+                        title="AWS services"
                         bricks={[{title: 'DynamoDB'},{title: 'Cloudwatch'},{title: 'Lambda'},{title: 'Amplify'},{title: 'AppConfig'},{title: 'IAM'},{title: 'RDS'},{title: 'WAF'}]}
                         />
                 </StandardResumeSection>

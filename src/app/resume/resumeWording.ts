@@ -56,6 +56,17 @@ const cornerstoneTalkingPoint: TalkingPoint[] = [
     },
 ]
 
+const freelanceTalkingPoints: TalkingPoint[] = [
+    {
+        bolded: 'Architected and delivered independent Python projects',
+        followUp: 'I developed personal solutions using Python, solving complex technical challenges in my personal laboratory environment.',
+    },
+    {
+        bolded: 'Freelance data migration consulting',
+        followUp: 'I advised a client on data integrity and transformation requirements for a high-volume historical data upload to the Salesforce platform, ensuring accurate schema mapping and compliance.',
+    }
+]
+
 const techElevatorTalkingPoints: TalkingPoint[] = [
     {
         bolded: 'Full-stack coding bootcamp',
@@ -77,4 +88,5 @@ export const ResumeWording = {
     accentureTalkingPoints,
     techElevatorTalkingPoints,
     woosterTalkingPoints,
+    freelanceTalkingPoints
 }
