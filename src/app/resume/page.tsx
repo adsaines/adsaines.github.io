@@ -3,13 +3,11 @@ import { BlurbWithTitle, ItemWithExplanations, StandardResumeSection, TitleWithB
 import { ResumeWording } from './resumeWording'
 import { SocialLinks } from "@/structures/header";
 
-/* TODO: this will require a media query for small screen setup, primarily, more horizontal room if the screen is small */
 const Resume: NextPage = () => {
     return (
         <div className="h-full overflow-auto flex justify-center">
             <article className={`resume flex flex-col md:p-4 gap-4 m-2 md:max-w-4/5 sm:w-full text-lg`}>
               
-                {/* TODO-MAYBE: have this show on DEV mode? */}
                 <StandardResumeSection title="Methodologies" show={false} >
                     <div className="flex flex-wrap gap-4 justify-around">
 
@@ -25,7 +23,7 @@ const Resume: NextPage = () => {
                     </div>
                 </StandardResumeSection>
                 <StandardResumeSection title="Professional Experience" >
-                    {/* TODO: make this a swappable section, you can view it by project or company */}
+                    {/* TODO: make a projects page that goes along with this stuff, mirror linked in for this */}
                     <ItemWithExplanations 
                         title="Accenture"
                         subTitle="software engineer"
@@ -103,7 +101,6 @@ const Resume: NextPage = () => {
                         />
                 </StandardResumeSection>
                 <StandardResumeSection title="Personal">
-                    {/* TODO: maybe slap a picture of me here? */}
                     <div className="flex flex-col max-sm:gap-4 md:gap-6 justify-center items-center">
                         <span className="font-semibold text-xl text-(--light-secondary) text-center">
                             Alex Saines

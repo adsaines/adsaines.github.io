@@ -18,11 +18,14 @@ export default function Home() {
             
             <div className="flex flex-col gap-6 px-12 max-sm:w-full md:w-[20rem]">
                 <HomePageLink path="resume" title="resume" />
+                <HomePageLink path="stories" title="story_time" />
+                <HomePageLink path="settings" title="settings" />
                 {
                     settings.cutContent && <HomePageLink path="thanks" title="thanks_to" />
                 }
-                <HomePageLink path="stories" title="story_time" />
-                <HomePageLink path="settings" title="settings" />
+                {
+                    settings.synergy && <HomePageLink path="synergy" title="synergy" />
+                }
             </div>
         </div>
     );

@@ -45,15 +45,6 @@ const SmallMediaHeader = () => {
                     selected={path.includes('resume')}
                     setExpanded={setExpanded}
                     />
-                {
-                    settings.cutContent && 
-                    <HamburgerMenuLink
-                        title="thanks" 
-                        path="thanks" 
-                        selected={path.includes('thanks')}
-                        setExpanded={setExpanded}
-                        />
-                }
                 <HamburgerMenuLink
                     title="story_time" 
                     path="stories" 
@@ -66,6 +57,24 @@ const SmallMediaHeader = () => {
                     selected={path.includes('settings')}
                     setExpanded={setExpanded}
                     />
+                {
+                    settings.cutContent && 
+                    <HamburgerMenuLink
+                        title="thanks" 
+                        path="thanks" 
+                        selected={path.includes('thanks')}
+                        setExpanded={setExpanded}
+                        />
+                }
+                {
+                    settings.synergy && 
+                    <HamburgerMenuLink
+                        title="synergy" 
+                        path="synergy" 
+                        selected={path.includes('synergy')}
+                        setExpanded={setExpanded}
+                        />
+                }
             </nav>
         </>
     )
@@ -115,15 +124,6 @@ const WideMediaHeader = () => {
                 selected={path.includes('resume')}
                 hoverText="learn more about my career and experience"
                 />
-            {
-                settings.cutContent && 
-                <HeaderLink
-                    name="thanks" 
-                    path="thanks" 
-                    selected={path.includes('thanks')}
-                    hoverText="technological libraries that I'm thankful for"
-                    />
-            }
             <HeaderLink
                 name="story_time" 
                 path="stories" 
@@ -136,6 +136,24 @@ const WideMediaHeader = () => {
                 selected={path.includes('settings')}
                 hoverText="could find some fun switches"
                 />
+            {
+                settings.cutContent && 
+                <HeaderLink
+                    name="thanks" 
+                    path="thanks" 
+                    selected={path.includes('thanks')}
+                    hoverText="technological libraries that I'm thankful for"
+                    />
+            }
+            {
+                settings.synergy && 
+                <HeaderLink
+                    name="synergy" 
+                    path="synergy" 
+                    selected={path.includes('synergy')}
+                    hoverText="true synergy comes from within"
+                    />
+            }
             <div className="grow">
             </div>
             <SocialLinks />

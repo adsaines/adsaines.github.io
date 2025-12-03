@@ -14,6 +14,10 @@ const Settings: NextPage = () => {
     const flipCutContent = () => {
         updateSettings({cutContent: !settings.cutContent})
     }
+    
+    const flipSynergy = () => {
+        updateSettings({synergy: !settings.synergy})
+    }
 
     return (
         <div className="flex flex-col gap-6 p-12 justify-start">
@@ -26,11 +30,18 @@ const Settings: NextPage = () => {
                     offText="business"
                     />
                 <Switch 
-                    title="Cut Content"
+                    title="Cut content"
                     action={flipCutContent} 
                     selected={settings.cutContent} 
                     onText="show" 
                     offText="hide"
+                    />
+                <Switch 
+                    title="Synergy"
+                    action={flipSynergy} 
+                    selected={settings.synergy} 
+                    onText="synergy" 
+                    offText="division"
                     />
             </div>
         </div>

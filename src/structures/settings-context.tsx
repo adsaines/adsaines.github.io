@@ -5,6 +5,7 @@ import { createContext, useState } from "react";
 export type PageSettings = {
     devMode: boolean;
     cutContent: boolean;
+    synergy: boolean;
 }
 
 export type SettingsContextContents = {
@@ -19,6 +20,7 @@ export const SettingContextWrapper = ({children}: {children: React.ReactNode}) =
     const [settings, setSettings] = useState<PageSettings>({
         devMode: false,
         cutContent: false,
+        synergy: false,
     })
 
     const updateSettings = (newValues: Partial<PageSettings>) => {
