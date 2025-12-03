@@ -7,7 +7,7 @@ export default function Home() {
                 Alex Saines's Dev Website
             </h1>
             <h2 className="text-xl pb-16">
-                <span className="text-(--light-secondary)">engineer, developer,</span> <span className="text-base">cook, karate master</span>
+                <span className="text-(--light-secondary)">engineer, developer,</span> cook, karate master
             </h2>
             
             <div className="flex flex-col gap-6 px-12 max-sm:w-full md:w-[20rem]">
