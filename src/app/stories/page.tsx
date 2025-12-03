@@ -4,7 +4,6 @@ import { NextPage } from "next";
 import { useContext, useEffect, useState } from "react";
 import { MobileStoryDisplay, StoryDisplay, StorySelection } from "./projections";
 import { SettingsContext } from "@/structures/settings-context";
-
 import {default as devStories} from '@/app/stories/stories/dev-stories.json';
 import {default as busStories} from '@/app/stories/stories/business-stories.json';
 
@@ -15,23 +14,9 @@ export type Story = {
     title: string;
 }
 
-const defaultBusStory: Story = {
-    lvl: 'LVL_000 to LVL_100 => beginner to master',
-    abstract: 'This is a story detailing one of my life experiences in the world of software development & engineering.',
-    title: 'Example title',
-    contents: ['Experience and anecdotes show up here.']
-}
-
-const defaultDevStory: Story = {
-    lvl: `I used to have a l33t code level.`,
-    abstract: `This is an entertaining and informative story: from my start to my end I don't know if I've found a friend quite as fickle as VBA.`,
-    title: `You'll only see me once per page load.`,
-    contents: ['Experience and anecdotes show up here.']
-}
-
 const StoriesPage: NextPage = () => {
     const {settings} = useContext(SettingsContext);
-    const [selectedStory, setSelectedStory] = useState<Story | null>(settings.devMode ? defaultDevStory : defaultBusStory)
+    const [selectedStory, setSelectedStory] = useState<Story | null>(null)
     const [storyList, setStoryList] = useState<Story[]>([]);
     const [storiesFetched, setStoriesFetched] = useState(false);
 
@@ -49,6 +34,7 @@ const StoriesPage: NextPage = () => {
 
     useEffect(() => {
         setStoryList(settings.devMode ? devStories as Story[] : busStories as Story[])
+        setSelectedStory(settings.devMode ? devStories[0] : busStories[0])
         setStoriesFetched(true);
     }, [])
 
