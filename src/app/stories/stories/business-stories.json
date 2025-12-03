@@ -29,7 +29,7 @@
     "contents": [
       "I was thrilled to join the team responsible for creating our company's custom front-end framework, the structure used to build every page the user sees. The core of this system relied heavily on Lodash templates.",
       "If you needed a login form, you had a \"Login Template.\" If you needed a full page, you had a \"Page Template.\"",
-      "The problem was in how we assembled them. Instead of simply attaching the Login Template to the Page Template, we were using a system where you had to stuff one template inside another template, which might itself be inside a third template that was designed specifically to hold the second template.",
+      "The problem was in how we assembled them. Instead of simply attaching the Login Template to the Page Template, we used a system where you had to stuff one template inside another template, which might itself be inside a third template that was designed specifically to hold the second template.",
       "For example, to build a full page, you would take a template for a small form, place it inside a template designed for an array of small forms, and then place that into the main Page Template. ",
       "In quick order it became a game of layering in which the only question you were allowed to ask was \"what does this turtle sit on?\" To which the only appropriate answer could be: \"another turtle.\""
     ]
@@ -84,7 +84,7 @@
     "contents": [
       "The priority in software engineering is always building a robust, functional product. However, when it comes to documentation, the lesson is that written rules and procedures must evolve alongside the product.",
       "Documentation should not take the form of static manuals filled with step-by-step instructions or screenshots. Why? Because code changes constantly, features get updated, UI's shift, and visual steps become outdated and confusing.",
-      "The most effective documentation I've experienced and created is documentation that is live and functional.",
+      "The most effective documentation I've experienced and created was documentation that was live and functional.",
       "For Engineers: The best documentation for how the code works is the tests themselves. A comprehensive test suite shows exactly what the code is supposed to do and how it behaves.",
       "For Users: The best description of how to perform an action should live in the application right where the action is taken (e.g., tooltips, contextual help).",
       "This philosophy taught me that documenting a product shouldn't be a separate, static writing task; it should be an integrated part of the build process that provides real-time functional assurance and guidance."

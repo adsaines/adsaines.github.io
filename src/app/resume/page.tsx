@@ -1,8 +1,6 @@
 import { NextPage } from "next";
 import { BlurbWithTitle, ItemWithExplanations, StandardResumeSection, TitleWithBricks } from "./projections";
 import { ResumeWording } from './resumeWording'
-import linkedIn from "@/images/linked-in-white-background.png"
-import gitHubLight from "@/images/github-inertocat-light.png"
 import { SocialLinks } from "@/structures/header";
 
 /* TODO: this will require a media query for small screen setup, primarily, more horizontal room if the screen is small */
@@ -53,10 +51,10 @@ const Resume: NextPage = () => {
                     {/* TODO-MAYBE: chart the technologies by experience & preference in a scatter chart */}
                     <TitleWithBricks 
                         title="Languages"
-                        bricks={[{title: 'TypeScript'},{title: 'Javascript'},{title: 'Python'},{title: 'CSS'},{title: 'PowerShell'},{title: 'ColdFusion', link: 'https://en.wikipedia.org/wiki/Adobe_ColdFusion'},{title: 'Java'},{title: 'Terraform'},{title: 'YAML'}]}
+                        bricks={[{title: 'TypeScript'},{title: 'JavaScript'},{title: 'Python'},{title: 'CSS'},{title: 'PowerShell'},{title: 'ColdFusion'},{title: 'Java'},{title: 'Terraform'},{title: 'YAML'}]}
                         />
                     <TitleWithBricks 
-                        title="Javascript Frameworks"
+                        title="JavaScript Frameworks"
                         bricks={[{title: 'Angular'},{title: 'React'},{title: 'Vue'}]}
                         />
                     <TitleWithBricks 
@@ -69,11 +67,11 @@ const Resume: NextPage = () => {
                         />
                     <TitleWithBricks 
                         title="Notable Packages"
-                        bricks={[{title: 'RxJS', link: 'https://rxjs.dev/'},{title: 'Cypress'},{title: 'jQuery'}]}
+                        bricks={[{title: 'RxJS'},{title: 'Cypress'},{title: 'jQuery'}]}
                         />
                     <TitleWithBricks 
                         title="AWS Services"
-                        bricks={[{title: 'Dynamo DB'},{title: 'Cloudwatch'},{title: 'Lambda'},{title: 'Amplify'},{title: 'AppConfig'},{title: 'IAM'},{title: 'RDS'},{title: 'WAF'}]}
+                        bricks={[{title: 'DynamoDB'},{title: 'Cloudwatch'},{title: 'Lambda'},{title: 'Amplify'},{title: 'AppConfig'},{title: 'IAM'},{title: 'RDS'},{title: 'WAF'}]}
                         />
                 </StandardResumeSection>
                 <StandardResumeSection title="Education" >
@@ -108,9 +106,6 @@ const Resume: NextPage = () => {
                         </p>
                         <p className="flex justify-center items-center md:hidden">
                             <span className="material-icons pr-4">local_pizza</span> cook everyday <span className="material-icons pl-4">cake</span>
-                        </p>
-                        <p className="text-center max-sm:hidden">
-                            I keep my mind active with games at night.
                         </p>
                         <p className="flex justify-center items-center md:hidden">
                             <span className="material-icons pr-4">sports_esports</span> game, when able <span className="material-icons pl-4">videogame_asset</span>

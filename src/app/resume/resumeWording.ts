@@ -6,15 +6,15 @@ const tddBlurb = `I've been using TDD for a while and I've found that I prefer t
 const accentureTalkingPoints: TalkingPoint[] = [
     {
         bolded: 'Engineered and optimized full-stack applications',
-        followUp: 'I Lead critical refactoring initiatives to enhance functionality, user experience, and overall maintainability across diverse frameworks.'
+        followUp: 'I led critical refactoring initiatives to enhance functionality, user experience, and overall maintainability across diverse frameworks.'
     },
     {
         bolded: 'Designed and implemented scalable architectural solutions',
-        followUp: `These solutions were deployed across microservices and API's to drive significant efficiency gains.`
+        followUp: `I deployed these solutions across microservices and API's to drive significant efficiency gains.`
     },
     {
         bolded: 'Developed and integrated robust data solutions',
-        followUp: 'Development included secure data processing, storage, and reporting, ensuring data integrity and compliance.'
+        followUp: 'I handled development, including secure data processing, storage, and reporting, ensuring data integrity and compliance.'
     },
     {
         bolded: 'Mentored and guided team members on advanced development workflows',
@@ -22,7 +22,7 @@ const accentureTalkingPoints: TalkingPoint[] = [
     },
     {
         bolded: 'Built, deployed, and maintained internal component library',
-        followUp: 'Our library standardized development practices and increased overall project efficiency.'
+        followUp: 'I standardized development practices and increased overall project efficiency with our library.'
     },
 ]
 
@@ -33,7 +33,7 @@ const benchmarkTalkingPoints: TalkingPoint[] = [
     },
     {
         bolded: 'Streamlined data management processes',
-        followUp: 'We accomplished this with a thorough plan to transition from manual methods to automated, user-friendly interfaces and robust backend systems.'
+        followUp: 'I accomplished this with a thorough plan to transition from manual methods to automated, user-friendly interfaces and robust backend systems.'
     },
     {
         bolded: 'Successfully managed complex data integrations for high-profile clients',
@@ -59,14 +59,14 @@ const cornerstoneTalkingPoint: TalkingPoint[] = [
 const techElevatorTalkingPoints: TalkingPoint[] = [
     {
         bolded: 'Full-stack coding bootcamp',
-        followUp: 'Completed intensive training focused on developing dynamic, full-stack web applications using Java Spring Boot for robust APIs and Vue.js for component-based front-end systems.'
+        followUp: 'I completed intensive training focused on developing dynamic, full-stack web applications, utilizing Java Spring Boot for robust APIs and Vue.js for component-based front-end systems.'
     }
 ]
 
 const woosterTalkingPoints: TalkingPoint[] = [
     {
         bolded: 'Four years of analytical work',
-        followUp: 'Studied under Professor Emeritus John Lindner and became the progenitor of a published paper.',
+        followUp: 'I studied under Professor Emeritus John Lindner, applying statistical methods to original research that ultimately led to the publication of a peer-reviewed paper.',
     }
 ]
 
