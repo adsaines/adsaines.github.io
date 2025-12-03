@@ -4,7 +4,8 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import linkedIn from "@/images/linked-in-white-background.png"
 import gitHubLight from "@/images/github-inertocat-light.png"
-import { Dispatch, SetStateAction, useState } from "react"
+import { Dispatch, SetStateAction, useContext, useState } from "react"
+import { SettingsContext } from "./settings-context"
 
 export const Header = ({children}: {children: React.ReactNode}) => {
     return (
@@ -19,6 +20,7 @@ export const Header = ({children}: {children: React.ReactNode}) => {
 const SmallMediaHeader = () => {
     const path = usePathname()
     const [expanded, setExpanded] = useState(false);
+    const {settings} = useContext(SettingsContext)
 
     return (
         <>
@@ -43,12 +45,15 @@ const SmallMediaHeader = () => {
                     selected={path.includes('resume')}
                     setExpanded={setExpanded}
                     />
-                <HamburgerMenuLink
-                    title="thanks" 
-                    path="thanks" 
-                    selected={path.includes('thanks')}
-                    setExpanded={setExpanded}
-                    />
+                {
+                    settings.cutContent && 
+                    <HamburgerMenuLink
+                        title="thanks" 
+                        path="thanks" 
+                        selected={path.includes('thanks')}
+                        setExpanded={setExpanded}
+                        />
+                }
                 <HamburgerMenuLink
                     title="story_time" 
                     path="stories" 
@@ -89,6 +94,7 @@ const HamburgerMenuLink = ({title, path, selected, setExpanded}:{title: string, 
 }
 
 const WideMediaHeader = () => {
+    const {settings} = useContext(SettingsContext)
     const path = usePathname()
 
     return (
@@ -109,12 +115,15 @@ const WideMediaHeader = () => {
                 selected={path.includes('resume')}
                 hoverText="learn more about my career and experience"
                 />
-            <HeaderLink
-                name="thanks" 
-                path="thanks" 
-                selected={path.includes('thanks')}
-                hoverText="technological libraries that I'm thankful for"
-                />
+            {
+                settings.cutContent && 
+                <HeaderLink
+                    name="thanks" 
+                    path="thanks" 
+                    selected={path.includes('thanks')}
+                    hoverText="technological libraries that I'm thankful for"
+                    />
+            }
             <HeaderLink
                 name="story_time" 
                 path="stories" 

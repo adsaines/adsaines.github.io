@@ -1,6 +1,12 @@
+'use client'
+
+import { SettingsContext } from "@/structures/settings-context";
 import Link from "next/link";
+import { useContext } from "react";
 
 export default function Home() {
+    const {settings} = useContext(SettingsContext)
+
     return (
         <div className="flex flex-col gap-4 h-screen w-full justify-center items-center">
             <h1 className="text-2xl text-center">
@@ -12,7 +18,9 @@ export default function Home() {
             
             <div className="flex flex-col gap-6 px-12 max-sm:w-full md:w-[20rem]">
                 <HomePageLink path="resume" title="resume" />
-                <HomePageLink path="thanks" title="thanks_to" />
+                {
+                    settings.cutContent && <HomePageLink path="thanks" title="thanks_to" />
+                }
                 <HomePageLink path="stories" title="story_time" />
                 <HomePageLink path="settings" title="settings" />
             </div>

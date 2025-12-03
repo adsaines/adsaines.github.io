@@ -10,17 +10,42 @@ const Settings: NextPage = () => {
     const flipDevMode = () => {
         updateSettings({devMode: !settings.devMode})
     }
+    
+    const flipCutContent = () => {
+        updateSettings({cutContent: !settings.cutContent})
+    }
 
     return (
         <div className="flex flex-col gap-6 p-12 justify-start">
             <div className="flex flex-col">
-                <label className="text-xl">Content Mode Switch</label>
-                <button onClick={flipDevMode} className="text-lg flex items-center gap-2 px-6 py-2 my-1 w-fit cursor-pointer">
-                    <span data-selected={settings.devMode} className="data-[selected='true']:text-(--light-secondary) data-[selected='true']:font-semibold">dev</span>
-                    <span className="material-icons">swap_horiz</span>
-                    <span data-selected={!settings.devMode} className="data-[selected='true']:text-(--light-secondary) data-[selected='true']:font-semibold">business</span>
-                </button>
+                <Switch 
+                    title="Stories"
+                    action={flipDevMode} 
+                    selected={settings.devMode} 
+                    onText="dev" 
+                    offText="business"
+                    />
+                <Switch 
+                    title="Cut Content"
+                    action={flipCutContent} 
+                    selected={settings.cutContent} 
+                    onText="show" 
+                    offText="hide"
+                    />
             </div>
+        </div>
+    )
+}
+
+const Switch = ({title, selected, action, onText, offText}: {title: string, selected: boolean, action: () => void, onText: string, offText: string}) => {
+    return (
+        <div>
+            <label id="content-mode-label" className="text-xl">{title}</label>
+            <button aria-labelledby="content-mode-label" onClick={action} className="text-lg flex items-center gap-2 px-6 py-2 my-1 w-fit cursor-pointer">
+                <span data-selected={selected} className="data-[selected='true']:text-(--light-secondary) data-[selected='true']:font-semibold">{onText}</span>
+                <span className="material-icons">swap_horiz</span>
+                <span data-selected={!selected} className="data-[selected='true']:text-(--light-secondary) data-[selected='true']:font-semibold">{offText}</span>
+            </button>
         </div>
     )
 }
