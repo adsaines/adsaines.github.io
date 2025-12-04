@@ -66,3 +66,20 @@ She thought each of the listed technologies were clickable because they were in 
 
 - fill the resume gap (do as nick suggested) => DONE
 - doesn't get the thanks page... 3rd or 4th strike for it, so remove, DONE
+
+# Gemini
+
+- make the resume page static using "getStaticProps" function to allow resume trawlers to grab it's contents
+
+# Me, my own
+
+## TODO
+
+- upload my resume here so that visitors can download it
+
+## DONE
+
+- create a picture for the tab mini-profile and internet crawlers
+  - also so that linked-in can pull it in the area: https://www.linkedin.com/in/alexsaines/details/featured/
+  - it's called a favicon => use my face
+- profesionalize the site byline: alex saines' site that proves he's awesome... maybe just ask ai to generate something

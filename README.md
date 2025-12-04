@@ -5,6 +5,8 @@
 - [If css imports are not recognized...](https://nextjs.org/docs/app/api-reference/config/typescript#ide-plugin)
 - [Github Pages](https://docs.github.com/en/pages)
 - [Google Material Fonts/Icons](https://fonts.google.com/icons)
+- [Yahoo, best practices for speeding up your web site ](https://developer.yahoo.com/performance/rules.html#favicon)
+- [NextJs Metadata Object](https://nextjs.org/docs/app/getting-started/metadata-and-og-images)
 
 # Purpose
 

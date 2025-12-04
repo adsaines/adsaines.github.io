@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Saines's site that proves he's awesome.",
-  description: "Seriously, I'm awesome. I can code in a fullstack environment from reports trolling databases on the bottom to an expanding modal informing table displays on the front end.",
+  title: "Alex Saines",
+  description: "Senior Full-Stack Engineer specializing in scalable architecture, critical refactoring, and data integration. Expert in React, Typescript, and managing pipeline deployments.",
 };
 
 export default function RootLayout({
@@ -28,20 +28,23 @@ export default function RootLayout({
         <html lang="en">
 			<head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <link 
-                    href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                    rel="stylesheet">  
-                </link>
+				<link 
+					href="https://fonts.googleapis.com/icon?family=Material+Icons"
+					rel="stylesheet" 
+					/>
+				<link 
+					rel="icon" 
+					href="../../public/favicon.png" 
+					/>
 			</head>
 
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-				
 				<SettingContextWrapper>
-				<Header>
-					{children}
-				</Header>
+					<Header>
+						{children}
+					</Header>
 				</SettingContextWrapper>
             </body>
         </html>
