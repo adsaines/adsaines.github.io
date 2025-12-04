@@ -75,11 +75,10 @@ She thought each of the listed technologies were clickable because they were in 
 
 ## TODO
 
-- upload my resume here so that visitors can download it
-
 ## DONE
 
 - create a picture for the tab mini-profile and internet crawlers
   - also so that linked-in can pull it in the area: https://www.linkedin.com/in/alexsaines/details/featured/
   - it's called a favicon => use my face
 - profesionalize the site byline: alex saines' site that proves he's awesome... maybe just ask ai to generate something
+- upload my resume here so that visitors can download it

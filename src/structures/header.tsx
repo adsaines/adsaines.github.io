@@ -186,7 +186,14 @@ const HeaderLink = ({path, name, hoverText, selected}: {path: string, name: stri
 
 export const SocialLinks = () => {
     return (
-        <>
+        <div className="flex gap-2 justify-center items-center">
+            <a 
+                href="/saines_resume_2025_12.pdf"
+                download='Alex-Saines-Resume.pdf'
+                className="flex justify-center items-center w-8 text-(--color-rose-100)"
+                >
+                <span className="material-icons w-8">picture_as_pdf</span>
+            </a>
             <a 
                 href="https://www.linkedin.com/in/AlexSaines"
                 target="_blank"
@@ -201,6 +208,6 @@ export const SocialLinks = () => {
                 >
                 <img className="w-8" src={gitHubLight.src} alt={'Github'} />
             </a>
-        </>
+        </div>
     )
 }
