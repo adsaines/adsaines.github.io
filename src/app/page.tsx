@@ -28,6 +28,9 @@ export default function Home() {
                 {
                     settings.synergy && <HomePageLink path="synergy" title="synergy" />
                 }
+                {
+                    settings.bread && <HomePageLink path="bread" title="bread" />
+                }
             </div>
         </div>
     );

@@ -154,6 +154,15 @@ const WideMediaHeader = () => {
                     hoverText="true synergy comes from within"
                     />
             }
+            {
+                settings.bread && 
+                <HeaderLink
+                    name="bread" 
+                    path="bread" 
+                    selected={path.includes('bread')}
+                    hoverText="let the baking commence!"
+                    />
+            }
             <div className="grow">
             </div>
             <SocialLinks />

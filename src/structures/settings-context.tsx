@@ -1,11 +1,12 @@
 'use client'
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export type PageSettings = {
     devMode: boolean;
     cutContent: boolean;
     synergy: boolean;
+    bread: boolean;
 }
 
 export type SettingsContextContents = {
@@ -21,6 +22,7 @@ export const SettingContextWrapper = ({children}: {children: React.ReactNode}) =
         devMode: false,
         cutContent: false,
         synergy: false,
+        bread: false,
     })
 
     const updateSettings = (newValues: Partial<PageSettings>) => {
@@ -29,6 +31,10 @@ export const SettingContextWrapper = ({children}: {children: React.ReactNode}) =
             ...newValues
         })
     }
+
+    useEffect(() => {
+        console.log(settings)
+    }, [settings])
 
     return (
         <SettingsContext.Provider 

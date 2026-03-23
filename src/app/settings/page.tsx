@@ -19,6 +19,10 @@ const Settings: NextPage = () => {
         updateSettings({synergy: !settings.synergy})
     }
 
+    const flipBread = () => {
+        updateSettings({bread: !settings.bread})
+    }
+
     return (
         <div className="flex flex-col gap-6 p-12 justify-start">
             <div className="flex flex-col">
@@ -42,6 +46,13 @@ const Settings: NextPage = () => {
                     selected={settings.synergy} 
                     onText="synergy" 
                     offText="division"
+                    />
+                <Switch 
+                    title="Bread"
+                    action={flipBread} 
+                    selected={settings.bread} 
+                    onText="bake" 
+                    offText="rise"
                     />
             </div>
         </div>
