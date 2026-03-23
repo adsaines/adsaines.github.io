@@ -32,10 +32,6 @@ export const SettingContextWrapper = ({children}: {children: React.ReactNode}) =
         })
     }
 
-    useEffect(() => {
-        console.log(settings)
-    }, [settings])
-
     return (
         <SettingsContext.Provider 
             value={{
