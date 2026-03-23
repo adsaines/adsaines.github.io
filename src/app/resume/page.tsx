@@ -5,7 +5,7 @@ import { SocialLinks } from "@/structures/header";
 
 const Resume: NextPage = () => {
     return (
-        <div className="h-full overflow-auto flex justify-center">
+        <div className="h-full overflow-auto flex justify-center mb-4">
             <article className={`resume flex flex-col md:p-4 gap-4 m-2 md:max-w-4/5 sm:w-full text-lg`}>
               
                 <StandardResumeSection title="Methodologies" show={false} >
