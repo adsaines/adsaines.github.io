@@ -1,14 +1,10 @@
+import { GridFactory } from "@/projections/gridTableGenerators";
+import { AmountsAndRatios } from "./sections";
+
 export default function Bread() {
     return (
         <article className="h-full overflow-auto flex flex-col mb-4 gap-6 p-8">
-            <section className="flex flex-col gap-4">
-                Here I will show a basic table of ingredient amounts for a hearth loaf. Noting that you should weight the compactable ingredients.
-                <div className="grid grid-cols-3 w-1/2 m-auto">
-                    <div className="grid-cell">Ingredient</div>
-                    <div className="grid-cell">Weight (grams)</div>
-                    <div className="grid-cell">Percent (%)</div>
-                </div>
-            </section>
+            <AmountsAndRatios />
             <section className="flex flex-col w-full">
                 <div>
                     Here will describe the number and times of kneading required to turn the ingredients into a mass that will produce a soft bread loaf.
