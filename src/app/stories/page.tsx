@@ -68,6 +68,7 @@ const StoriesPage: NextPage = () => {
                     data-show={storiesFetched} 
                     className="data-[show='false']:hidden flex flex-col w-2/5 border-r-2 p-4 gap-2"
                     >
+                    {/* TODO: when the screen is small, but not small by css standards the story text is wrapping and centering. It should be truncated. */}
                     {
                         storyList
                             .sort(sortGreatestFirst)
