@@ -1,24 +1,13 @@
 import { GridFactory } from "@/projections/gridTableGenerators";
-import { AmountsAndRatios } from "./sections";
+import { AmountsAndRatios, KneadingAndWaiting } from "./sections";
 
 export default function Bread() {
     return (
         <article className="h-full overflow-auto flex flex-col mb-4 gap-6 p-8">
             <AmountsAndRatios />
-            <section className="flex flex-col w-full">
-                <div>
-                    Here will describe the number and times of kneading required to turn the ingredients into a mass that will produce a soft bread loaf.
-                </div>
-                <div className="grid grid-cols-2 w-1/2 m-auto">
-                    <div className="grid-cell">freshly mixed</div>
-                    <div className="grid-cell">first turn</div>
-                    <div className="grid-cell">second turn</div>
-                    <div className="grid-cell">third turn</div>
-                </div>
-                <div>
-                    Final picture of what the loaf should look like when you split it and place it in the banneton.
-                </div>
-            </section>
+            <hr />
+            <KneadingAndWaiting />
+            <hr />
             <section>
                 This will talk about why my wait times won't necessarily be your wait times.
             </section>

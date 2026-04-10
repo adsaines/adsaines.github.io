@@ -17,6 +17,7 @@
     --light-secondary: var(--color-teal-400);
     --light-tertiary: var(--color-emerald-400);
     --highlight: var(--color-fuchsia-700);
+    --external-link: var(--color-cyan-400)
 }
 
 @media (prefers-color-scheme: dark) {
