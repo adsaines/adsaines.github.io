@@ -210,13 +210,10 @@ export const LetsBake = () => {
                 </div>
                 <div className="flex flex-col gap-4 justify-center">
                     <p>
-                        Start your oven. Set it to 500 deg F / 260 deg C and place a <a className="text-(--external-link) hover:underline" href="https://en.wikipedia.org/wiki/Dutch_oven" target="_blank">Dutch Oven</a> or <a className="text-(--external-link) hover:underline" href="https://www.amazon.com/Lodge-Cooker-Pre-seasoned-Skillet-Convertible/dp/B0009JKG9M" target="_blank">Combo Cooker</a> the center. It also helps to have a baking stone (pizza stone) on the bottom of the oven.
+                        Start your oven. Set it to 500 deg F / 260 deg C and place a <a className="text-(--external-link) hover:underline" href="https://en.wikipedia.org/wiki/Dutch_oven" target="_blank">Dutch Oven</a> or <a className="text-(--external-link) hover:underline" href="https://www.amazon.com/Lodge-Cooker-Pre-seasoned-Skillet-Convertible/dp/B0009JKG9M" target="_blank">Combo Cooker</a> in the center. It also helps to have a baking stone (pizza stone) on the bottom of the oven.
                     </p>
                     <p>
                         Let your oven heat up for at least 30 minutes so that the pot is piping hot.
-                    </p>
-                    <p>
-                        Once the oven and pan are both hot, we need to remove the dough and score it.
                     </p>
                 </div>
             </div>
@@ -245,10 +242,10 @@ export const LetsBake = () => {
                 <p>design is mostly your choice</p>
             </div>
             <p>
-                As an aside: note that the inside of the loaf is not solid. There should be lots of little bubbles and what looks like a set of webbed connections. This is a mark of proper yeast gestation. The internal strength of your bread is determined by this web. If it's good and strong you get a soft bouncy interior.
+                Note that the inside of the loaf is not solid. There should be lots of little bubbles and what looks like a set of webbed connections. This is a mark of proper yeast gestation. The internal strength of your bread is determined by this web. If it's good and strong you get a soft bouncy interior.
             </p>
             <p>
-                Place your loaf into you cooker. <span className="text-(--light-tertiary)">MAKE SURE TO PLACE THE LID ONTO YOUR POT</span>. And set a timer for 20 minutes.
+                Place your loaf into your cooker. <span className="text-(--light-tertiary)">MAKE SURE TO PLACE THE LID ONTO YOUR POT</span>. And set a timer for 20 minutes.
             </p>
             <p>
                 It is crucial that you put the lid on the pot for the first half of the baking time because the rise of your loaf requires a moist environment. Professional ovens accomplish this by adding steam into the oven directly. Using a lidded pot traps all of the moisture in your loaf and steams it without the need to add any to your oven.
