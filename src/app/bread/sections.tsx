@@ -121,3 +121,49 @@ export const KneadingAndWaiting = () => {
         </section>
     )
 }
+
+export const WaitTimes = () => {
+    return (
+        <section className="flex flex-col w-full gap-4 px-8">
+            <h2 className="text-center text-xl text-(--light-secondary)">
+                Waiting / Proofing
+            </h2>
+            <h3 className="text-lg text-(--light-tertiary)">
+                TLDR
+            </h3>
+            <p>
+                It your kitchen hovers around ~60 deg f, give your bread ~10 hours.
+            </p>
+            <p>
+                It your kitchen hovers around ~70 deg f, give your bread ~7 hours.
+            </p>
+            <p>
+                It your kitchen is hotter than 75 deg f, give it ~4 hours, and check every hour after if it's not done.
+            </p>
+            <h3 className="text-lg text-(--light-tertiary)">
+                Proofing is highly reliant on temperature.
+            </h3>
+            <p>
+                In the winter I mix and fold after the kids are in bed. Then let the dough proof overnight on the counter; 9-12 hours. I start the oven when I wake up and bake over the course of the morning.
+            </p>
+            <p>
+                In the spring I mix (1-2pm), fold (done around 4pm), and proof (until 10 or midnight) in the afternoon/evening. I have to refrigerate the dough overnight or bake late.
+            </p>
+            <p>
+                The difference? In the winter my kitchen's ambient temperature is 60-65. In the spring it's 70-75. About a 10 degree difference means that my proofing time goes from ~10 to ~7 hours. If you also have a cold winter kitchen and want to speed up the process; buy a <a className="text-(--external-link) hover:underline" href="https://www.amazon.com/proofing-box/s?k=proofing+box" target="_blank">proofing box</a>. They aren't too expensive and can fit 2 loaves of bread comfortably.
+            </p>
+            <p>
+                Do note, that the amount of time your bread proofs does effect the overall flavor. A loaf that has proofed longer at lower temperatures has a more "sour" flavor.
+            </p>
+            <h3 className="text-lg text-(--light-tertiary)">
+                When your dough is ready you can refrigerate it...
+            </h3>
+            <p>
+                ...for up to two days without changing baking times or conditions. I haven't tried it any longer and the folks that I read and watch generally don't refrigerate the loaves for more than 24 hours purposefully.
+            </p>
+            <p>
+                I like to mix, fold, and proof over the course of one day, then refrigerate over night. It adds some flavor to the bread and makes it very easy to mark (score).
+            </p>
+        </section>
+    )
+}
