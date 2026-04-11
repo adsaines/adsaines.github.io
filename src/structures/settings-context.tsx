@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname } from "next/navigation";
 import { createContext, useEffect, useState } from "react";
 
 export type PageSettings = {
@@ -17,6 +18,7 @@ export type SettingsContextContents = {
 export const SettingsContext = createContext({} as SettingsContextContents)
 
 export const SettingContextWrapper = ({children}: {children: React.ReactNode}) => {
+    const path = usePathname();
 
     const [settings, setSettings] = useState<PageSettings>({
         devMode: false,
@@ -31,6 +33,20 @@ export const SettingContextWrapper = ({children}: {children: React.ReactNode}) =
             ...newValues
         })
     }
+
+    useEffect(() => {
+        if(path.includes('thanks') && !settings.cutContent){
+            updateSettings({...settings, cutContent: true})
+        }
+        
+        if(path.includes('synergy') && !settings.synergy){
+            updateSettings({...settings, synergy: true})
+        }
+
+        if(path.includes('bread') && !settings.bread){
+            updateSettings({...settings, bread: true})
+        }
+    }, [path])
 
     return (
         <SettingsContext.Provider 
