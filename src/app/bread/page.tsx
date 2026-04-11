@@ -1,5 +1,5 @@
 import { GridFactory } from "@/projections/gridTableGenerators";
-import { AmountsAndRatios, KneadingAndWaiting, WaitTimes } from "./sections";
+import { AmountsAndRatios, KneadingAndWaiting, LetsBake, WaitTimes } from "./sections";
 
 export default function Bread() {
     return (
@@ -10,9 +10,7 @@ export default function Bread() {
             <hr />
             <WaitTimes />
             <hr />
-            <section>
-                Now bake that loaf. Probably throw in a sex joke about jiggly things. Mention dutch oven, temperature, time, and loaf size. Make sure to note that crisp crust is not dependent on coating a loaf with anything but the amount of time cooked without a lid.
-            </section>
+            <LetsBake />
         </article>
     )
 }
