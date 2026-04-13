@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Header } from "@/structures/header";
 import '@/styles/globals.css'
 import { SettingContextWrapper } from "@/structures/settings-context";
+import favicon from '@/images/favicon.ico'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +29,11 @@ export default function RootLayout({
         <html lang="en">
 			<head>
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* https://ogp.me/ => for facebook, and hopefully texting preview blocks*/}
+        <meta property="og:title" content="Alex Saine's dev page" />
+        <meta property="og:type" content="web page" />
+        <meta property="og:image" content={favicon.src} />
+        <meta property="og:url" content="https://adsaines.github.io/" />
 				<link 
 					href="https://fonts.googleapis.com/icon?family=Material+Icons"
 					rel="stylesheet" 
