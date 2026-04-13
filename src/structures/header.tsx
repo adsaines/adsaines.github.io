@@ -75,6 +75,15 @@ const SmallMediaHeader = () => {
                         setExpanded={setExpanded}
                         />
                 }
+                {
+                    settings.bread && 
+                    <HamburgerMenuLink
+                        title="bread" 
+                        path="bread" 
+                        selected={path.includes('bread')}
+                        setExpanded={setExpanded}
+                        />
+                }
             </nav>
         </>
     )
