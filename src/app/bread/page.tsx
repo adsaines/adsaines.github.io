@@ -1,4 +1,3 @@
-import { GridFactory } from "@/projections/gridTableGenerators";
 import { AmountsAndRatios, KneadingAndWaiting, LetsBake, WaitTimes } from "./sections";
 
 export default function Bread() {
