@@ -27,32 +27,31 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-			<head>
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* https://ogp.me/ => for facebook, and hopefully texting preview blocks*/}
-        <meta property="og:title" content="Alex Saine's dev page" />
-        <meta property="og:type" content="web page" />
-        <meta property="og:image" content={textPreview.src} />
-        <meta property="og:url" content="https://adsaines.github.io/" />
-				<link 
-					href="https://fonts.googleapis.com/icon?family=Material+Icons"
-					rel="stylesheet" 
-					/>
-        {/* I don't think this is doing anything */}
-				{/* <link 
-					rel="icon" 
-					href="../../public/favicon.png" 
-					/> */}
-			</head>
+		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			{/* https://ogp.me/ => for facebook, and hopefully texting preview blocks*/}
+			<meta property="og:title" content="Alex Saines' dev page" />
+			<meta property="og:description" content="A set of information that begins to describe me. You can always see my resume and professional lessons (story_time). You can also investigate several hidden journeys by visiting the settings." />
+			<meta property="og:type" content="web page" />
+			<meta property="og:image" content={textPreview.src} />
+			<meta property="og:image:alt" content="Me and my second kiddo on a windy day." />
+			<meta property="og:url" content="https://adsaines.github.io/" />
+			<meta property="og:site_name" content="GitHub IO" />
+
+			<link 
+				href="https://fonts.googleapis.com/icon?family=Material+Icons"
+				rel="stylesheet" 
+				/>
+		</head>
 
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-				<SettingContextWrapper>
-					<Header>
-						{children}
-					</Header>
-				</SettingContextWrapper>
+              <SettingContextWrapper>
+                <Header>
+                  {children}
+                </Header>
+              </SettingContextWrapper>
             </body>
         </html>
     );
