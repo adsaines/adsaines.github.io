@@ -68,14 +68,14 @@ export const AmountsAndRatios = () => {
                     <p>
                         Hearth breads (classic sourdough loaves) have much in common with each other. Bakers over the years have zeroed in on several common practices that you will find helpful to acknowledge and not adjust as you begin your bread baking journey.
                     </p>
-                    <p className="pl-4">
-                        Commonality #1: you need salt. Around 2% is standard. Without salt your loaf will be bland.
+                    <p className="sm:pl-4">
+                        <span className="max-sm:text-(--light-tertiary)">Commonality #1:</span> you need salt. Around 2% is standard. Without salt your loaf will be bland.
                     </p>
-                    <p className="pl-4">
-                        Commonality #2: most of your loaf should consist of all purpose flour. That is white flour with a protein percentage of 11-12%. This provides the best rise and allows for stretchier less crumbly bread.
+                    <p className="sm:pl-4">
+                        <span className="max-sm:text-(--light-tertiary)">Commonality #2:</span> most of your loaf should consist of all purpose flour. That is white flour with a protein percentage of 11-12%. This provides the best rise and allows for stretchier less crumbly bread.
                     </p>
-                    <p className="pl-4">
-                        Commonality #3: If adding additional ingredients to you bread, soak those ingredients before adding them. This includes any nuts, seeds, dried fruits, herbs... etc. The moisture content in the additions must exist and not mess with the liquid percentage of the base loaf.
+                    <p className="sm:pl-4">
+                        <span className="max-sm:text-(--light-tertiary)">Commonality #3:</span> If adding additional ingredients to you bread, soak those ingredients before adding them. This includes any nuts, seeds, dried fruits, herbs... etc. The moisture content in the additions must exist and not mess with the liquid percentage of the base loaf.
                     </p>
                 </div>
             </div>
@@ -109,7 +109,7 @@ export const KneadingAndWaiting = () => {
                     <span className="text-(--light-tertiary)">&#191;&#191; fold and wait ?? (4/3)</span>: If after three folds and waits the dough is loose and lacks tension on the edges then you want to do some more iterations of folding and waiting, hopefully just one more.
                 </li>
                 <li>
-                    <span className="text-(--light-tertiary)">Move to a banneton</span>: Once the dough is mostly smooth and has some tension after a waiting period it is ready for the final fold. You want to use a <a className="text-(--external-link) hover:underline" href="https://www.youtube.com/watch?v=1HN4heVooA0" target="_blank">letter fold</a> and then dust the dough with flour and move it to a <a className="text-(--external-link) hover:underline" href="https://letmegooglethat.com/?q=banneton+basket" target="_blank">banneton basket.</a> For good measure, and no sticking issues, flour the banneton as well.
+                    <span className="text-(--light-tertiary)">Move to a banneton</span>: Once the dough is mostly smooth and has some tension after a waiting period it is ready for the final fold. You want to use a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.youtube.com/watch?v=1HN4heVooA0" target="_blank">letter fold</a> and then dust the dough with flour and move it to a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://letmegooglethat.com/?q=banneton+basket" target="_blank">banneton basket.</a> For good measure, and no sticking issues, flour the banneton as well.
                 </li>
             </ul>
             <div className="grid grid-cols-2 max-sm:grid-cols-1 lg:w-3/4 max-sm:w-full m-auto gap-4 sm:p-4">
@@ -279,7 +279,7 @@ export const LetsBake = () => {
                     <img src={Baking2.src} alt="steamed bread expands well"/>
                     <p className="max-sm:text-(--light-tertiary)">steamed bread expands well</p>
                 </div>
-                <div className="flex flex-col gap-4 justify-center w-3/5">
+                <div className="flex flex-col gap-4 justify-center lg:w-3/5">
                     <p>
                         Steaming a loaf helps it expand and sets you up for a good springy interior.
                     </p>
