@@ -358,68 +358,63 @@ const CollapsibleBreadSection = ({title, children, startOpen = false}:{title: st
     const [isOpen, setIsOpen] = useState(startOpen);
 
     return (
-        <button 
-            className="flex group my-4" 
-            onClick={() => setIsOpen(!isOpen)}
-            >
-            <section className={`
-                flex flex-col w-full gap-4 p-8 
+        <section className={`
+            flex flex-col w-full gap-4 p-8 my-4 
 
-                border
+            border
 
-                hover:border-dashed 
-                hover:border-(--light-primary)
-                hover:border-r-(--light-primary) hover:border-b-(--light-primary) hover:border-l-(--light-primary)
- 
-                border-r-(--dark-primary) border-b-(--dark-primary) border-l-(--dark-primary)
-                `}>
+            hover:border-dashed 
+            hover:border-(--light-primary)
+            hover:border-r-(--light-primary) hover:border-b-(--light-primary) hover:border-l-(--light-primary)
+
+            border-r-(--dark-primary) border-b-(--dark-primary) border-l-(--dark-primary)
+            `}>
+            <button 
+                className="flex justify-around text-(--light-secondary) group" 
+                onClick={() => setIsOpen(!isOpen)}
+                >
+                <div className="group-hover:invisible flex text-center items-center">
+                    <span className="material-icons ">keyboard_double_arrow_right</span>
+                </div>
                 <div 
-                    className="flex justify-around text-(--light-secondary) group" 
-                    onClick={() => setIsOpen(!isOpen)}
+                    data-show={!isOpen}
+                    className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
                     >
-                    <div className="group-hover:invisible flex text-center items-center">
-                        <span className="material-icons ">keyboard_double_arrow_right</span>
-                    </div>
-                    <div 
-                        data-show={!isOpen}
-                        className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
-                        >
-                        <span className="material-icons">keyboard_double_arrow_down</span>
-                    </div>
-                    <div 
-                        data-show={isOpen}
-                        className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
-                        >
-                        <span className="material-icons">keyboard_double_arrow_up</span>
-                    </div>
-                    
-                    <h2 className="text-center text-xl">
-                        {title}
-                    </h2>
-
-                    <div 
-                        data-show={!isOpen}
-                        className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
-                        >
-                        <span className="material-icons">keyboard_double_arrow_down</span>
-                    </div>
-                    <div 
-                        data-show={isOpen}
-                        className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
-                        >
-                        <span className="material-icons">keyboard_double_arrow_up</span>
-                    </div>
-                    <div className="group-hover:invisible flex text-center items-center">
-                        <span className="material-icons ">keyboard_double_arrow_left</span>
-                    </div>
+                    <span className="material-icons">keyboard_double_arrow_down</span>
                 </div>
                 <div 
                     data-show={isOpen}
-                    className="flex flex-col gap-4 data-[show='false']:hidden text-left"
+                    className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
                     >
-                    {children}
+                    <span className="material-icons">keyboard_double_arrow_up</span>
                 </div>
-            </section>
-        </button>
+                
+                <h2 className="text-center text-xl">
+                    {title}
+                </h2>
+
+                <div 
+                    data-show={!isOpen}
+                    className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                    >
+                    <span className="material-icons">keyboard_double_arrow_down</span>
+                </div>
+                <div 
+                    data-show={isOpen}
+                    className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                    >
+                    <span className="material-icons">keyboard_double_arrow_up</span>
+                </div>
+                <div className="group-hover:invisible flex text-center items-center">
+                    <span className="material-icons ">keyboard_double_arrow_left</span>
+                </div>
+            </button>
+            <div 
+                data-show={isOpen}
+                className="flex flex-col gap-4 data-[show='false']:hidden text-left"
+                >
+                {children}
+            </div>
+        </section>
     )
 }
