@@ -13,6 +13,65 @@ import Baking3 from '@/images/Bread_Baking_3.jpg'
 import Baked1 from '@/images/Bread_Baked_1.jpg'
 import Baked2 from '@/images/Bread_Baked_2.jpg'
 import Baked4 from '@/images/Bread_Baked_4.jpg'
+import { useState } from "react"
+
+export const BreadPurpose = () => {
+    return (
+        <CollapsibleBreadSection title="Why I make bread" startOpen={true}>
+            <p>
+                I like bread. Kroger sells (or did at one point in the past) some bake it at home baguettes. I would slice them in half, eat the interior, then butter the crust. I wanted that over candy as a kid.
+            </p>
+            <p>
+                So, over the years I have attempted to make bread. I've tried a lot of different styles but I never got that fluffy stretchy interior. Hearth breads and overnight breads and festival breads all fell short of what I expected in the oven; buns didn't pop; loaves didn't rise; interiors were dense and crumbly; flavors were bland. They weren't that great.
+            </p>
+            <p>
+                That changed when I got my sourdough starter going. The first few popped! For the first time in my life the bread got bigger in the oven. When it came out you could squeeze it and hear the crust go crackle and crunch. After a bit of practice the interior became stretchy and chewy and there were little holes in it. It came out right, and now I've got my flow. I'm making 5 or 6 loaves a week and keeping my friends supplied.
+            </p>
+        </CollapsibleBreadSection>
+    )
+}
+
+export const BreadOverview = () => {
+    return (
+        <CollapsibleBreadSection title="Overview: The basic form of things" startOpen={true}>
+            <p>
+                This is the short version of the detailed sections below, no pics or anything, just the forward to describe the coming chapters.
+            </p>
+            <p>
+                Starter... there are so many sources on how to get it. You can order ready to go starter online or make it yoursel. I'll leave the googling to you for a ready to go supplier. If you want to start from scratch, try <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe" target="_blank">King Arthur's</a> way.
+            </p>
+            <p>
+                Amounts: I make loaves that include 500 grams of flour. You must measure by weight because any ingredient that is compactible (flour, salt, most granular things) do not have a reliable weight to volume ratio.
+            </p>
+            <p>
+                Kneading and folding: my books and online sources say that there are four steps to get from freshly mixed dough to bakable shaped dough.
+            </p>
+            <ul className="list-decimal max-sm:pl-4 sm:pl-8 text-left">
+                <li>
+                    Mix all ingredients.
+                </li>
+                <li>
+                    Wait 30 minutes, turn dough using a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.youtube.com/watch?v=1HN4heVooA0" target="_blank">letter fold</a> or similar technique. Repeate 3 times for a total of four folds.
+                </li>
+                <li>
+                    After the fourth fold shape the dough and place it in a container to proof.
+                </li>
+            </ul>
+            <p>
+                Proofing takes 4-12 hours for bread to complete (depends on temperature).
+            </p>
+            <p>
+                Optional Proofing: 12-24 hours in the fridge to increase acidity / flavor.
+            </p>
+            <p>
+                Baking time: proofed dough goes into a hot dutch oven with the lid on at 500 degs F for 20 minutes. Then 450 deg F with the lid off for 20 more minutes.
+            </p>
+            <p>
+                Resting: don't touch the bread for at least an hour after it comes out of the oven. The cooling process finalizes the structure. Cutting the bread early stops the setting process.
+            </p>
+        </CollapsibleBreadSection>
+    )
+}
 
 const AmountsTable = () => {
     return (
@@ -46,49 +105,41 @@ const AmountsTable = () => {
 
 export const AmountsAndRatios = () => {
     return (
-        <section className="flex gap-4 px-8">
-            <div className="flex flex-col gap-4">
-                <h2 className="text-center text-xl text-(--light-secondary)">
-                    Amounts & Ratios
-                </h2>
-                <div className="flex max-sm:flex-col justify-start gap-4">
-                    <div className="flex flex-col gap-2">
-                        <p>
-                            The importance of measurements cannot be overstated in the world of baking. Any ingredient that can be compacted will not provide the same amount when mesaured using volumes (cups / tablespoons / liters). For flour measurements you must add by weight. I use grams becuase my sources all use grams; thus my notes are also in grams.
-                        </p>
-                        <p>
-                            Percentages in baking are represented as ingredient weight / total flour weight. Thus, in this pages example, the total flour weight is 500 grams, and the percentages are all (ingredient weight) / 500.
-                        </p>
-                    </div>
-                    <div className="flex justify-start sm:w-1/2 shrink-0">
-                        <AmountsTable />
-                    </div>
-                </div>
-                <div className="flex flex-col gap-4">
+        <CollapsibleBreadSection title="Details: Amounts & Ratios" >
+            <div className="flex max-sm:flex-col justify-start gap-4">
+                <div className="flex flex-col gap-2">
                     <p>
-                        Hearth breads (classic sourdough loaves) have much in common with each other. Bakers over the years have zeroed in on several common practices that you will find helpful to acknowledge and not adjust as you begin your bread baking journey.
+                        The importance of measurements cannot be overstated in the world of baking. Any ingredient that can be compacted will not provide the same amount when mesaured using volumes (cups / tablespoons / liters). For flour measurements you must add by weight. I use grams becuase my sources all use grams; thus my notes are also in grams.
                     </p>
-                    <p className="sm:pl-4">
-                        <span className="max-sm:text-(--light-tertiary)">Commonality #1:</span> you need salt. Around 2% is standard. Without salt your loaf will be bland.
+                    <p>
+                        Percentages in baking are represented as ingredient weight / total flour weight. Thus, in this pages example, the total flour weight is 500 grams, and the percentages are all (ingredient weight) / 500.
                     </p>
-                    <p className="sm:pl-4">
-                        <span className="max-sm:text-(--light-tertiary)">Commonality #2:</span> most of your loaf should consist of all purpose flour. That is white flour with a protein percentage of 11-12%. This provides the best rise and allows for stretchier less crumbly bread.
-                    </p>
-                    <p className="sm:pl-4">
-                        <span className="max-sm:text-(--light-tertiary)">Commonality #3:</span> If adding additional ingredients to you bread, soak those ingredients before adding them. This includes any nuts, seeds, dried fruits, herbs... etc. The moisture content in the additions must exist and not mess with the liquid percentage of the base loaf.
-                    </p>
+                </div>
+                <div className="flex justify-start sm:w-1/2 shrink-0">
+                    <AmountsTable />
                 </div>
             </div>
-        </section>
+            <div className="flex flex-col gap-4">
+                <p>
+                    Hearth breads (classic sourdough loaves) have much in common with each other. Bakers over the years have zeroed in on several common practices that you will find helpful to acknowledge and not adjust as you begin your bread baking journey.
+                </p>
+                <p className="sm:pl-4">
+                    <span className="max-sm:text-(--light-tertiary)">Commonality #1:</span> you need salt. Around 2% is standard. Without salt your loaf will be bland.
+                </p>
+                <p className="sm:pl-4">
+                    <span className="max-sm:text-(--light-tertiary)">Commonality #2:</span> most of your loaf should consist of all purpose flour. That is white flour with a protein percentage of 11-12%. This provides the best rise and allows for stretchier less crumbly bread.
+                </p>
+                <p className="sm:pl-4">
+                    <span className="max-sm:text-(--light-tertiary)">Commonality #3:</span> If adding additional ingredients to you bread, soak those ingredients before adding them. This includes any nuts, seeds, dried fruits, herbs... etc. The moisture content in the additions must exist and not mess with the liquid percentage of the base loaf.
+                </p>
+            </div>
+        </CollapsibleBreadSection>
     )
 }
 
 export const KneadingAndWaiting = () => {
     return (
-        <section className="flex flex-col w-full gap-4 px-8">
-            <h2 className="text-center text-xl text-(--light-secondary)">
-                Kneading and Folding
-            </h2>
+        <CollapsibleBreadSection title="Details: Kneading and Folding">
             <p>
                 Once the ingredients are chosen and selected... 
             </p>
@@ -137,16 +188,13 @@ export const KneadingAndWaiting = () => {
                 <img src={rise1.src} alt="folded and in it's banneton"/>
                 <p className="max-sm:text-(--light-tertiary)">folded and in it's banneton</p>
             </div>
-        </section>
+        </CollapsibleBreadSection>
     )
 }
 
 export const WaitTimes = () => {
     return (
-        <section className="flex flex-col w-full gap-4 px-8">
-            <h2 className="text-center text-xl text-(--light-secondary)">
-                Waiting / Proofing
-            </h2>
+        <CollapsibleBreadSection title="Details: Waiting / Proofing">
             <h3 className="text-lg text-(--light-tertiary)">
                 TLDR
             </h3>
@@ -183,16 +231,13 @@ export const WaitTimes = () => {
             <p>
                 I like to mix, fold, and proof over the course of one day, then refrigerate over night. It adds some flavor to the bread and makes it very easy to mark (score).
             </p>
-        </section>
+        </CollapsibleBreadSection>
     )
 }
 
 export const LetsBake = () => {
     return (
-        <section className="flex flex-col w-full gap-4 px-8">
-            <h2 className="text-center text-xl text-(--light-secondary)">
-                Baking Time
-            </h2>
+        <CollapsibleBreadSection title="Details: Baking Time">
             <div className="flex max-sm:flex-col gap-4">
                 <div className="flex flex-col gap-4 justify-center">
                     <p>
@@ -305,6 +350,76 @@ export const LetsBake = () => {
                 <img src={Baked4.src} alt="properly proofed"/>
                 <p className="max-sm:text-(--light-tertiary)">I like to make two at a time</p>
             </div>
-        </section>
+        </CollapsibleBreadSection>
+    )
+}
+
+const CollapsibleBreadSection = ({title, children, startOpen = false}:{title: string, children: React.ReactNode, startOpen?: boolean}) => {
+    const [isOpen, setIsOpen] = useState(startOpen);
+
+    return (
+        <button 
+            className="flex group my-4" 
+            onClick={() => setIsOpen(!isOpen)}
+            >
+            <section className={`
+                flex flex-col w-full gap-4 p-8 
+
+                border
+
+                hover:border-dashed 
+                hover:border-(--light-primary)
+                hover:border-r-(--light-primary) hover:border-b-(--light-primary) hover:border-l-(--light-primary)
+ 
+                border-r-(--dark-primary) border-b-(--dark-primary) border-l-(--dark-primary)
+                `}>
+                <div 
+                    className="flex justify-around text-(--light-secondary) group" 
+                    onClick={() => setIsOpen(!isOpen)}
+                    >
+                    <div className="group-hover:invisible flex text-center items-center">
+                        <span className="material-icons ">keyboard_double_arrow_right</span>
+                    </div>
+                    <div 
+                        data-show={!isOpen}
+                        className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                        >
+                        <span className="material-icons">keyboard_double_arrow_down</span>
+                    </div>
+                    <div 
+                        data-show={isOpen}
+                        className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                        >
+                        <span className="material-icons">keyboard_double_arrow_up</span>
+                    </div>
+                    
+                    <h2 className="text-center text-xl">
+                        {title}
+                    </h2>
+
+                    <div 
+                        data-show={!isOpen}
+                        className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                        >
+                        <span className="material-icons">keyboard_double_arrow_down</span>
+                    </div>
+                    <div 
+                        data-show={isOpen}
+                        className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                        >
+                        <span className="material-icons">keyboard_double_arrow_up</span>
+                    </div>
+                    <div className="group-hover:invisible flex text-center items-center">
+                        <span className="material-icons ">keyboard_double_arrow_left</span>
+                    </div>
+                </div>
+                <div 
+                    data-show={isOpen}
+                    className="flex flex-col gap-4 data-[show='false']:hidden text-left"
+                    >
+                    {children}
+                </div>
+            </section>
+        </button>
     )
 }
