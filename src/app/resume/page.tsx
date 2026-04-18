@@ -170,7 +170,7 @@ const Resume: NextPage = () => {
                         <a
                             href="https://agilemanifesto.org/"
                             target="_blank"
-                            className="pt-2 text-(--light-tertiary) font-semibold flex items-center"
+                            className="pt-2 text-(--external-link) font-semibold flex items-center"
                             >
                                 The Agile Manifesto
                                 <span className="material-icons text-xs pl-2">open_in_new</span>

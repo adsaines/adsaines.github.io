@@ -87,11 +87,11 @@ export const ItemWithExplanations = ({
                     <a 
                         href={link.href} 
                         target="_blank" 
-                        className="text-(--light-secondary) flex items-center underline"
+                        className="text-(--external-link) flex items-center underline"
                         >
                         {link.title}
                         <div className="w-2">
-                            <span className="material-icons">arrow_outward</span>
+                            <span className="material-icons">open_in_new</span>
                         </div>
                     </a>
                 }
@@ -115,7 +115,6 @@ export type Brick = {
 }
 
 export const MakeBrick = ({brick}: {brick: Brick}) => {
-
     if (brick.link){
         return (
             <a 
@@ -125,7 +124,7 @@ export const MakeBrick = ({brick}: {brick: Brick}) => {
                 >
                 {brick.title}
                 <div className="w-2">
-                    <span className="material-icons">arrow_outward</span>
+                    <span className="material-icons">open_in_new</span>
                 </div>
             </a>
         )
