@@ -2,12 +2,6 @@
 
 import { AmountsAndRatios, BreadOverview, BreadPurpose, KneadingAndWaiting, LetsBake, WaitTimes } from "./sections";
 
-/*
-    things left to do...
-
-    1: link each of the overview lines to the other portions of the page.
-*/
-
 export default function Bread() {
     return (
         <article className="h-full overflow-auto">

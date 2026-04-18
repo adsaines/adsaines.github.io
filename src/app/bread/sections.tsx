@@ -13,11 +13,11 @@ import Baking3 from '@/images/Bread_Baking_3.jpg'
 import Baked1 from '@/images/Bread_Baked_1.jpg'
 import Baked2 from '@/images/Bread_Baked_2.jpg'
 import Baked4 from '@/images/Bread_Baked_4.jpg'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export const BreadPurpose = () => {
     return (
-        <CollapsibleBreadSection title="Why I make bread" startOpen={true}>
+        <CollapsibleBreadSection title="Why I make bread" startOpen={true} id="bread_purpose">
             <p>
                 I like bread. Kroger sells (or did at one point in the past) some bake it at home baguettes. I would slice them in half, eat the interior, then butter the crust. I wanted that over candy as a kid.
             </p>
@@ -33,7 +33,7 @@ export const BreadPurpose = () => {
 
 export const BreadOverview = () => {
     return (
-        <CollapsibleBreadSection title="Overview: The basic form of things" startOpen={true}>
+        <CollapsibleBreadSection title="Overview: The basic form of things" startOpen={true} id="bread_overview">
             <p>
                 This is the short version of the detailed sections below, no pics or anything, just the forward to describe the coming chapters.
             </p>
@@ -41,10 +41,10 @@ export const BreadOverview = () => {
                 Starter... there are so many sources on how to get it. You can order ready to go starter online or make it yoursel. I'll leave the googling to you for a ready to go supplier. If you want to start from scratch, try <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe" target="_blank">King Arthur's</a> way.
             </p>
             <p>
-                Amounts: I make loaves that include 500 grams of flour. You must measure by weight because any ingredient that is compactible (flour, salt, most granular things) do not have a reliable weight to volume ratio.
+                <a href="#amounts_and_ratios" className="text-(--external-link) hover:underline max-sm:underline">Amounts</a>: I make loaves that include 500 grams of flour. You must measure by weight because any ingredient that is compactible (flour, salt, most granular things) do not have a reliable weight to volume ratio.
             </p>
             <p>
-                Kneading and folding: my books and online sources say that there are four steps to get from freshly mixed dough to bakable shaped dough.
+                <a href="#kneading_and_waiting" className="text-(--external-link) hover:underline max-sm:underline">Kneading and Folding</a>: my books and online sources say that there are four steps to get from freshly mixed dough to bakable shaped dough.
             </p>
             <ul className="list-decimal max-sm:pl-4 sm:pl-8 text-left">
                 <li>
@@ -58,13 +58,13 @@ export const BreadOverview = () => {
                 </li>
             </ul>
             <p>
-                Proofing takes 4-12 hours for bread to complete (depends on temperature).
+                <a href="#wait_times" className="text-(--external-link) hover:underline max-sm:underline">Proofing</a> takes 4-12 hours for bread to complete (depends on temperature).
             </p>
             <p>
                 Optional Proofing: 12-24 hours in the fridge to increase acidity / flavor.
             </p>
             <p>
-                Baking time: proofed dough goes into a hot dutch oven with the lid on at 500 degs F for 20 minutes. Then 450 deg F with the lid off for 20 more minutes.
+                <a href="#baking_time" className="text-(--external-link) hover:underline max-sm:underline">Baking Time</a>: proofed dough goes into a hot dutch oven with the lid on at 500 degs F for 20 minutes. Then 450 deg F with the lid off for 20 more minutes.
             </p>
             <p>
                 Resting: don't touch the bread for at least an hour after it comes out of the oven. The cooling process finalizes the structure. Cutting the bread early stops the setting process.
@@ -81,11 +81,11 @@ const AmountsTable = () => {
                 />
             <hr className="col-span-3 pb-2 mt-2 sm:border-t-2" />
             <GridFactory.Row 
-                data={['Flour: All Purpose','400','80']}
+                data={['Flour: All Purpose','425','85']}
                 />
             <hr className="col-span-3 pb-2 mt-2 border-dashed lg:hidden" />
             <GridFactory.Row 
-                data={['Flour: Whole Wheat','100','20']}
+                data={['Flour: Whole Wheat','75','15']}
                 />
             <hr className="col-span-3 pb-2 mt-2 border-dashed lg:hidden" />
             <GridFactory.Row 
@@ -105,7 +105,7 @@ const AmountsTable = () => {
 
 export const AmountsAndRatios = () => {
     return (
-        <CollapsibleBreadSection title="Details: Amounts & Ratios" >
+        <CollapsibleBreadSection title="Details: Amounts & Ratios" id="amounts_and_ratios">
             <div className="flex max-sm:flex-col justify-start gap-4">
                 <div className="flex flex-col gap-2">
                     <p>
@@ -139,7 +139,7 @@ export const AmountsAndRatios = () => {
 
 export const KneadingAndWaiting = () => {
     return (
-        <CollapsibleBreadSection title="Details: Kneading and Folding">
+        <CollapsibleBreadSection title="Details: Kneading and Folding" id="kneading_and_waiting">
             <p>
                 Once the ingredients are chosen and selected... 
             </p>
@@ -194,7 +194,7 @@ export const KneadingAndWaiting = () => {
 
 export const WaitTimes = () => {
     return (
-        <CollapsibleBreadSection title="Details: Waiting / Proofing">
+        <CollapsibleBreadSection title="Details: Waiting / Proofing" id="wait_times">
             <h3 className="text-lg text-(--light-tertiary)">
                 TLDR
             </h3>
@@ -237,7 +237,7 @@ export const WaitTimes = () => {
 
 export const LetsBake = () => {
     return (
-        <CollapsibleBreadSection title="Details: Baking Time">
+        <CollapsibleBreadSection title="Details: Baking Time" id="baking_time">
             <div className="flex max-sm:flex-col gap-4">
                 <div className="flex flex-col gap-4 justify-center">
                     <p>
@@ -354,24 +354,54 @@ export const LetsBake = () => {
     )
 }
 
-const CollapsibleBreadSection = ({title, children, startOpen = false}:{title: string, children: React.ReactNode, startOpen?: boolean}) => {
+const CollapsibleBreadSection = ({
+    title, 
+    children, 
+    startOpen = false,
+    id,
+}:{
+    title: string, 
+    children: React.ReactNode, 
+    startOpen?: boolean,
+    id: string,
+}) => {
     const [isOpen, setIsOpen] = useState(startOpen);
+    const [hash, setHash] = useState<string>();
+
+    // Thanks AI, react doesn't like to do this.
+    useEffect(() => {
+        if(typeof window === undefined) return;
+
+        const handleHashChange = () => {
+            setHash(window.location.hash);
+        };
+
+        window.addEventListener('hashchange', handleHashChange);
+        return () => window.removeEventListener('hashchange', handleHashChange);
+    }, []);
+
+    useEffect(() => {
+        if(hash === `#${id}` && !isOpen){
+            setIsOpen(true);
+        }
+    }, [hash])
 
     return (
         <section className={`
             flex flex-col w-full gap-4 p-8 my-4 
 
             border
+            border-(--dark-primary)
 
             hover:border-dashed 
             hover:border-(--light-primary)
             hover:border-r-(--light-primary) hover:border-b-(--light-primary) hover:border-l-(--light-primary)
 
-            border-r-(--dark-primary) border-b-(--dark-primary) border-l-(--dark-primary)
             `}>
             <button 
-                className="flex justify-around text-(--light-secondary) group" 
+                className="flex justify-around text-(--light-secondary) group p-4 border" 
                 onClick={() => setIsOpen(!isOpen)}
+                id={id}
                 >
                 <div className="group-hover:invisible flex text-center items-center">
                     <span className="material-icons ">keyboard_double_arrow_right</span>
