@@ -38,13 +38,13 @@ export const BreadOverview = () => {
                 This is the short version of the detailed sections below, no pics or anything, just the forward to describe the coming chapters.
             </p>
             <p>
-                Starter... there are so many sources on how to get it. You can order ready to go starter online or make it yoursel. I'll leave the googling to you for a ready to go supplier. If you want to start from scratch, try <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe" target="_blank">King Arthur's</a> way.
+                Starter... there are so many sources on how to get it. You can order ready to go starter online or make it yourself. I'll leave the googling to you for a ready to go supplier. If you want to start from scratch, try <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe" target="_blank">King Arthur's</a> way.
             </p>
             <p>
-                <a href="#amounts_and_ratios" className="text-(--external-link) hover:underline max-sm:underline">Amounts</a>: I make loaves that include 500 grams of flour. You must measure by weight because any ingredient that is compactible (flour, salt, most granular things) do not have a reliable weight to volume ratio.
+                <a href="#amounts_and_ratios" className="text-(--external-link) hover:underline max-sm:underline">Amounts</a>: I make loaves that include 500 grams of flour. You must measure by weight because any ingredient that is compactible (flour(s) / most powdered things) do not have a reliable weight to volume ratio.
             </p>
             <p>
-                <a href="#kneading_and_waiting" className="text-(--external-link) hover:underline max-sm:underline">Kneading and Folding</a>: my books and online sources say that there are four steps to get from freshly mixed dough to bakable shaped dough.
+                <a href="#kneading_and_waiting" className="text-(--external-link) hover:underline max-sm:underline">Kneading and Folding</a>: my books and online sources say that there are three steps to get from freshly mixed dough to bakable shaped dough.
             </p>
             <ul className="list-decimal max-sm:pl-4 sm:pl-8 text-left">
                 <li>
@@ -112,7 +112,7 @@ export const AmountsAndRatios = () => {
                         The importance of measurements cannot be overstated in the world of baking. Any ingredient that can be compacted will not provide the same amount when mesaured using volumes (cups / tablespoons / liters). For flour measurements you must add by weight. I use grams becuase my sources all use grams; thus my notes are also in grams.
                     </p>
                     <p>
-                        Percentages in baking are represented as ingredient weight / total flour weight. Thus, in this pages example, the total flour weight is 500 grams, and the percentages are all (ingredient weight) / 500.
+                        Percentages in baking are represented as ingredient weight / total flour weight. Thus, in this recipe, the total flour weight is 500 grams, and the percentages are all (ingredient weight) / 500.
                     </p>
                 </div>
                 <div className="flex justify-start sm:w-1/2 shrink-0">
@@ -157,12 +157,13 @@ export const KneadingAndWaiting = () => {
                     <span className="text-(--light-tertiary)">FOLD AND WAIT (3/3)</span>: Repeat the previous step.
                 </li>
                 <li>
-                    <span className="text-(--light-tertiary)">&#191;&#191; fold and wait ?? (4/3)</span>: If after three folds and waits the dough is loose and lacks tension on the edges then you want to do some more iterations of folding and waiting, hopefully just one more.
+                    <span className="text-(--light-tertiary)">&#191;&#191; FOLD AND WAIT ?? (4/3)</span>: If after three folds and waits the dough is loose and lacks tension on the edges then you want to do some more iterations of folding and waiting, hopefully just one more. If you reach 5 folding periods the problem isn't the folding it's the amount of yeast / starter and it's activity. Move on from the folding and see what happens in the oven.
                 </li>
                 <li>
                     <span className="text-(--light-tertiary)">Move to a banneton</span>: Once the dough is mostly smooth and has some tension after a waiting period it is ready for the final fold. You want to use a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.youtube.com/watch?v=1HN4heVooA0" target="_blank">letter fold</a> and then dust the dough with flour and move it to a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://letmegooglethat.com/?q=banneton+basket" target="_blank">banneton basket.</a> For good measure, and no sticking issues, flour the banneton as well.
                 </li>
             </ul>
+            {/* TODO: turn this into a carousel that moves at set intervals, unless a user clicks on the backward / forward button, then pause the auto move for a while, a minute maybe?, has to accept explanation text for each included picture */}
             <div className="grid grid-cols-2 max-sm:grid-cols-1 lg:w-3/4 max-sm:w-full m-auto gap-4 sm:p-4">
                 <div className="grid-cell flex flex-col text-center gap-2">
                     <img src={knead1.src} alt="freshly mixed"/>
@@ -199,13 +200,13 @@ export const WaitTimes = () => {
                 TLDR
             </h3>
             <p>
-                It your kitchen hovers around ~60 deg f, give your bread ~10 hours.
+                It your kitchen hovers around ~60 deg F, give your bread ~10 hours.
             </p>
             <p>
-                It your kitchen hovers around ~70 deg f, give your bread ~7 hours.
+                It your kitchen hovers around ~70 deg F, give your bread ~7 hours.
             </p>
             <p>
-                It your kitchen is hotter than 75 deg f, give it ~4 hours, and check every hour after if it's not done.
+                It your kitchen is hotter than 75 deg F, give it ~4 hours, and check every hour after if it's not done.
             </p>
             <h3 className="text-lg text-(--light-tertiary)">
                 Proofing is highly reliant on temperature.
@@ -235,6 +236,8 @@ export const WaitTimes = () => {
     )
 }
 
+// TODO: change the side by side sections of picture & text into text-picture-text vertically
+// MAYBE: use the carousell that I'm going to build for the quad picture set above.
 export const LetsBake = () => {
     return (
         <CollapsibleBreadSection title="Details: Baking Time" id="baking_time">
@@ -247,7 +250,7 @@ export const LetsBake = () => {
                         Note that the dough has expanded and fills the basket fully, but is not overflowing.
                     </p>
                     <p>
-                        If you poke it gently, the indentation will bounce back, slowly.
+                        If you poke it gently, the indentation will bounce back; you should be able to watch it bounce back and have no question that you saw it do that.
                     </p>
                     <p>
                         It should not be sticky or dry.
@@ -255,7 +258,7 @@ export const LetsBake = () => {
                 </div>
                 <div className="flex flex-col text-center gap-2 w-full lg:w-2/5">
                     <img src={rise2.src} alt="properly proofed"/>
-                    <p className="max-sm:text-(--light-tertiary)">poperly proofed loaf in it's banneton</p>
+                    <p className="max-sm:text-(--light-tertiary)">properly proofed loaf in it's banneton</p>
                 </div>
             </div>
             <div className="flex max-sm:flex-col gap-4">
@@ -312,7 +315,7 @@ export const LetsBake = () => {
                 </div>
                 <div className="flex flex-col gap-4 justify-center">
                     <p>
-                        After 20 minutes, open the oven, remove the pot lid, and set the temperature to 450 deg F / 230 deg C.
+                        After 20 minutes, open the oven, remove the pot lid, and set the temperature to 450 deg F / 232 deg C.
                     </p>
                     <p>
                         Close up the oven and set the timer for another 20 minutes.
