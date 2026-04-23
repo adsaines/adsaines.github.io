@@ -14,6 +14,7 @@ import Baked1 from '@/images/Bread_Baked_1.jpg'
 import Baked2 from '@/images/Bread_Baked_2.jpg'
 import Baked4 from '@/images/Bread_Baked_4.jpg'
 import { useEffect, useState } from "react"
+import { PictureCarousel } from "@/structures/carousel"
 
 export const BreadPurpose = () => {
     return (
@@ -181,6 +182,16 @@ export const KneadingAndWaiting = () => {
                     <img src={knead4.src} alt="third fold"/>
                     <p className="max-sm:text-(--light-tertiary)">third fold</p>
                 </div>
+            </div>
+            <div className="flex justify-center items-center">
+                <PictureCarousel 
+                    pictures={[
+                        {src: knead1.src, subText:"freshly mixed"},
+                        {src: knead2.src, subText:"first fold"},
+                        {src: knead3.src, subText:"second fold"},
+                        {src: knead4.src, subText:"third fold"},
+                    ]} 
+                    />
             </div>
             <p>
                 After all of the work, you'll end up with a dough lump in a basket. It doesn't look very pretty now, but once it has risen it will smooth out and you'll begin to behold the beauty of a well done bread loaf.

@@ -18,6 +18,47 @@
     --light-tertiary: var(--color-emerald-400);
     --highlight: var(--color-fuchsia-700);
     --external-link: var(--color-cyan-400)
+
+    --animate-slideoutleft: slide-out-left 1s ease-out forwards;
+    --animate-slideinleft: slide-in-left 1s ease-out forwards;
+    --animate-slideoutright: slide-out-right 1s ease-out forwards;
+    --animate-slideinright: slide-in-right 1s ease-out forwards;
+
+    @keyframes slide-out-left {
+        to {
+            transform: translate3d(-60rem,0,0);
+            opacity: 0%;
+        }
+    }
+
+    @keyframes slide-in-left {
+        0% {
+            transform: translate3d(-60rem,0,0)l;
+            opacity: 0%;
+        }
+        100% {
+            transform: translate3d(0,0,0);
+            opacity: 100%;
+        }
+    }
+
+    @keyframes slide-out-right {
+        to {
+            transform: translate3d(60rem,0,0);
+            opacity: 0%;
+        }
+    }
+
+    @keyframes slide-in-right {
+        0% {
+            transform: translate3d(60rem,0,0);
+            opacity: 0%;
+        }
+        100% {
+            transform: translate3d(0,0,0);
+            opacity: 100%;
+        }
+    }
 }
 
 @media (prefers-color-scheme: dark) {
