@@ -19,12 +19,16 @@
     --highlight: var(--color-fuchsia-700);
     --external-link: var(--color-cyan-400)
 
-    --animate-slideoutleft: slide-out-left 1s ease-out forwards;
+    --animate-slideoutleft: slide-out-left 2s ease-out forwards;
     --animate-slideinleft: slide-in-left 1s ease-out forwards;
-    --animate-slideoutright: slide-out-right 1s ease-out forwards;
+    --animate-slideoutright: slide-out-right 2s ease-out forwards;
     --animate-slideinright: slide-in-right 1s ease-out forwards;
 
     @keyframes slide-out-left {
+        from {
+            transform: translate3d(0,0,0);
+            opacity: 60rem;
+        }
         to {
             transform: translate3d(-60rem,0,0);
             opacity: 0%;
@@ -32,17 +36,21 @@
     }
 
     @keyframes slide-in-left {
-        0% {
-            transform: translate3d(-60rem,0,0)l;
+        from {
+            transform: translate3d(-60rem,0,0);
             opacity: 0%;
         }
-        100% {
+        to {
             transform: translate3d(0,0,0);
-            opacity: 100%;
+            opacity: 60rem;
         }
     }
 
     @keyframes slide-out-right {
+        from {
+            transform: translate3d(0,0,0);
+            opacity: 60rem;
+        }
         to {
             transform: translate3d(60rem,0,0);
             opacity: 0%;
@@ -50,13 +58,13 @@
     }
 
     @keyframes slide-in-right {
-        0% {
+        from {
             transform: translate3d(60rem,0,0);
             opacity: 0%;
         }
-        100% {
+        to {
             transform: translate3d(0,0,0);
-            opacity: 100%;
+            opacity: 60rem;
         }
     }
 }
