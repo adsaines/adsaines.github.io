@@ -10,14 +10,6 @@ type PictureDirection = 'left' | 'right'
 const CAROUSEL_AUTO_GO_TIME = 6000;
 const HUMAN_INTERACTION_WAIT_TIME = 60000;
 
-/*
-    Lots of things to work out...
-
-    1) the previous picture is still visible, it needs to go away completely
-    2) sliding in from the left doesn't work right
-    3) opacity isn't applying to animations
-*/
-
 export const PictureCarousel = ({ pictures }:{ pictures: CarouselPicture[] }) => {
     const [previousIdx, setPreviousIdx] = useState(0)
     const [picIdx, setPicIdx] = useState(0);
@@ -51,9 +43,6 @@ export const PictureCarousel = ({ pictures }:{ pictures: CarouselPicture[] }) =>
     }
 
     const setupNextPicMove = (useTime: number) => {
-        // TODO-RE: testing only
-        console.log(useTime);
-
         if(timeOutforNextPic.current !== null){
             clearTimeout(timeOutforNextPic.current);
         }
@@ -68,7 +57,7 @@ export const PictureCarousel = ({ pictures }:{ pictures: CarouselPicture[] }) =>
 
     return (
         <div className="flex flex-col max-sm:w-full w-4/5 p-4">
-            <div className="w-full flex overflow-hidden">
+            <div className="w-full flex justify-center items-center overflow-hidden">
                 {
                     pictures.map((picture, picNum) => {
                         return (
@@ -110,6 +99,19 @@ export const PictureCarousel = ({ pictures }:{ pictures: CarouselPicture[] }) =>
     )
 }
 
+
+/*
+    One big issue left
+
+    opacity isn't applying to left exit animations
+    - I think it has to do with the pictures re-ordering themselves so that the sliding one's animation doesn't fire
+    - even though the other animations are firing, the pictures still exist side-by side in the display
+    
+    I need to figure out how to make the selected picture be front and center even though the other pictures exist. 
+
+    In clio we did it by setting height to 0 on exiting items, but in this case that cancels the images animation exit.
+
+*/
 const PictureBox = ({
     picture,
     direction,
@@ -127,9 +129,9 @@ const PictureBox = ({
             data-direction={direction}
             data-incoming={incoming}
             className={`
-                w-full 
-
+                transition-transform
                 data-[show=false]:hidden
+                data-[incoming=false]:animate-fadeout
 
                 data-[direction=left]:data-[incoming=true]:animate-slideinleft
                 data-[direction=right]:data-[incoming=true]:animate-slideinright
@@ -142,3 +144,9 @@ const PictureBox = ({
         </div>
     )
 }
+
+/*
+    data-[direction=left]:data-[incoming=false]:animate-slideoutright
+    data-[direction=right]:data-[incoming=false]:animate-slideoutleft
+
+*/
