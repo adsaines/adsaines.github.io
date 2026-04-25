@@ -9,11 +9,11 @@ export const StandardResumeSection = ({title, children, show=true}: {title: stri
     )
 }
 
-export const HorizontalRuleWithTitle = ({title}: {title: string}) => {
+export const HorizontalRuleWithTitle = ({title, bold = true, extraPad = true}: {title: string, bold?: boolean, extraPad?: boolean}) => {
     return (
-        <div className="flex w-full items-center pb-4">
+        <div data-pad={extraPad} className="flex w-full items-center data-[pad=true]:pb-4">
             <hr className="grow border" />
-            <h1 className="px-2 grow-0 text-center text-xl font-bold no-wrap">
+            <h1 data-bolded={bold} className="px-2 grow-0 text-center text-xl data-[bold=true]:font-bold no-wrap">
                 {title}
             </h1>
             <hr className="grow border"/>

@@ -19,10 +19,10 @@
     --highlight: var(--color-fuchsia-700);
     --external-link: var(--color-cyan-400)
 
-    --animate-slideoutleft: slide-out-left 2s ease-out forwards;
-    --animate-slideinleft: slide-in-left 1s ease-out forwards;
-    --animate-slideoutright: slide-out-right 2s ease-out forwards;
-    --animate-slideinright: slide-in-right 1s ease-out forwards;
+    --animate-slideoutleft: slide-out-left 1500ms ease-out forwards;
+    --animate-slideinleft: slide-in-left 1500ms ease-out forwards;
+    --animate-slideoutright: slide-out-right 1500ms ease-out forwards;
+    --animate-slideinright: slide-in-right 1500ms ease-out forwards;
 
     @keyframes slide-out-left {
         from {

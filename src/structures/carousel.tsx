@@ -63,7 +63,7 @@ export const PictureCarousel = ({ pictures }:{ pictures: CarouselPicture[] }) =>
 
     return (
         <div className="flex flex-col max-sm:w-full lg:w-4/5 sm:p-4">
-            <div className="w-full flex justify-center items-center overflow-hidden">
+            <div className="flex h-fit justify-center items-center overflow-hidden">
                 {
                     pictures.map((picture, picNum) => {
                         return (
@@ -131,7 +131,7 @@ const PictureBox = ({
                 data-[direction=right]:data-[incoming=false]:animate-slideoutleft
             `}
             >
-            <img src={picture.src} alt={picture.subText ?? 'A bread picture.'} />
+            <img className="max-h-200" src={picture.src} alt={picture.subText ?? 'A bread picture.'} />
         </div>
     )
 }

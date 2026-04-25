@@ -15,6 +15,7 @@ import Baked2 from '@/images/Bread_Baked_2.jpg'
 import Baked4 from '@/images/Bread_Baked_4.jpg'
 import { useEffect, useState } from "react"
 import { PictureCarousel } from "@/structures/carousel"
+import { HorizontalRuleWithTitle } from "../resume/projections"
 
 export const BreadPurpose = () => {
     return (
@@ -228,62 +229,46 @@ export const WaitTimes = () => {
     )
 }
 
-// TODO: change the side by side sections of picture & text into text-picture-text vertically
-// MAYBE: use the carousell that I'm going to build for the quad picture set above.
 export const LetsBake = () => {
     return (
         <CollapsibleBreadSection title="Details: Baking Time" id="baking_time">
-            <div className="flex max-sm:flex-col gap-4">
-                <div className="flex flex-col gap-4 justify-center">
-                    <p>
-                        It's risen! What was lumpy is now smooth and unblemished.
-                    </p>
-                    <p>
-                        Note that the dough has expanded and fills the basket fully, but is not overflowing.
-                    </p>
-                    <p>
-                        If you poke it gently, the indentation will bounce back; you should be able to watch it bounce back and have no question that you saw it do that.
-                    </p>
-                    <p>
-                        It should not be sticky or dry.
-                    </p>
-                </div>
-                <div className="flex flex-col text-center gap-2 w-full lg:w-2/5">
-                    <img src={rise2.src} alt="properly proofed"/>
-                    <p className="max-sm:text-(--light-tertiary)">properly proofed loaf in it's banneton</p>
-                </div>
+            <div className="flex justify-center items-center">
+                <PictureCarousel 
+                    pictures={[
+                        {src: rise2.src, subText: "properly proofed loaf in it's banneton" },
+                        {src: rise4.src, subText: "proper proofing should retain the basket shape" }
+                    ]} 
+                    />
             </div>
-            <div className="flex max-sm:flex-col gap-4">
-                <div className="flex flex-col text-center gap-2 max-sm:w-full max-lg:w-4/2 lg:w-2/5 lg:shrink-0">
-                    <img src={Baking1.src} alt="hot pan in a hot oven"/>
-                    <p className="max-sm:text-(--light-tertiary)">hot oven, hot pan</p>
-                </div>
-                <div className="flex flex-col gap-4 justify-center">
-                    <p>
-                        Start your oven. Set it to 500 deg F / 260 deg C and place a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://en.wikipedia.org/wiki/Dutch_oven" target="_blank">Dutch Oven</a> or <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.amazon.com/Lodge-Cooker-Pre-seasoned-Skillet-Convertible/dp/B0009JKG9M" target="_blank">Combo Cooker</a> in the center. It also helps to have a baking stone (pizza stone) on the bottom of the oven.
-                    </p>
-                    <p>
-                        Let your oven heat up for at least 30 minutes so that the pot is piping hot.
-                    </p>
-                </div>
-            </div>
-            <div className="flex max-sm:flex-col gap-4">
-                <div className="flex flex-col gap-4 justify-center">
-                    <p>
-                        Once the oven and pan are both hot, we need to remove the dough and score it.
-                    </p>
-                    <p>
-                        If you have a combo cooker you can flip the dough right into the cooker. If you have a dutch oven then you'll want to use some parchment paper so that you can move the dough into the deeper well.
-                    </p>
-                    <p>
-                        Scoring / marking your loaf is required to allow the loaf to expand as it desires. The design that is made will effect how well the loaf expands. But you don't need to worry too much. A long slash from one side to the other will let it expand just fine.
-                    </p>
-                </div>
-                <div className="flex flex-col text-center gap-2 max-sm:w-full max-lg:w-6/2 lg:w-2/5 lg:shrink-0">
-                    <img src={rise4.src} alt="properly proofed"/>
-                    <p className="max-sm:text-(--light-tertiary)">proper proofing should retain the basket shape</p>
-                </div>
-            </div>
+            <p>
+                It's risen! What was lumpy is now smooth and unblemished.
+            </p>
+            <p>
+                Note that the dough has expanded and fills the basket fully, but is not overflowing.
+            </p>
+            <p>
+                If you poke it gently, the indentation will bounce back; you should be able to watch it bounce back and have no question that you saw it do that.
+            </p>
+            <p>
+                It should not be sticky or dry.
+            </p>
+            <HorizontalRuleWithTitle title="PreHeat" bold={false} extraPad={false} />
+            <p>
+                Start your oven. Set it to 500 deg F / 260 deg C and place a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://en.wikipedia.org/wiki/Dutch_oven" target="_blank">Dutch Oven</a> or <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.amazon.com/Lodge-Cooker-Pre-seasoned-Skillet-Convertible/dp/B0009JKG9M" target="_blank">Combo Cooker</a> in the center. It also helps to have a baking stone (pizza stone) on the bottom of the oven.
+            </p>
+            <p>
+                Let your oven heat up for at least 30 minutes so that the pot is piping hot.
+            </p>
+            <HorizontalRuleWithTitle title="Load the Dough" bold={false} extraPad={false} />
+            <p>
+                Once the oven and pan are both hot, we need to remove the dough and score it.
+            </p>
+            <p>
+                If you have a combo cooker you can flip the dough right into the cooker. If you have a dutch oven then you'll want to use some parchment paper so that you can move the dough into the deeper well.
+            </p>
+            <p>
+                Scoring / marking your loaf is required to allow the loaf to expand as it desires. The design that is made will effect how well the loaf expands. But you don't need to worry too much. A long slash from one side to the other will let it expand just fine.
+            </p>
             <p>
                 When you score your loaf, don't be gentle. Make sure to cut a good line. Use a very sharp knife or a razor. I have a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.amazon.com/Lccowot-Bread-Lame-Stainless-Sourdough/dp/B0C369NX7C/ref=sr_1_25?sr=8-25" target="_blank">razor</a>. I like to do one off-center line from end to end on all of my loaves. After that I'm just trying to draw pretty designs.
             </p>
@@ -297,34 +282,29 @@ export const LetsBake = () => {
             <p>
                 Place your loaf into your cooker. <span className="text-(--light-tertiary)">MAKE SURE TO PLACE THE LID ONTO YOUR POT</span>. And set a timer for 20 minutes.
             </p>
+            <HorizontalRuleWithTitle title="Baking" bold={false} extraPad={false} />
+            <div className="flex justify-center items-center">
+                <PictureCarousel 
+                    pictures={[
+                        {src: Baking1.src, subText: "hot oven, hot pan" },
+                        {src: Baking3.src, subText: "halfway through" },
+                        {src: Baking2.src, subText: "steamed bread expands well" },
+                    ]} 
+                    />
+            </div>
             <p>
                 It is crucial that you put the lid on the pot for the first half of the baking time because the rise of your loaf requires a moist environment. Professional ovens accomplish this by adding steam into the oven directly. Using a lidded pot traps all of the moisture in your loaf and steams it without the need to add any to your oven.
             </p>
-            <div className="flex max-sm:flex-col gap-4">
-                <div className="flex flex-col text-center gap-2 max-sm:w-full max-lg:w-4/2 lg:w-2/5 lg:shrink-0">
-                    <img src={Baking3.src} alt="halfway through"/>
-                    <p className="max-sm:text-(--light-tertiary)">halfway through</p>
-                </div>
-                <div className="flex flex-col gap-4 justify-center">
-                    <p>
-                        After 20 minutes, open the oven, remove the pot lid, and set the temperature to 450 deg F / 232 deg C.
-                    </p>
-                    <p>
-                        Close up the oven and set the timer for another 20 minutes.
-                    </p>
-                </div>
-            </div>
-            <div className="flex max-sm:flex-col gap-4">
-                <div className="flex flex-col text-center gap-2 max-sm:w-full max-lg:w-full lg:w-2/5 lg:shrink-0">
-                    <img src={Baking2.src} alt="steamed bread expands well"/>
-                    <p className="max-sm:text-(--light-tertiary)">steamed bread expands well</p>
-                </div>
-                <div className="flex flex-col gap-4 justify-center lg:w-3/5">
-                    <p>
-                        Steaming a loaf helps it expand and sets you up for a good springy interior.
-                    </p>
-                </div>
-            </div>
+            <p>
+                After 20 minutes, open the oven, remove the pot lid, and set the temperature to 450 deg F / 232 deg C.
+            </p>
+            <p>
+                Close up the oven and set the timer for another 20 minutes.
+            </p>
+            <p>
+                Steaming a loaf helps it expand and sets you up for a good springy interior.
+            </p>
+            <HorizontalRuleWithTitle title="Rest & Eat" bold={false} extraPad={false} />
             <p>
                 It's done! A crunchy-crisp outside hiding a soft and stretchy inside. The expanded crisp edge to the primary lengthwise cut is called an "ear." It should be dark, but not burnt. The height of the ear indicates the amount of expansion the loaf has experienced.
             </p>
@@ -394,7 +374,7 @@ const CollapsibleBreadSection = ({
 
             `}>
             <button 
-                className="flex justify-around text-(--light-secondary) group p-4 border" 
+                className="flex justify-around text-(--light-secondary) group p-4 cursor-pointer border sm:border-dashed hover:border-solid" 
                 onClick={() => setIsOpen(!isOpen)}
                 id={id}
                 >
