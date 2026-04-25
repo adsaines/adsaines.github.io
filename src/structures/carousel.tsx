@@ -1,5 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 
+/*
+    There is on issue to fix for this carousel...
+
+    When the outgoing picture get's smooshed it's exit animation is being cancelled. So, the existing picture dissappears as the new one slides in instead of the exist happening simultaneously to the entry.
+*/
+
 export type CarouselPicture = {
     src: string;
     subText?: string;
@@ -56,7 +62,7 @@ export const PictureCarousel = ({ pictures }:{ pictures: CarouselPicture[] }) =>
     }
 
     return (
-        <div className="flex flex-col max-sm:w-full w-4/5 p-4">
+        <div className="flex flex-col max-sm:w-full lg:w-4/5 sm:p-4">
             <div className="w-full flex justify-center items-center overflow-hidden">
                 {
                     pictures.map((picture, picNum) => {
@@ -72,46 +78,31 @@ export const PictureCarousel = ({ pictures }:{ pictures: CarouselPicture[] }) =>
                     })
                 }
             </div>
-            <div className="flex px-8 py-2">
-                <button 
-                    className="flex shrink mr-auto border border-(--light-primary)" 
-                    onClick={() => {
-                        goToPicture(-1, HUMAN_INTERACTION_WAIT_TIME);
-                    }}
-                    >
-                    <span className="material-icons ">keyboard_double_arrow_left</span>
-                    <span className="material-icons ">keyboard_double_arrow_left</span>
-                </button>
-                <div className="grow text-center">
-                    {pictures[picIdx].subText}({picIdx +1} / {pictures.length})
+            <div className="flex sm:px-8 py-2 items-center">
+                <MoveButton action={() => goToPicture(-1, HUMAN_INTERACTION_WAIT_TIME)} goLeft={true} />
+                <div className="grow text-center flex flex-col max-sm:text-(--light-tertiary)">
+                    <div>{pictures[picIdx].subText}</div>
+                    <div>({picIdx +1} / {pictures.length})</div>
                 </div>
-                <button 
-                    className="flex shrink ml-auto border border-(--light-primary)" 
-                    onClick={() => {
-                        goToPicture(1, HUMAN_INTERACTION_WAIT_TIME);
-                    }}
-                    >
-                    <span className="material-icons ">keyboard_double_arrow_right</span>
-                    <span className="material-icons ">keyboard_double_arrow_right</span>
-                </button>
+                <MoveButton action={() => goToPicture(1, HUMAN_INTERACTION_WAIT_TIME)} goLeft={false} />
             </div>
         </div>
     )
 }
 
+const MoveButton = ({action, goLeft}:{action: () => void, goLeft: boolean}) => {
+    const icon = goLeft ? 'keyboard_double_arrow_left' : 'keyboard_double_arrow_right';
+    return (
+        <button 
+            className="flex shrink mr-auto border sm:border-dashed hover:border-solid border-(--light-primary) h-1/2 cursor-pointer" 
+            onClick={action}
+            >
+            <span className="material-icons ">{icon}</span>
+            <span className="material-icons ">{icon}</span>
+        </button>
+    )
+}
 
-/*
-    One big issue left
-
-    opacity isn't applying to left exit animations
-    - I think it has to do with the pictures re-ordering themselves so that the sliding one's animation doesn't fire
-    - even though the other animations are firing, the pictures still exist side-by side in the display
-    
-    I need to figure out how to make the selected picture be front and center even though the other pictures exist. 
-
-    In clio we did it by setting height to 0 on exiting items, but in this case that cancels the images animation exit.
-
-*/
 const PictureBox = ({
     picture,
     direction,
@@ -131,7 +122,7 @@ const PictureBox = ({
             className={`
                 transition-transform
                 data-[show=false]:hidden
-                data-[incoming=false]:animate-fadeout
+                data-[incoming=false]:w-0
 
                 data-[direction=left]:data-[incoming=true]:animate-slideinleft
                 data-[direction=right]:data-[incoming=true]:animate-slideinright

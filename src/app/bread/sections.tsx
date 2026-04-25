@@ -164,25 +164,6 @@ export const KneadingAndWaiting = () => {
                     <span className="text-(--light-tertiary)">Move to a banneton</span>: Once the dough is mostly smooth and has some tension after a waiting period it is ready for the final fold. You want to use a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.youtube.com/watch?v=1HN4heVooA0" target="_blank">letter fold</a> and then dust the dough with flour and move it to a <a className="text-(--external-link) hover:underline max-sm:underline" href="https://letmegooglethat.com/?q=banneton+basket" target="_blank">banneton basket.</a> For good measure, and no sticking issues, flour the banneton as well.
                 </li>
             </ul>
-            {/* TODO: turn this into a carousel that moves at set intervals, unless a user clicks on the backward / forward button, then pause the auto move for a while, a minute maybe?, has to accept explanation text for each included picture */}
-            <div className="grid grid-cols-2 max-sm:grid-cols-1 lg:w-3/4 max-sm:w-full m-auto gap-4 sm:p-4">
-                <div className="grid-cell flex flex-col text-center gap-2">
-                    <img src={knead1.src} alt="freshly mixed"/>
-                    <p className="max-sm:text-(--light-tertiary)">freshly mixed</p>
-                </div>
-                <div className="grid-cell flex flex-col text-center gap-2">
-                    <img src={knead2.src} alt="first fold"/>
-                    <p className="max-sm:text-(--light-tertiary)">first fold</p>
-                </div>
-                <div className="grid-cell flex flex-col text-center gap-2">
-                    <img src={knead3.src} alt="second fold"/>
-                    <p className="max-sm:text-(--light-tertiary)">second fold</p>
-                </div>
-                <div className="grid-cell flex flex-col text-center gap-2">
-                    <img src={knead4.src} alt="third fold"/>
-                    <p className="max-sm:text-(--light-tertiary)">third fold</p>
-                </div>
-            </div>
             <div className="flex justify-center items-center">
                 <PictureCarousel 
                     pictures={[
