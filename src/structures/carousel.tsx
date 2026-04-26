@@ -131,7 +131,7 @@ const PictureBox = ({
                 data-[direction=right]:data-[incoming=false]:animate-slideoutleft
             `}
             >
-            <img className="max-h-200" src={picture.src} alt={picture.subText ?? 'A bread picture.'} />
+            <img className="max-h-200 min-h-100" src={picture.src} alt={picture.subText ?? 'A bread picture.'} />
         </div>
     )
 }
