@@ -378,18 +378,18 @@ const CollapsibleBreadSection = ({
                 onClick={() => setIsOpen(!isOpen)}
                 id={id}
                 >
-                <div className="group-hover:invisible flex text-center items-center">
+                <div className="max-sm:hidden group-hover:invisible flex text-center items-center">
                     <span className="material-icons ">keyboard_double_arrow_right</span>
                 </div>
                 <div 
                     data-show={!isOpen}
-                    className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                    className="sm:group-hover:visible sm:invisible flex text-center items-center data-[show='false']:hidden"
                     >
                     <span className="material-icons">keyboard_double_arrow_down</span>
                 </div>
                 <div 
                     data-show={isOpen}
-                    className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                    className="sm:group-hover:visible sm:invisible flex text-center items-center data-[show='false']:hidden"
                     >
                     <span className="material-icons">keyboard_double_arrow_up</span>
                 </div>
@@ -400,17 +400,17 @@ const CollapsibleBreadSection = ({
 
                 <div 
                     data-show={!isOpen}
-                    className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                    className="sm:group-hover:visible sm:invisible flex text-center items-center data-[show='false']:hidden"
                     >
                     <span className="material-icons">keyboard_double_arrow_down</span>
                 </div>
                 <div 
                     data-show={isOpen}
-                    className="group-hover:visible invisible flex text-center items-center data-[show='false']:hidden"
+                    className="sm:group-hover:visible sm:invisible flex text-center items-center data-[show='false']:hidden"
                     >
                     <span className="material-icons">keyboard_double_arrow_up</span>
                 </div>
-                <div className="group-hover:invisible flex text-center items-center">
+                <div className="max-sm:hidden group-hover:invisible flex text-center items-center">
                     <span className="material-icons ">keyboard_double_arrow_left</span>
                 </div>
             </button>
