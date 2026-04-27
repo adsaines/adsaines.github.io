@@ -6,6 +6,7 @@ import { createContext, useEffect, useState } from "react";
 export type PageSettings = {
     devMode: boolean;
     cutContent: boolean;
+    expandedContent: boolean;
     synergy: boolean;
     bread: boolean;
 }
@@ -23,6 +24,7 @@ export const SettingContextWrapper = ({children}: {children: React.ReactNode}) =
     const [settings, setSettings] = useState<PageSettings>({
         devMode: false,
         cutContent: false,
+        expandedContent: false,
         synergy: false,
         bread: false,
     })
@@ -37,6 +39,10 @@ export const SettingContextWrapper = ({children}: {children: React.ReactNode}) =
     useEffect(() => {
         if(path.includes('thanks') && !settings.cutContent){
             updateSettings({...settings, cutContent: true})
+        }
+        
+        if(path.includes('/projects') && !settings.expandedContent){
+            updateSettings({...settings, expandedContent: true})
         }
         
         if(path.includes('synergy') && !settings.synergy){

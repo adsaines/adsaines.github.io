@@ -42,9 +42,18 @@ const SmallMediaHeader = () => {
                 <HamburgerMenuLink
                     title="resume" 
                     path="resume" 
-                    selected={path.includes('resume')}
+                    selected={path.endsWith('/resume')}
                     setExpanded={setExpanded}
                     />
+                {
+                    settings.expandedContent && 
+                    <HamburgerMenuLink
+                        title="resume/projects" 
+                        path="resume/projects" 
+                        selected={path.endsWith('/resume/projects')}
+                        setExpanded={setExpanded}
+                        />
+                }
                 <HamburgerMenuLink
                     title="story_time" 
                     path="stories" 
@@ -130,9 +139,18 @@ const WideMediaHeader = () => {
             <HeaderLink
                 name="resume" 
                 path="resume" 
-                selected={path.includes('resume')}
+                selected={path.endsWith('/resume')}
                 hoverText="learn more about my career and experience"
                 />
+            {
+                settings.expandedContent && 
+                <HeaderLink
+                    name="resume/projects" 
+                    path="resume/projects" 
+                    selected={path.endsWith('/resume/projects')}
+                    hoverText="My resume, as a timelime of projects"
+                    />
+            }
             <HeaderLink
                 name="story_time" 
                 path="stories" 
@@ -194,7 +212,8 @@ const HeaderLink = ({path, name, hoverText, selected}: {path: string, name: stri
     return (
         <Link 
             className="py-1 px-2 border-2 font-bold border-1 text-(--light-tertiary) border-(--dark-tertiary) hover:border-(--light-tertiary) "
-            href={path} 
+            // href={`localhost:3000/${path}`} 
+            href={path}
             aria-label={hoverText}
             >
             {name}

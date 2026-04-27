@@ -22,6 +22,13 @@ const Settings: NextPage = () => {
     const flipBread = () => {
         updateSettings({bread: !settings.bread})
     }
+    
+    const flipExpandedContent = () => {
+        // todo-re: testing only
+        console.log(settings);
+
+        updateSettings({expandedContent: !settings.expandedContent})
+    }
 
     return (
         <div className="flex flex-col gap-6 p-12 justify-start">
@@ -32,6 +39,13 @@ const Settings: NextPage = () => {
                     selected={settings.devMode} 
                     onText="dev" 
                     offText="business"
+                    />  
+                <Switch 
+                    title="projects timeline"
+                    action={flipExpandedContent} 
+                    selected={settings.expandedContent} 
+                    onText="visible" 
+                    offText="invisible"
                     />
                 <Switch 
                     title="Cut content"

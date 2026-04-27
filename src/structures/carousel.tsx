@@ -137,9 +137,3 @@ const PictureBox = ({
         </div>
     )
 }
-
-/*
-    data-[direction=left]:data-[incoming=false]:animate-slideoutright
-    data-[direction=right]:data-[incoming=false]:animate-slideoutleft
-
-*/
