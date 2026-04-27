@@ -81,7 +81,9 @@ export const PictureCarousel = ({ pictures }:{ pictures: CarouselPicture[] }) =>
             <div className="flex sm:px-8 py-2 items-center">
                 <MoveButton action={() => goToPicture(-1, HUMAN_INTERACTION_WAIT_TIME)} goLeft={true} />
                 <div className="grow text-center flex flex-col max-sm:text-(--light-tertiary)">
-                    <div>{pictures[picIdx].subText}</div>
+                    <div className="max-sm:h-12 max-sm:text-wrap truncate">
+                        {pictures[picIdx].subText}
+                    </div>
                     <div>({picIdx +1} / {pictures.length})</div>
                 </div>
                 <MoveButton action={() => goToPicture(1, HUMAN_INTERACTION_WAIT_TIME)} goLeft={false} />
@@ -131,7 +133,7 @@ const PictureBox = ({
                 data-[direction=right]:data-[incoming=false]:animate-slideoutleft
             `}
             >
-            <img className="max-h-200 min-h-100" src={picture.src} alt={picture.subText ?? 'A bread picture.'} />
+            <img className="max-h-200 min-h-50" src={picture.src} alt={picture.subText ?? 'A bread picture.'} />
         </div>
     )
 }
