@@ -1,30 +1,22 @@
-export type Years = {
-    start: number;
-    end?: number;
-    continuing: boolean;
-}
+import { Years, Project } from "./projectData";
 
-export const Project = ({
-    title, 
-    techStack,
+export const ProjectDisplay = ({
     children,
-    years
+    project
 }:{
-    title: string, 
-    techStack: string[],
     children: React.ReactNode,
-    years: Years,
+    project: Project
 }) => {
     return (
         <div className="flex flex-col sm:p-2 max-sm:py-4 gap-2">
             <h3 className="font-bold text-(--light-secondary) text-xl max-sm:underline">
-                {title} ({yearsTag(years)})
+                {project.title} ({yearsTag(project.years)})
             </h3>
             <div className="flex ">
                 {children}
             </div>
             <p className="text-(--light-tertiary)">
-                {techStack.join(', ')}
+                {project.techSkills?.join(', ')}
             </p>
         </div>
     )
