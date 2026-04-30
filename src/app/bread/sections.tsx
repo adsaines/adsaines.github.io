@@ -126,13 +126,13 @@ export const AmountsAndRatios = () => {
             </p>
             <ul className="list-decimal max-sm:pl-4 sm:pl-8">
                 <li>
-                    <span className="max-sm:text-(--light-tertiary)">Commonality #1:</span> you need salt. Around 2% is standard. Without salt your loaf will be bland.
+                    <span className="max-sm:text-(--light-tertiary)">#1:</span> you need salt. Around 2% is standard. Without salt your loaf will be bland.
                 </li>
                 <li>
-                    <span className="max-sm:text-(--light-tertiary)">Commonality #2:</span> most of your loaf should consist of all purpose flour. That is white flour with a protein percentage of 11-12%. This provides the best rise and allows for stretchier less crumbly bread.
+                    <span className="max-sm:text-(--light-tertiary)">#2:</span> most of your loaf should consist of all purpose flour. That is white flour with a protein percentage of 11-12%. This provides the best rise and allows for stretchier less crumbly bread.
                 </li>
                 <li>
-                    <span className="max-sm:text-(--light-tertiary)">Commonality #3:</span> If adding additional ingredients to you bread, soak those ingredients before adding them. This includes any nuts, seeds, dried fruits, herbs... etc. The moisture content in the additions must exist and not mess with the liquid percentage of the base loaf.
+                    <span className="max-sm:text-(--light-tertiary)">#3:</span> If adding additional ingredients to you bread, soak those ingredients before adding them. This includes any nuts, seeds, dried fruits, herbs... etc. The moisture content in the additions must exist and not mess with the liquid percentage of the base loaf.
                 </li>
             </ul>
         </CollapsibleBreadSection>
