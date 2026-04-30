@@ -40,13 +40,13 @@ export const BreadOverview = () => {
                 This is the short version of the detailed sections below, no pics or anything, just the forward to describe the coming chapters.
             </p>
             <p>
-                Starter... there are so many sources on how to get it. You can order ready to go starter online or make it yourself. I'll leave the googling to you for a ready to go supplier. If you want to start from scratch, try <a className="text-(--external-link) hover:underline max-sm:underline" href="https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe" target="_blank">King Arthur's</a> way.
+                Starter... there are so many sources on how to get it. You can order ready to go starter online or make it yourself. I'll leave the googling to you for a ready to go supplier. If you want to start from scratch, try <a className="text-(--internal-link) hover:underline max-sm:underline" href="https://www.kingarthurbaking.com/recipes/sourdough-starter-recipe" target="_blank">King Arthur's</a> way.
             </p>
             <p>
-                <a href="#amounts_and_ratios" className="text-(--external-link) hover:underline max-sm:underline">Amounts</a>: I make loaves that include 500 grams of flour. You must measure by weight because any ingredient that is compactible (flour(s) / most powdered things) do not have a reliable weight to volume ratio.
+                <a href="#amounts_and_ratios" className="text-(--internal-link) hover:underline max-sm:underline">Amounts</a>: I make loaves that include 500 grams of flour. You must measure by weight because any ingredient that is compactible (flour(s) / most powdered things) do not have a reliable weight to volume ratio.
             </p>
             <p>
-                <a href="#kneading_and_waiting" className="text-(--external-link) hover:underline max-sm:underline">Kneading and Folding</a>: my books and online sources say that there are three steps to get from freshly mixed dough to bakable shaped dough.
+                <a href="#kneading_and_waiting" className="text-(--internal-link) hover:underline max-sm:underline">Kneading and Folding</a>: my books and online sources say that there are three steps to get from freshly mixed dough to bakable shaped dough.
             </p>
             <ul className="list-decimal max-sm:pl-4 sm:pl-8 text-left">
                 <li>
@@ -60,13 +60,13 @@ export const BreadOverview = () => {
                 </li>
             </ul>
             <p>
-                <a href="#wait_times" className="text-(--external-link) hover:underline max-sm:underline">Proofing</a> takes 4-12 hours for bread to complete (depends on temperature).
+                <a href="#wait_times" className="text-(--internal-link) hover:underline max-sm:underline">Proofing</a> takes 4-12 hours for bread to complete (depends on temperature).
             </p>
             <p>
                 Optional Proofing: 12-24 hours in the fridge to increase acidity / flavor.
             </p>
             <p>
-                <a href="#baking_time" className="text-(--external-link) hover:underline max-sm:underline">Baking Time</a>: proofed dough goes into a hot dutch oven with the lid on at 500 degs F for 20 minutes. Then 450 deg F with the lid off for 20 more minutes.
+                <a href="#baking_time" className="text-(--internal-link) hover:underline max-sm:underline">Baking Time</a>: proofed dough goes into a hot dutch oven with the lid on at 500 degs F for 20 minutes. Then 450 deg F with the lid off for 20 more minutes.
             </p>
             <p>
                 Resting: don't touch the bread for at least an hour after it comes out of the oven. The cooling process finalizes the structure. Cutting the bread early stops the setting process.
@@ -121,20 +121,20 @@ export const AmountsAndRatios = () => {
                     <AmountsTable />
                 </div>
             </div>
-            <div className="flex flex-col gap-4">
-                <p>
-                    Hearth breads (classic sourdough loaves) have much in common with each other. Bakers over the years have zeroed in on several common practices that you will find helpful to acknowledge and not adjust as you begin your bread baking journey.
-                </p>
-                <p className="sm:pl-4">
+            <p>
+                Hearth breads (classic sourdough loaves) have much in common with each other. Bakers over the years have zeroed in on several common practices that you will find helpful to acknowledge and not adjust as you begin your bread baking journey.
+            </p>
+            <ul className="list-decimal max-sm:pl-4 sm:pl-8">
+                <li>
                     <span className="max-sm:text-(--light-tertiary)">Commonality #1:</span> you need salt. Around 2% is standard. Without salt your loaf will be bland.
-                </p>
-                <p className="sm:pl-4">
+                </li>
+                <li>
                     <span className="max-sm:text-(--light-tertiary)">Commonality #2:</span> most of your loaf should consist of all purpose flour. That is white flour with a protein percentage of 11-12%. This provides the best rise and allows for stretchier less crumbly bread.
-                </p>
-                <p className="sm:pl-4">
+                </li>
+                <li>
                     <span className="max-sm:text-(--light-tertiary)">Commonality #3:</span> If adding additional ingredients to you bread, soak those ingredients before adding them. This includes any nuts, seeds, dried fruits, herbs... etc. The moisture content in the additions must exist and not mess with the liquid percentage of the base loaf.
-                </p>
-            </div>
+                </li>
+            </ul>
         </CollapsibleBreadSection>
     )
 }
@@ -193,13 +193,13 @@ export const WaitTimes = () => {
                 TLDR
             </h3>
             <p>
-                It your kitchen hovers around ~60 deg F, give your bread ~10 hours.
+                If your kitchen hovers around ~60 deg F, give your bread ~10 hours.
             </p>
             <p>
-                It your kitchen hovers around ~70 deg F, give your bread ~7 hours.
+                If your kitchen hovers around ~70 deg F, give your bread ~7 hours.
             </p>
             <p>
-                It your kitchen is hotter than 75 deg F, give it ~4 hours, and check every hour after if it's not done.
+                If your kitchen is hotter than 75 deg F, give it ~4 hours, and check every hour after if it's not done.
             </p>
             <h3 className="text-lg text-(--light-tertiary)">
                 Proofing is highly reliant on temperature.
@@ -217,10 +217,10 @@ export const WaitTimes = () => {
                 Do note, that the amount of time your bread proofs does effect the overall flavor. A loaf that has proofed longer at lower temperatures has a more "sour" flavor.
             </p>
             <h3 className="text-lg text-(--light-tertiary)">
-                When your dough is ready you can refrigerate it...
+                When your dough is ready you can refrigerate it.
             </h3>
             <p>
-                ...for up to two days without changing baking times or conditions. I haven't tried it any longer and the folks that I read and watch generally don't refrigerate the loaves for more than 24 hours purposefully.
+                It'll stay good for up to two days without changing baking times or conditions. I haven't tried it any longer and the folks that I read and watch generally don't refrigerate the loaves for more than 24 hours purposefully.
             </p>
             <p>
                 I like to mix, fold, and proof over the course of one day, then refrigerate over night. It adds some flavor to the bread and makes it very easy to mark (score).
@@ -416,7 +416,7 @@ const CollapsibleBreadSection = ({
             </button>
             <div 
                 data-show={isOpen}
-                className="flex flex-col gap-4 data-[show='false']:hidden text-left"
+                className="flex flex-col gap-4 data-[show='false']:hidden text-left p-2"
                 >
                 {children}
             </div>
