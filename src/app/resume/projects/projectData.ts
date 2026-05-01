@@ -65,6 +65,7 @@ export enum TechSkills {
 export enum SoftSkills {
     COMPLIANCE_REPORTING = 'Compliance reporting',
     CONSULTING = 'Consulting',
+    CONTINUOUS_IMPROVEMENT = 'Continuous Improvement',
     ENGINEERING_STANDARDS = 'Engineering standards',
     FEDERAL_REGULATIONS = 'Federal regulations',
     OHIO_STATE_REGULATIONS = 'Ohio state regulations',
@@ -74,14 +75,15 @@ export enum SoftSkills {
     LIVE_TESTING = 'Live testing',
     RISK_MANAGEMENT = 'Risk management',
     SPRINT_PLANNING = 'Sprint Planning',
-    PROCESS_ALIGNMENT = 'Process alignment'
+    PROCESS_ALIGNMENT = 'Process alignment',
+    FLAT_TEAM = 'Flat team',
 }
 
 export type Project = {
     employer: Employers;
     title: string, 
-    techSkills?: string[],
-    softSkills?: string[],
+    techSkills?: TechSkills[],
+    softSkills?: SoftSkills[],
     methodology?: DevelopmentMethodologies[],
     years: Years,
     description: string
@@ -91,8 +93,8 @@ export const myProjects: Project[] = [
     {
         employer: Employers.ACCENTURE,
         title: "Bid optimization",
-        techSkills:['React', 'Typescript', 'AWS Dynamo', 'AWS Cloudwatch', 'AWS Lamdba', 'AWS Amplify', 'AWS Scheduler', 'Python', 'Pandas', 'Vitest', 'Cypress', 'Accenture Manage MySales (MMS)', 'Salesforce', 'Dev ops'],
-        softSkills: ['Flat team', 'Continuous improvement'],
+        techSkills:[TechSkills.REACT, TechSkills.TYPESCRIPT, TechSkills.AWS_DYNAMO, TechSkills.AWS_CLOUDWATCH, TechSkills.AWS_LAMDBA, TechSkills.AWS_AMPLIFY, TechSkills.AWS_SCHEDULER, TechSkills.PYTHON, TechSkills.PANDAS, TechSkills.VITEST, TechSkills.CYPRESS, TechSkills.MMS, TechSkills.SALESFORCE, TechSkills.DEV_OPS],
+        softSkills: [SoftSkills.FLAT_TEAM, SoftSkills.CONTINUOUS_IMPROVEMENT],
         methodology: [DevelopmentMethodologies.AGILE],
         years: {start: 2024, continuing: true},
         description: 'Created an internal SAAS tool to optimize the creation of early stage deals, minimize the amount bonus stuffing, and maximize the bid price. We used AI powered tools to predict and suggest selections for our users.',
@@ -100,8 +102,8 @@ export const myProjects: Project[] = [
     {
         employer: Employers.ACCENTURE,
         title: "Branded component library",
-        techSkills: ['React', 'Typescript', 'React-Aria', 'a11y', 'Storybook'],
-        softSkills: ['Flat team', 'Continuous improvement'],
+        techSkills: [TechSkills.REACT, TechSkills.TYPESCRIPT, TechSkills.REACT_ARIA, TechSkills.A11Y, TechSkills.STORYBOOK],
+        softSkills: [SoftSkills.FLAT_TEAM, SoftSkills.CONTINUOUS_IMPROVEMENT],
         methodology: [DevelopmentMethodologies.AGILE],
         years: {start: 2024, continuing: true},
         description: 'Beutified a headless UI library to match the color, tone, and feel of Accenture branding to save internal teams development time.',
@@ -109,7 +111,7 @@ export const myProjects: Project[] = [
     {
         employer: Employers.ACCENTURE,
         title: "E2E testing warehouse utilization",
-        techSkills: ['React', 'Typescript', 'AWS S3', 'Terraform', 'Jest', 'Cypress'],
+        techSkills: [TechSkills.REACT, TechSkills.TYPESCRIPT, TechSkills.AWS_S3, TechSkills.TERRAFORM, TechSkills.JEST, TechSkills.CYPRESS],
         softSkills: [],
         methodology: [DevelopmentMethodologies.TOP_DOWN, DevelopmentMethodologies.AGILE],
         years: {start: 2024, continuing: false},
@@ -118,7 +120,7 @@ export const myProjects: Project[] = [
     {
         employer: Employers.ACCENTURE,
         title: "Employee project utilization planner",
-        techSkills: ['Angular', 'Typescript', 'RxJs', 'Redux', 'Sub-Pub', 'Continuous data integration'],
+        techSkills: [TechSkills.ANGULAR, TechSkills.TYPESCRIPT, TechSkills.RXJS, TechSkills.REDUX, TechSkills.SUB_PUB, TechSkills.CONTINUOUS_MONITORING_SYSTEMS],
         softSkills: [],
         methodology: [DevelopmentMethodologies.AGILE],
         years: {start: 2022, end: 2023, continuing: false},
@@ -127,8 +129,8 @@ export const myProjects: Project[] = [
     {
         employer: Employers.FREELANCE,
         title: "Data migration",
-        techSkills: ['Salesforce', 'QuickBooks', 'API', 'Consulting'],
-        softSkills: [],
+        techSkills: [ TechSkills.SALESFORCE, TechSkills.QUICKBOOKS, TechSkills.API],
+        softSkills: [ SoftSkills.CONSULTING],
         methodology: [DevelopmentMethodologies.TOP_DOWN],
         years: {start: 2020, continuing: false},
         description: 'Advised a client on how best to upload disparate legacy data sources into Salesforce through their online portal.',
@@ -136,8 +138,8 @@ export const myProjects: Project[] = [
     {
         employer: Employers.GENSUITE,
         title: "TANKS Calculations",
-        techSkills: ['SQL', 'Refactoring', 'Coldfusion', 'Legacy code', 'Federal regulations'],
-        softSkills: [],
+        techSkills: [TechSkills.SQL, TechSkills.REFACTORING, TechSkills.COLDFUSION, TechSkills.LEGACY_CODE, ],
+        softSkills: [SoftSkills.FEDERAL_REGULATIONS],
         methodology: [DevelopmentMethodologies.TOP_DOWN],
         years: {start: 2020, continuing: false},
         description: 'Followed the letter of the law by utilizing SQL calculations that fed into SQL reports for each slice of data recieved about chemical storage tanks on client sites. We had to merge old calculations with new calculations and fill federally defined equation sets with the correct information to estimate chemical loss through natural processes.',
@@ -145,8 +147,8 @@ export const myProjects: Project[] = [
     {
         employer: Employers.GENSUITE,
         title: "Refactoring",
-        techSkills: ['JavaScript', 'Promises', 'ColdFusion', 'JQuery', 'HTML form validation', 'DataTables', 'REST API', 'Refactoring', 'Legacy code', 'Health and safety', 'Live testing'],
-        softSkills: [],
+        techSkills: [TechSkills.JAVASCRIPT, TechSkills.PROMISES, TechSkills.COLDFUSION, TechSkills.JQUERY, TechSkills.HTML_FORM_VALIDATION, TechSkills.DATATABLES, TechSkills.REST_API, TechSkills.REFACTORING, TechSkills.LEGACY_CODE],
+        softSkills: [SoftSkills.HEALTH_AND_SAFETY, SoftSkills.LIVE_TESTING],
         methodology: [DevelopmentMethodologies.TICKETS],
         years: {start: 2019, end: 2022, continuing: false},
         description: 'I worked to update untested legacy code files to follow modern class-based standards. Each modification was tested in parallel with the unmodified code to ensure that no functionality was lost. I broke up files, centralized data flows, added data classes, added static operations, removed duplication, added variability, and created REST APIs.',
@@ -154,8 +156,8 @@ export const myProjects: Project[] = [
     {
         employer: Employers.GENSUITE,
         title: "Security Updates",
-        techSkills: ['HTML form validation', 'SQL', 'ColdFusion', 'LoDash', 'JavaScript', 'Legacy code', 'Digital Security', 'Risk management'],
-        softSkills: [],
+        techSkills: [TechSkills.HTML_FORM_VALIDATION, TechSkills.SQL, TechSkills.COLDFUSION, TechSkills.LODASH, TechSkills.JAVASCRIPT, TechSkills.LEGACY_CODE],
+        softSkills: [SoftSkills.DIGITAL_SECURITY, SoftSkills.RISK_MANAGEMENT],
         methodology: [DevelopmentMethodologies.TICKETS],
         years: {start: 2019, end: 2022, continuing: false},
         description: 'Working with the Action Tracking System (ATS) team, I updated our code base to prevent security vulnerabilities as we became aware of them. Our primary fixes included, but were by noe means limited to, SQL injection, cross platform script injection, HTML form manipulation, and broken access control.',
@@ -163,8 +165,8 @@ export const myProjects: Project[] = [
     {
         employer: Employers.CORNERSTONE,
         title: "Flare data anlysis system",
-        techSkills: ['Visual Basic for Applications (VBA)', 'Consulting', 'Live document', 'Compliance reporting', 'Federal regulations', 'Ohio state regulations', 'Engineering standards', 'Continuous data integration', 'Continuous monitoring systems'],
-        softSkills: [],
+        techSkills: [TechSkills.VBA, TechSkills.CONTINUOUS_DATA_INTEGRATION, TechSkills.CONTINUOUS_MONITORING_SYSTEMS],
+        softSkills: [SoftSkills.CONSULTING, SoftSkills.LIVE_DOCUMENT, SoftSkills.COMPLIANCE_REPORTING, SoftSkills.FEDERAL_REGULATIONS, SoftSkills.OHIO_STATE_REGULATIONS, SoftSkills.ENGINEERING_STANDARDS],
         methodology: [DevelopmentMethodologies.WATERFALL],
         years: {start: 2019, end: 2019, continuing: false},
         description: 'I harvested data from continuous monitoring systems attached to landfill gas flares and analyzed the data to make sure that the operation of the flare met federal and state requirements. Any violations or deviances from the prescribed operations were logged and a report generated for the proper authorities.',
@@ -172,8 +174,8 @@ export const myProjects: Project[] = [
     {
         employer: Employers.CORNERSTONE,
         title: "Well data anlysis system",
-        techSkills: ['Visual Basic for Applications (VBA)', 'Consulting', 'Live document', 'Compliance reporting', 'Federal regulations', 'Ohio state regulations', 'Engineering standards', 'Preprocessing'],
-        softSkills: [],
+        techSkills: [TechSkills.VBA, TechSkills.PREPROCESSING],
+        softSkills: [SoftSkills.CONSULTING, SoftSkills.LIVE_DOCUMENT, SoftSkills.COMPLIANCE_REPORTING, SoftSkills.FEDERAL_REGULATIONS, SoftSkills.OHIO_STATE_REGULATIONS, SoftSkills.ENGINEERING_STANDARDS],
         methodology: [DevelopmentMethodologies.WATERFALL],
         years: {start: 2019, end: 2019, continuing: false},
         description: 'I harvested data from gas wells in landfills and analyzed the data to make sure that the landfill gas system met federal and state requirements. Any violations or deviances from the prescribed operations were logged and a report generated for the proper authorities.',
@@ -181,8 +183,8 @@ export const myProjects: Project[] = [
     {
         employer: Employers.CORNERSTONE,
         title: "Leachate generation prediction",
-        techSkills: ['Visual Basic for Applications (VBA)', 'API', 'Consulting'],
-        softSkills: [],
+        techSkills: [TechSkills.VBA, TechSkills.API],
+        softSkills: [SoftSkills.CONSULTING],
         methodology: [DevelopmentMethodologies.TOP_DOWN],
         years: {start: 2016, continuing: false},
         description: `I was tasked to predict the amount of leachate that would be generated at our client's sites so that they could plan for any extra shipments that would need to be made to their treatment facility. By marrying historical weather data, the area of uncovered / under construction cells, historical leachate generation, and material runoff percentages I was able to come up with a working equation. When applied our clients were able to predict the total leachate generation based on rainfall and area of the working areas on their landfill.`,
