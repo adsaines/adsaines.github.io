@@ -1,4 +1,4 @@
-import { Years, Project, SoftSkills, TechSkills, myProjects, Employers } from "./projectData";
+import { Years, Project, SoftSkills, TechSkills, myProjects, Employers, AiSkills } from "./projectData";
 
 export const ProjectDisplay = ({
     children,
@@ -17,11 +17,13 @@ export const ProjectDisplay = ({
             </div>
             <SkillDisplay skillTitle="Tech skills"  skills={project.techSkills}/>
             <SkillDisplay skillTitle="Soft skills"  skills={project.softSkills}/>
+            <SkillDisplay skillTitle="AI Skills & Experiences"  skills={project.aiSkills}/>
         </div>
     )
 }
 
-const SkillDisplay = ({skills, skillTitle}:{skills?: SoftSkills[] | TechSkills[], skillTitle: string}) => {
+const SkillDisplay = ({skills, skillTitle}:{skills?: SoftSkills[] | TechSkills[] | AiSkills[], skillTitle: string}) => {
+    const keyIfyString = (str: string) => str.split(' ').join('-').toLowerCase();
 
     if(!skills || skills.length === 0){
         return null
@@ -29,14 +31,18 @@ const SkillDisplay = ({skills, skillTitle}:{skills?: SoftSkills[] | TechSkills[]
 
     return (
         <div className="flex px-8 py-2">
-            <div className="text-(--light-secondary) font-bold flex w-1/5 justify-end items-center border-r-2 border-(--light-primary) pr-3 mr-3">
+            <div className="text-(--light-secondary) font-bold flex w-1/5 justify-end text-end text-wrap items-center border-r-2 border-(--light-primary) pr-3 mr-3">
                 {skillTitle}
             </div>
             <hr dir="vertical" />
             <div className="text-(--light-tertiary) w-4/5 flex flex-wrap justify-start gap-3">
                 {skills?.map((skill) => {
                     return (
-                        <span>{skill}</span>
+                        <span 
+                            key={`skill-key-${keyIfyString(skillTitle)}-${keyIfyString(skill)}`}
+                            >
+                            {skill}
+                        </span>
                     )
                 })}
             </div>
@@ -61,7 +67,7 @@ const yearsTag = (years: Years) => {
     return `${years.start} - ${years.end}`;
 }
 
-export const Employer = ({title, children}:{title: string, children: React.ReactNode}) => {
+const Employer = ({title, children}:{title: string, children: React.ReactNode}) => {
     return (
         <div className="flex flex-col p-6 max-sm:p-8 gap-2 border-1 border-dashed rounded-sm border-(--dark-primary) border-rounded hover:border-(--light-primary)">
             <h2 className="font-bold text-2xl underline">

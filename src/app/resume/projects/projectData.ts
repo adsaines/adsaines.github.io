@@ -62,6 +62,20 @@ export enum TechSkills {
     VITEST = 'Vitest'
 }
 
+export enum AiSkills {
+    PROMPT_ENGINEERING = 'Prompt engineering',
+    PROMPTING = 'Prompting',
+    AGENTIC = 'Agentic',
+    GENERATIVE = 'Generative',
+    PAIRING = 'Pairing',
+    AGENT_SKILLS = 'Agent skills',
+    GITHUB_COPILOT = 'Github copilot',
+    GITHUB_PROMPTS = 'Github prompts',
+    GITHUB_AGENTS = 'Github agents',
+    GITHUB_INSTRUCTIONS = 'Github instructions',
+    MCP_SERVERS = 'Model context protocol (MCP) servers'
+}
+
 export enum SoftSkills {
     COMPLIANCE_REPORTING = 'Compliance reporting',
     CONSULTING = 'Consulting',
@@ -84,6 +98,7 @@ export type Project = {
     title: string, 
     techSkills?: TechSkills[],
     softSkills?: SoftSkills[],
+    aiSkills?: AiSkills[],
     methodology?: DevelopmentMethodologies[],
     years: Years,
     description: string
@@ -95,6 +110,19 @@ export const myProjects: Project[] = [
         title: "Bid optimization",
         techSkills:[TechSkills.REACT, TechSkills.TYPESCRIPT, TechSkills.AWS_DYNAMO, TechSkills.AWS_CLOUDWATCH, TechSkills.AWS_LAMDBA, TechSkills.AWS_AMPLIFY, TechSkills.AWS_SCHEDULER, TechSkills.PYTHON, TechSkills.PANDAS, TechSkills.VITEST, TechSkills.CYPRESS, TechSkills.MMS, TechSkills.SALESFORCE, TechSkills.DEV_OPS],
         softSkills: [SoftSkills.FLAT_TEAM, SoftSkills.CONTINUOUS_IMPROVEMENT],
+        aiSkills: [
+            AiSkills.PROMPT_ENGINEERING,
+            AiSkills.PROMPTING,
+            AiSkills.AGENTIC,
+            AiSkills.GENERATIVE,
+            AiSkills.PAIRING,
+            AiSkills.AGENT_SKILLS,
+            AiSkills.GITHUB_COPILOT,
+            AiSkills.GITHUB_PROMPTS,
+            AiSkills.GITHUB_AGENTS,
+            AiSkills.GITHUB_INSTRUCTIONS,
+            AiSkills.MCP_SERVERS,
+        ],
         methodology: [DevelopmentMethodologies.AGILE],
         years: {start: 2024, continuing: true},
         description: 'Created an internal SAAS tool to optimize the creation of early stage deals, minimize the amount bonus stuffing, and maximize the bid price. We used AI powered tools to predict and suggest selections for our users.',
@@ -112,7 +140,7 @@ export const myProjects: Project[] = [
         employer: Employers.ACCENTURE,
         title: "E2E testing warehouse utilization",
         techSkills: [TechSkills.REACT, TechSkills.TYPESCRIPT, TechSkills.AWS_S3, TechSkills.TERRAFORM, TechSkills.JEST, TechSkills.CYPRESS],
-        softSkills: [],
+        softSkills: [SoftSkills.PROCESS_ALIGNMENT, SoftSkills.CONSULTING, SoftSkills.CONTINUOUS_IMPROVEMENT],
         methodology: [DevelopmentMethodologies.TOP_DOWN, DevelopmentMethodologies.AGILE],
         years: {start: 2024, continuing: false},
         description: 'Thoroughly tested an applications usage paths by utilizing Cypress to process, annotate, and complete warehouse utilization scans; ensuring 100% coverage of application functionality.',
@@ -121,7 +149,7 @@ export const myProjects: Project[] = [
         employer: Employers.ACCENTURE,
         title: "Employee project utilization planner",
         techSkills: [TechSkills.ANGULAR, TechSkills.TYPESCRIPT, TechSkills.RXJS, TechSkills.REDUX, TechSkills.SUB_PUB, TechSkills.CONTINUOUS_MONITORING_SYSTEMS],
-        softSkills: [],
+        softSkills: [SoftSkills.DIGITAL_SECURITY, SoftSkills.PROCESS_ALIGNMENT, SoftSkills.SPRINT_PLANNING],
         methodology: [DevelopmentMethodologies.AGILE],
         years: {start: 2022, end: 2023, continuing: false},
         description: 'Created an integrated tool that fed off a deal publication pipeline to fill out employee headcounts, timelines, and costs; continuously monitoring the pipeline to ensure any update is pushed through to the user for incorporation in their planning session.',
@@ -160,7 +188,7 @@ export const myProjects: Project[] = [
         softSkills: [SoftSkills.DIGITAL_SECURITY, SoftSkills.RISK_MANAGEMENT],
         methodology: [DevelopmentMethodologies.TICKETS],
         years: {start: 2019, end: 2022, continuing: false},
-        description: 'Working with the Action Tracking System (ATS) team, I updated our code base to prevent security vulnerabilities as we became aware of them. Our primary fixes included, but were by noe means limited to, SQL injection, cross platform script injection, HTML form manipulation, and broken access control.',
+        description: 'Working with the Action Tracking System (ATS) team, I updated our code base to prevent security vulnerabilities as we became aware of them. Our primary fixes included, but were by no means limited to, SQL injection, cross platform script injection, HTML form manipulation, and broken access control.',
     },
     {
         employer: Employers.CORNERSTONE,
