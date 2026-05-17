@@ -5,25 +5,29 @@ const tddBlurb = `I've been using TDD for a while and I've found that I prefer t
 
 const accentureTalkingPoints: TalkingPoint[] = [
     {
-        bolded: 'Engineered and optimized full-stack applications',
-        followUp: 'I led critical refactoring initiatives to enhance functionality, user experience, and overall maintainability across diverse frameworks.'
+        bolded: "Integrated GitHub Copilot into daily workflows",
+        followUp: "Using AI-assisted tools like GitHub Copilot, I accelerated daily code generation, automated technical reviews, and streamlined our research processes."
     },
     {
-        bolded: 'Designed and implemented scalable architectural solutions',
-        followUp: `I deployed these solutions across microservices and API's to drive significant efficiency gains.`
+        bolded: "Engineered and optimized full-stack applications",
+        followUp: "I led critical refactoring initiatives across diverse frameworks to enhance functionality and maintainability, relying on AI-driven diagnostics for rapid troubleshooting."
     },
     {
-        bolded: 'Developed and integrated robust data solutions',
-        followUp: 'I handled development, including secure data processing, storage, and reporting, ensuring data integrity and compliance.'
+        bolded: "Designed and implemented scalable architectural solutions",
+        followUp: "I deployed microservices and APIs, leveraging generative AI to fast-track the initial system design phases and drive significant efficiency gains."
     },
     {
-        bolded: 'Mentored and guided team members on advanced development workflows',
-        followUp: 'I fostered skill development and collaborative success.'
+        bolded: "Developed and integrated robust data solutions",
+        followUp: "Through AI pair-programming, I streamlined secure data processing, storage, and reporting to guarantee both delivery speed and strict compliance."
     },
     {
-        bolded: 'Built, deployed, and maintained internal component library',
-        followUp: 'I standardized development practices and increased overall project efficiency with our library.'
+        bolded: "Mentored and guided team members on advanced development workflows",
+        followUp: "I boosted collaborative team velocity and fostered modern skills by championing the adoption of AI-assisted coding practices across the organization."
     },
+    {
+        bolded: "Built, deployed, and maintained internal component library",
+        followUp: "I standardized development practices and increased overall project delivery speed by generating highly reusable UI components with generative AI tools."
+    }
 ]
 
 const benchmarkTalkingPoints: TalkingPoint[] = [

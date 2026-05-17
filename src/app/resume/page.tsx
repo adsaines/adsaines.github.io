@@ -2,6 +2,7 @@ import { NextPage } from "next";
 import { BlurbWithTitle, ItemWithExplanations, StandardResumeSection, TitleWithBricks } from "./projections";
 import { ResumeWording } from './resumeWording'
 import { SocialLinks } from "@/structures/header";
+import { TechSkills } from "./projects/projectData";
 
 const Resume: NextPage = () => {
     return (
@@ -56,27 +57,59 @@ const Resume: NextPage = () => {
                     {/* TODO-MAYBE: chart the technologies by experience & preference in a scatter chart */}
                     <TitleWithBricks 
                         title="Languages"
-                        bricks={[{title: 'TypeScript'},{title: 'JavaScript'},{title: 'Python'},{title: 'CSS'},{title: 'PowerShell'},{title: 'ColdFusion'},{title: 'Java'},{title: 'Terraform'},{title: 'YAML'}]}
+                        bricks={[
+                            {title: TechSkills.TYPESCRIPT},
+                            {title: TechSkills.JAVASCRIPT},
+                            {title: TechSkills.PYTHON},
+                            {title: TechSkills.CSS},
+                            {title: TechSkills.POWERSHELL},
+                            {title: TechSkills.COLDFUSION},
+                            {title: TechSkills.JAVA},
+                            {title: TechSkills.TERRAFORM},
+                            {title: TechSkills.YAML}]}
                         />
                     <TitleWithBricks 
                         title="JavaScript frameworks"
-                        bricks={[{title: 'Angular'},{title: 'React'},{title: 'Vue'}]}
+                        bricks={[
+                            {title: TechSkills.ANGULAR},
+                            {title: TechSkills.REACT},
+                            {title: TechSkills.VUE}]}
                         />
                     <TitleWithBricks 
                         title="DB languages"
-                        bricks={[{title: 'MSSQL'},{title: 'PostgreSQL'},{title: 'SOQL/SOSL (Salesforce)'}]}
+                        bricks={[
+                            {title: TechSkills.MSSQL},
+                            {title: TechSkills.POSTGRESQL},
+                            {title: TechSkills.SOQL}]}
                         />
                     <TitleWithBricks 
                         title="CSS"
-                        bricks={[{title: 'Basic & SCSS'},{title: 'Tailwind'},{title: 'Bootstrap'}]}
+                        bricks={[
+                            {title: TechSkills.CSS_SCSS},
+                            {title: TechSkills.CSS_TAILWIND},
+                            {title: TechSkills.CSS_BOOTSTRAP},
+                        ]}
                         />
                     <TitleWithBricks 
                         title="Notable libraries"
-                        bricks={[{title: 'RxJS'},{title: 'Cypress'},{title: 'jQuery'}]}
+                        bricks={[
+                            {title: TechSkills.RXJS},
+                            {title: TechSkills.CYPRESS},
+                            {title: TechSkills.JQUERY}
+                        ]}
                         />
                     <TitleWithBricks 
                         title="AWS services"
-                        bricks={[{title: 'DynamoDB'},{title: 'Cloudwatch'},{title: 'Lambda'},{title: 'Amplify'},{title: 'AppConfig'},{title: 'IAM'},{title: 'RDS'},{title: 'WAF'}]}
+                        bricks={[
+                            {title: TechSkills.AWS_DYNAMO},
+                            {title: TechSkills.AWS_CLOUDWATCH},
+                            {title: TechSkills.AWS_LAMDBA},
+                            {title: TechSkills.AWS_AMPLIFY},
+                            {title: TechSkills.AWS_APPCONFIG},
+                            {title: TechSkills.AWS_IAM},
+                            {title: TechSkills.AWS_RDS},
+                            {title: TechSkills.AWS_WAF},
+                        ]}
                         />
                 </StandardResumeSection>
                 <StandardResumeSection title="Education" >
