@@ -42,7 +42,7 @@ export type TalkingPoint = {
 export type ItemWithExplanations = {
     title: string, 
     subTitle: string, 
-    startDate: string, 
+    startDate?: string, 
     endDate?: string, 
     justUseYear?: boolean
     talkingPoints: TalkingPoint[]
@@ -71,12 +71,17 @@ export const ItemWithExplanations = ({
                 <span>
                     {subTitle}
                 </span>
-                <span data-show={justUseYear} className="data-[show='false']:hidden">
-                    {datesToYearRange(startDate,endDate)}
-                </span>
-                <span data-show={!justUseYear} className="data-[show='false']:hidden">
-                    {dateRangeToMonthAndYearRange(startDate,endDate)}
-                </span>
+                {
+                    startDate &&
+                    <>
+                        <span data-show={justUseYear} className="data-[show='false']:hidden">
+                            {datesToYearRange(startDate,endDate)}
+                        </span>
+                        <span data-show={!justUseYear} className="data-[show='false']:hidden">
+                            {dateRangeToMonthAndYearRange(startDate,endDate)}
+                        </span>
+                    </>
+                }
             </div>
             <div className="max-sm:pl-4 md:w-3/5 flex flex-col gap-2">
                 {
