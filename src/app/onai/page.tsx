@@ -19,18 +19,17 @@ const OnAi: NextPage = () => {
                                 followUp: 'At the moment (mid 2026), AI models all tend towards sycophantic behavior and agree with you as much as they can. They want you to be happy because they are part of a business model. Their ultimate goal is to please you, not do things correctly.',
                             }} 
                             />
-                        <ItemWithExplanations 
-                            title="Sycophantism"
-                            subTitle="Mirror behavior"
-                            talkingPoints={[{
-                                bolded: 'Yes, we know it does this',
-                                followUp: 'Yes, this happens a lot, and everyone is susceptible.'
-                            }]}
-                            link={{
-                                title: 'AI overly affirms users asking for personal advice',
-                                href: 'https://news.stanford.edu/stories/2026/03/ai-advice-sycophantic-models-research'
-                            }}
-                            />
+
+                        <div className="mx-auto text-center">
+                            <a 
+                                className="text-center text-(--internal-link) hover:underline max-sm:underline" 
+                                href="https://news.stanford.edu/stories/2026/03/ai-advice-sycophantic-models-research" 
+                                target="_blank"
+                                >
+                                AI overly affirms users asking for personal advice
+                            </a>
+                        </div>
+                        
                         <FormatTalkingPoint 
                             point={{
                                 bolded: 'AI uses lots of energy',

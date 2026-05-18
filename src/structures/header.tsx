@@ -63,7 +63,7 @@ const SmallMediaHeader = () => {
                 <HamburgerMenuLink
                     title="on_ai" 
                     path="/onai" 
-                    selected={path.endsWith('/onai')}
+                    selected={path.endsWith('onai')}
                     setExpanded={setExpanded}
                     />
                 <HamburgerMenuLink
@@ -118,7 +118,7 @@ const HamburgerMenuLink = ({title, path, selected, setExpanded}:{title: string, 
     return (
         <Link 
             className="bg-(--dark-secondary) py-2 px-4 w-2/3 text-center font-semibold text-xl border-1 border-(--light-primary)" 
-            href={`/${path}`}
+            href={`${path}`}
             onClick={() => setExpanded(false)}
             >
                 {title}
