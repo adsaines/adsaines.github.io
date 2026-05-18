@@ -9,6 +9,7 @@ export type PageSettings = {
     expandedContent: boolean;
     synergy: boolean;
     bread: boolean;
+    onai: boolean;
 }
 
 export type SettingsContextContents = {
@@ -27,6 +28,7 @@ export const SettingContextWrapper = ({children}: {children: React.ReactNode}) =
         expandedContent: false,
         synergy: false,
         bread: false,
+        onai: false,
     })
 
     const updateSettings = (newValues: Partial<PageSettings>) => {
@@ -51,6 +53,10 @@ export const SettingContextWrapper = ({children}: {children: React.ReactNode}) =
 
         if(path.includes('bread') && !settings.bread){
             updateSettings({...settings, bread: true})
+        }
+
+        if(path.includes('onai') && !settings.onai){
+            updateSettings({...settings, onai: true})
         }
     }, [path])
 

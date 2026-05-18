@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import { FormatTalkingPoint, ItemWithExplanations, StandardResumeSection } from "../resume/projections"
+import { FormatTalkingPoint, StandardResumeSection } from "../resume/projections"
 
 const OnAi: NextPage = () => {
     return (    

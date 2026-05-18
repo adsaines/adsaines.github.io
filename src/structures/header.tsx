@@ -60,12 +60,15 @@ const SmallMediaHeader = () => {
                     selected={path.includes('stories')}
                     setExpanded={setExpanded}
                     />
-                <HamburgerMenuLink
-                    title="on_ai" 
-                    path="/onai" 
-                    selected={path.endsWith('onai')}
-                    setExpanded={setExpanded}
-                    />
+                {
+                    settings.onai && 
+                    <HamburgerMenuLink
+                        title="on_ai" 
+                        path="/onai" 
+                        selected={path.endsWith('onai')}
+                        setExpanded={setExpanded}
+                        />
+                }
                 <HamburgerMenuLink
                     title="settings" 
                     path="/settings" 
@@ -163,12 +166,15 @@ const WideMediaHeader = () => {
                 selected={path.includes('stories')}
                 hoverText="entertaining and elucidating stories about my experiences"
                 />
-            <HeaderLink
-                name="on_ai" 
-                path="/onai" 
-                selected={path.includes('onai')}
-                hoverText="my rambling thoughts on ai"
-                />
+            {
+                settings.onai && 
+                <HeaderLink
+                    name="on_ai" 
+                    path="/onai" 
+                    selected={path.includes('onai')}
+                    hoverText="my rambling thoughts on ai"
+                    />
+            }
             <HeaderLink
                 name="settings" 
                 path="/settings" 

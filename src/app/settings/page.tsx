@@ -22,6 +22,10 @@ const Settings: NextPage = () => {
     const flipBread = () => {
         updateSettings({bread: !settings.bread})
     }
+
+    const flipAi = () => {
+        updateSettings({onai: !settings.onai})
+    }
     
     const flipExpandedContent = () => {
         // todo-re: testing only
@@ -67,6 +71,13 @@ const Settings: NextPage = () => {
                     selected={settings.bread} 
                     onText="bake" 
                     offText="rise"
+                    />
+                <Switch 
+                    title="AI thoughts"
+                    action={flipAi} 
+                    selected={settings.onai} 
+                    onText="tangible" 
+                    offText="intangible"
                     />
             </div>
         </div>
