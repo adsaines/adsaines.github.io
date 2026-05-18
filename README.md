@@ -16,21 +16,29 @@ I made this page primarily to show off my resume and provide people with some in
 
 Here you will find a robust version of my resume. I will be playing around with the best ways to show off my accomplishments, so check back on occasion and see my updated diction.
 
-## /thanks
-
-A general acknowledgment of the resources that I used to create my website. Specifically, the ones I like most.
-
 ## /stories (story_time)
 
 Several stories and experiences from my career in coding. Lots of fun things in there.
 
+## /onai
+
+AI is important, it's changing the way that technology gets done. It is vastly over-hyped, mis-understood, and increadibly useful.
+
+If you do not like the sci-fi genre of fiction, here's a breakdown of the various things that we have projected for our future:
+
+- AI will build an unstoppable robot army and kill everyone
+- AI will launch all of the nukes and kill everyone
+- AI will enslave humanity to further it's goals
+- AI will control all of humanity whether we want it to or not
+- AI will exist, be mis-understood, and help the underdogs launch a revolution
+- AI will co-exist with humanity and we will peacefully aid each other on our adventures through the stars
+- AI will kill almost everyone and torture the remains of humanity forever
+
+Take it as you will, but given our imaginations, our species has a 3/7 (43%) chance of being murdered, a 2/7 (29%) chance of being enslaved, and a 2/7 (29%) chance of co-existing with AI.
+
 ## /settings
 
-### dev vs business mode
-
-The default mode when you load this site is "business." That's because I include a link to this site on my resume and in my applications to companies. I want recruiters, HR, to-be managers, and to-be co-workers to read a polished and directed set of experiences on the story_time page. In that vein I passed all of my stories through an AI to polish them up.
-
-However, I enjoyed writing and reading the unpolished versions of those experiences. If you are interested in reading those versions flip the mode to dev and re-visit the story_time page. According to my mother, a lady of great renoun in poetry and writing, I have a flippant style that does not take things seriously or paint the experiences in a necessarily positive light.
+There are other pages on here. Flip the various switches to see what shows up. You can learn to bake bread or read an entertaining anecdote. Have fun.
 
 # Publishing
 
